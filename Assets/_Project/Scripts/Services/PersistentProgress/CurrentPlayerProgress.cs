@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace _Project.Services.PlayerProgress
+namespace _Project.PlayerProgress
 {
     [Serializable]
     public class CurrentPlayerProgress

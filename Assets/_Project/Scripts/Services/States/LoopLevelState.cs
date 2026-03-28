@@ -1,9 +1,9 @@
 ﻿using _Project.Infrastructure.InGameTime;
 using _Project.Infrastructure.SaveLoad;
-using _Project.Services.CurrentLevelProgress;
-using _Project.Services.PlayerProgress;
+using _Project.CurrentLevelProgress;
+using _Project.PlayerProgress;
 
-namespace _Project.Services.States
+namespace _Project.States
 {
     public class LoopLevelState : IState
     {

@@ -1,6 +1,6 @@
 using System;
 
-namespace _Project.Services.CurrentLevelProgress
+namespace _Project.CurrentLevelProgress
 {
     public interface ILevelProgress
     {

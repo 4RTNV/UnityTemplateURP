@@ -1,4 +1,4 @@
-﻿namespace _Project.Services.States
+﻿namespace _Project.States
 {
     public interface IExitableState
     {

@@ -1,8 +1,8 @@
 ﻿using _Project.Infrastructure;
-using _Project.Services.AssetManagement;
-using _Project.Services.SceneLoader;
+using _Project.AssetManagement;
+using _Project.SceneLoader;
 
-namespace _Project.Services.States
+namespace _Project.States
 {
     public class BootstrapState : IState
     {

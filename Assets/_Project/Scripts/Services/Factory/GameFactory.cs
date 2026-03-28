@@ -1,10 +1,10 @@
 using UnityEngine;
 using System.Collections.Generic;
 using _Project.Data;
-using _Project.Services.AssetManagement;
-using _Project.Services.PlayerProgress;
+using _Project.AssetManagement;
+using _Project.PlayerProgress;
 
-namespace _Project.Services.Factory
+namespace _Project.Factory
 {
     public class GameFactory : IGameFactory
     {

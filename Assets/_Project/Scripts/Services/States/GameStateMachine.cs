@@ -2,16 +2,16 @@ using System;
 using System.Collections.Generic;
 using _Project.Infrastructure.InGameTime;
 using _Project.Infrastructure.SaveLoad;
-using _Project.Services.AssetManagement;
-using _Project.Services.CurrentLevelProgress;
-using _Project.Services.Factory;
-using _Project.Services.PlayerProgress;
-using _Project.Services.SceneLoader;
+using _Project.AssetManagement;
+using _Project.CurrentLevelProgress;
+using _Project.Factory;
+using _Project.PlayerProgress;
+using _Project.SceneLoader;
 using _Project.StaticData;
 using _Project.UI.Services.Factory;
 using UnityEngine;
 
-namespace _Project.Services.States
+namespace _Project.States
 {
     public class GameStateMachine
     {

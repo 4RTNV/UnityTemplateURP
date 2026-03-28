@@ -1,8 +1,8 @@
 ﻿using _Project.Data;
 using _Project.Infrastructure.SaveLoad;
-using _Project.Services.PlayerProgress;
+using _Project.PlayerProgress;
 
-namespace _Project.Services.States
+namespace _Project.States
 {
     public class LoadProgressState : IState
     {

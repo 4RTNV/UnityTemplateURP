@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Linq;
-using _Project.StaticData;
 
-namespace _Project.Services.CurrentLevelProgress
+namespace _Project.CurrentLevelProgress
 {
     public class LevelProgress : ILevelProgress
     {

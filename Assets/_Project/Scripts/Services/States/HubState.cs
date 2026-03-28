@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using _Project.Services.PlayerProgress;
+using _Project.PlayerProgress;
 
-namespace _Project.Services.States
+namespace _Project.States
 {
     public class HubState : IState
     {

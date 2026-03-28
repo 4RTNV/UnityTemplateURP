@@ -1,13 +1,13 @@
-﻿using _Project.Services.Factory;
-using _Project.Services.CurrentLevelProgress;
-using _Project.Services;
-using _Project.Services.PlayerProgress;
+﻿using _Project.Factory;
+using _Project.CurrentLevelProgress;
+using _Project;
+using _Project.PlayerProgress;
 using _Project.StaticData;
 using _Project.UI.Services;
 using _Project.UI.Services.Factory;
 using UnityEngine;
 
-namespace _Project.Services.States
+namespace _Project.States
 {
     public class LoadLevelState : IPayloadedState<string>
     {

@@ -1,4 +1,4 @@
-﻿namespace _Project.Services.AssetManagement
+﻿namespace _Project.AssetManagement
 {
     public static class SceneNames
     {
