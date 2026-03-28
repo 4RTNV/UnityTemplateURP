@@ -1,6 +1,5 @@
-﻿using _Project.Data;
-using _Project.Infrastructure.SaveLoad;
-using _Project.PlayerProgress;
+﻿using _Project.PersistentProgress;
+using _Project.SaveLoad;
 
 namespace _Project.States
 {

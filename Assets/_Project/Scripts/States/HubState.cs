@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using _Project.PlayerProgress;
+using _Project.PersistentProgress;
 
 namespace _Project.States
 {

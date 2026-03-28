@@ -1,13 +1,12 @@
 using System;
 using System.Collections.Generic;
-using _Project.Infrastructure.InGameTime;
-using _Project.Infrastructure.SaveLoad;
-using _Project.AssetManagement;
 using _Project.CurrentLevelProgress;
 using _Project.Factory;
-using _Project.PlayerProgress;
+using _Project.PersistentProgress;
+using _Project.SaveLoad;
 using _Project.SceneLoader;
 using _Project.StaticData;
+using _Project.TimeService;
 using _Project.UI.Services.Factory;
 using UnityEngine;
 
@@ -19,8 +18,7 @@ namespace _Project.States
         private IExitableState _currentState;
 
         public GameStateMachine(IPersistentProgress persistentProgress, ISaveLoad saveLoad, IGameFactory gameFactory,
-            IUIFactory uiFactory, IAssetProvider assetProvider,
-            IStaticData staticData, ILevelProgress levelProgress, IInGameTimeService timeService,
+            IUIFactory uiFactory, IStaticData staticData, ILevelProgress levelProgress, IInGameTimeService timeService,
             IEnumerable<ISavedProgressReader> saveReaderServices, ISceneLoader sceneLoader)
         {
             _states = new Dictionary<Type, IExitableState>
@@ -31,7 +29,7 @@ namespace _Project.States
                 [typeof(HubState)] = new HubState(this, saveReaderServices),
                 [typeof(LoadLevelState)] = new LoadLevelState(this, gameFactory, persistentProgress, staticData, uiFactory, levelProgress),
                 [typeof(LoopLevelState)] = new LoopLevelState(this, saveLoad, levelProgress),
-                [typeof(FinishedLevelState)] = new FinishedLevelState(this, persistentProgress, persistentProgress, timeService)
+                [typeof(FinishedLevelState)] = new FinishedLevelState(this, timeService)
             };
         }
 

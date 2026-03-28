@@ -1,9 +1,8 @@
 ﻿using _Project.Factory;
 using _Project.CurrentLevelProgress;
-using _Project;
-using _Project.PlayerProgress;
+using _Project.AssetManagement;
+using _Project.PersistentProgress;
 using _Project.StaticData;
-using _Project.UI.Services;
 using _Project.UI.Services.Factory;
 using UnityEngine;
 

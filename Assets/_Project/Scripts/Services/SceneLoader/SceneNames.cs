@@ -1,4 +1,4 @@
-﻿namespace _Project.AssetManagement
+﻿namespace _Project.SceneLoader
 {
     public static class SceneNames
     {

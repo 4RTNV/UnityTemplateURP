@@ -1,7 +1,7 @@
-﻿using _Project.Infrastructure.InGameTime;
-using _Project.Infrastructure.SaveLoad;
-using _Project.CurrentLevelProgress;
-using _Project.PlayerProgress;
+﻿using _Project.CurrentLevelProgress;
+using _Project.PersistentProgress;
+using _Project.SaveLoad;
+using _Project.TimeService;
 
 namespace _Project.States
 {

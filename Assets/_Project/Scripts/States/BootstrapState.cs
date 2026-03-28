@@ -1,6 +1,4 @@
-﻿using _Project.Infrastructure;
-using _Project.AssetManagement;
-using _Project.SceneLoader;
+﻿using _Project.SceneLoader;
 
 namespace _Project.States
 {
