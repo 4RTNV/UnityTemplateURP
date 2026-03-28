@@ -2,7 +2,6 @@
 using _Project.Infrastructure;
 using _Project.Services.AssetManagement;
 using _Project.Services.SceneLoader;
-using _Project.UI.Services.Windows;
 using _Project.UI.Views;
 
 namespace _Project.Services.States
@@ -10,13 +9,11 @@ namespace _Project.Services.States
     public class LoadHubState : IState
     {
         private readonly GameStateMachine _gameStateMachine;
-        private readonly IWindowContainer _windowContainer;
         private readonly ISceneLoader _sceneLoader;
 
-        public LoadHubState(GameStateMachine gameStateMachine, IWindowContainer windowContainer, ISceneLoader sceneLoader)
+        public LoadHubState(GameStateMachine gameStateMachine, ISceneLoader sceneLoader)
         {
             _gameStateMachine = gameStateMachine;
-            _windowContainer = windowContainer;
             _sceneLoader = sceneLoader;
         }
 
@@ -26,7 +23,7 @@ namespace _Project.Services.States
 
         private void OnHubSceneLoaded()
         {
-            _windowContainer.Open<MoneyView>();
+            
         }
 
         public void Enter()

@@ -1,13 +1,5 @@
 ﻿using System.Collections.Generic;
-using UnityEngine;
-using _Project.Services.AssetManagement;
-using _Project.Services.Factory;
 using _Project.Services.PlayerProgress;
-using _Project.UI.Services.Factory;
-using _Project.UI.Services.Windows;
-using _Project.UI.Views;
-using Reflex.Extensions;
-using UnityEngine.SceneManagement;
 
 namespace _Project.Services.States
 {
@@ -17,13 +9,10 @@ namespace _Project.Services.States
         
         private readonly IEnumerator<ISavedProgressReader> _saveReaderServices;
         private readonly GameStateMachine _gameStateMachine;
-        private readonly IWindowContainer _windowContainer;
 
-        public HubState(GameStateMachine gameStateMachine, IEnumerable<ISavedProgressReader> saveReaderServices,
-            IWindowContainer windowContainer)
+        public HubState(GameStateMachine gameStateMachine, IEnumerable<ISavedProgressReader> saveReaderServices)
         {
             _gameStateMachine = gameStateMachine;
-            _windowContainer = windowContainer;
             SaveReaderServices = saveReaderServices;
         }
 
