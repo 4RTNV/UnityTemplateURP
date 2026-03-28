@@ -1,6 +1,5 @@
 ﻿using _Project.Infrastructure.InGameTime;
 using _Project.Infrastructure.SaveLoad;
-using _Project.Models;
 using _Project.Services.SceneLoader;
 using _Project.Services.AssetManagement;
 using _Project.Services.Factory;
