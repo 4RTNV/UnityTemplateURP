@@ -1,8 +1,6 @@
-﻿using System;
-using _Project.Infrastructure;
+﻿using _Project.Infrastructure;
 using _Project.Services.AssetManagement;
 using _Project.Services.SceneLoader;
-using _Project.UI.Views;
 
 namespace _Project.Services.States
 {

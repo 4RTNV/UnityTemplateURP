@@ -9,7 +9,6 @@ using _Project.Services.CurrentLevelProgress;
 using _Project.Services.PlayerProgress;
 using _Project.StaticData;
 using _Project.UI.Services.Factory;
-using _Project.UI.ViewModels;
 using Reflex.Core;
 using UnityEngine;
 
@@ -37,9 +36,6 @@ namespace _Project.Infrastructure
             builder.AddScoped(typeof(LevelProgress), typeof(ILevelProgress));
             builder.AddScoped(typeof(InGameTimeService), typeof(IInGameTimeService));
             
-            builder.AddSingleton(typeof(UserModel)); // one shared instance
-            builder.AddSingleton(typeof(UserMoneyViewModel)); // one shared VM
-
             builder.AddSingleton(typeof(GameStateMachine));
             builder.OnContainerBuilt += container =>
             {

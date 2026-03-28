@@ -1,6 +1,5 @@
 using _Project.Services.AssetManagement;
 using _Project.StaticData;
-using _Project.UI.Views;
 using Reflex.Core;
 using Reflex.Extensions;
 using Reflex.Injectors;
@@ -25,7 +24,7 @@ namespace _Project.UI.Services.Factory
         public void CreateUIRoot()
             => _uiRoot = _assets.Instantiate(UIRootPath).transform;
 
-        public TView CreateViewWithInjection<TView>() where TView : View
+        /*public TView CreateViewWithInjection<TView>() where TView : View
         {
             if (_uiRoot == null)
                 CreateUIRoot();
@@ -34,6 +33,6 @@ namespace _Project.UI.Services.Factory
             Container sceneContainer = view.gameObject.scene.GetSceneContainer();
             GameObjectInjector.InjectObject(view.gameObject, sceneContainer);
             return view;
-        }
+        }*/
     }
 }
