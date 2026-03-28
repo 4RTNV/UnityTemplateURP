@@ -1,6 +1,6 @@
-﻿using _Project.Services.PlayerProgress;
+﻿using _Project.PersistentProgress;
 
-namespace _Project.Infrastructure.SaveLoad
+namespace _Project.SaveLoad
 {
     public interface ISaveLoad 
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using System.Collections;
-using _Project.Infrastructure;
+using _Project;
 using UnityEngine.SceneManagement;
 
 namespace _Project.SceneLoader

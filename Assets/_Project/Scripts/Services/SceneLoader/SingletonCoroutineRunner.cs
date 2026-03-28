@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace _Project.Infrastructure
+namespace _Project.SceneLoader
 {
     public sealed class SingletonCoroutineRunner : MonoBehaviour
     {

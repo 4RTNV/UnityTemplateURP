@@ -1,4 +1,4 @@
-namespace _Project
+namespace _Project.AssetManagement
 {
     public static class Constants
     {
