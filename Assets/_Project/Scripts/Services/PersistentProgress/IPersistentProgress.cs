@@ -1,4 +1,4 @@
-﻿namespace _Project.PlayerProgress
+﻿namespace _Project.PersistentProgress
 {
     /// <summary>
     /// Service that provides access to player progress

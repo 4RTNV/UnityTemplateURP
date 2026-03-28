@@ -1,3 +1,14 @@
 {
-	"name": "_Project.TimeService"
+    "name": "_Project.TimeService",
+    "rootNamespace": "_Project.TimeService",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }

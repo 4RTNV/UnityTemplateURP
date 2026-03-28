@@ -1,4 +1,4 @@
-namespace _Project.PlayerProgress
+namespace _Project.PersistentProgress
 {
     public class PersistentProgress : IPersistentProgress
     {
