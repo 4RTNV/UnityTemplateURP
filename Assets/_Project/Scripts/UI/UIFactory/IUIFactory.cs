@@ -1,4 +1,4 @@
-﻿namespace _Project.UI.Services.Factory
+﻿namespace _Project.UI.Factory
 {
     public interface IUIFactory 
     {

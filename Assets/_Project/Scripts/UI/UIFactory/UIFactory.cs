@@ -2,7 +2,7 @@ using _Project.AssetManagement;
 using _Project.StaticData;
 using UnityEngine;
 
-namespace _Project.UI.Services.Factory
+namespace _Project.UI.Factory
 {
     public class UIFactory : IUIFactory
     {

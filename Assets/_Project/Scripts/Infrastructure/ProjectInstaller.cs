@@ -1,13 +1,13 @@
-﻿using _Project.InGameTime;
-using _Project.SaveLoad;
-using _Project.Services.SceneLoader;
-using _Project.Services.AssetManagement;
-using _Project.Services.Factory;
-using _Project.Services.States;
-using _Project.Services.CurrentLevelProgress;
-using _Project.Services.PlayerProgress;
+﻿using _Project.SaveLoad;
+using _Project.SceneLoader;
+using _Project.AssetManagement;
+using _Project.CurrentLevelProgress;
+using _Project.Factory;
+using _Project.States;
+using _Project.PersistentProgress;
 using _Project.StaticData;
-using _Project.UI.Services.Factory;
+using _Project.TimeService;
+using _Project.UI.Factory;
 using Reflex.Core;
 using UnityEngine;
 
@@ -24,7 +24,7 @@ namespace _Project.Infrastructure
         public void InstallBindings(ContainerBuilder builder)
         {
             builder.AddSingleton(typeof(AssetProvider), typeof(IAssetProvider));
-            builder.AddSingleton(typeof(PersistentProgress), typeof(IPersistentProgress));
+            builder.AddSingleton(typeof(PersistentProgress.PersistentProgress), typeof(IPersistentProgress));
             builder.AddSingleton(typeof(PlayerPrefsSaveLoad), typeof(ISaveLoad));
             builder.AddSingleton(typeof(ScriptableStaticData), typeof(IStaticData));
             builder.AddSingleton(typeof(AsyncSceneLoader), typeof(ISceneLoader));

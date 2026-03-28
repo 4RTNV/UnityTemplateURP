@@ -7,7 +7,7 @@ using _Project.SaveLoad;
 using _Project.SceneLoader;
 using _Project.StaticData;
 using _Project.TimeService;
-using _Project.UI.Services.Factory;
+using _Project.UI.Factory;
 using UnityEngine;
 
 namespace _Project.States

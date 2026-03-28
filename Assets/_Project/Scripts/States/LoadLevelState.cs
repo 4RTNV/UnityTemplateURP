@@ -3,7 +3,7 @@ using _Project.CurrentLevelProgress;
 using _Project.AssetManagement;
 using _Project.PersistentProgress;
 using _Project.StaticData;
-using _Project.UI.Services.Factory;
+using _Project.UI.Factory;
 using UnityEngine;
 
 namespace _Project.States
