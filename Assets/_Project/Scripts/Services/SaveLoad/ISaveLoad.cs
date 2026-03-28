@@ -1,4 +1,4 @@
-﻿using _Project.Data;
+﻿using _Project.Services.PlayerProgress;
 
 namespace _Project.Infrastructure.SaveLoad
 {

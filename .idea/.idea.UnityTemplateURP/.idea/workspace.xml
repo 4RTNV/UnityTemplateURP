@@ -4,7 +4,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cd204ba7-d195-47e0-a6ee-7f076d160efd" name="Changes" comment="" />
+    <list default="true" id="cd204ba7-d195-47e0-a6ee-7f076d160efd" name="Changes" comment="Created asmdef for Infrastructure">
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Data/CurrentPlayerProgress.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/PersistentProgress/CurrentPlayerProgress.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Data/CurrentPlayerProgress.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/PersistentProgress/CurrentPlayerProgress.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Data/DataExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Data/DataExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/AssetManagement/AssetPath.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/AssetManagement/AssetPath.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/AssetManagement/AssetProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/AssetManagement/AssetProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/AssetManagement/Constants.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/AssetManagement/Constants.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/AssetManagement/IAssetProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/AssetManagement/IAssetProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/AssetManagement/SceneNames.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/AssetManagement/SceneNames.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/Factory/GameFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/Factory/GameFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/Factory/IGameFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/Factory/IGameFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/LevelProgress/ILevelProgress.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/LevelProgress/ILevelProgress.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/LevelProgress/LevelConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/LevelProgress/LevelConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/LevelProgress/LevelProgress.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/LevelProgress/LevelProgress.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/PersistentProgress/IPersistentProgress.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/PersistentProgress/IPersistentProgress.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/PersistentProgress/IProgressUpdater.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/PersistentProgress/IProgressUpdater.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/PersistentProgress/ISavedProgressReader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/PersistentProgress/ISavedProgressReader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/PersistentProgress/PersistentProgress.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/PersistentProgress/PersistentProgress.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/SaveLoad/PlayerPrefsSaveLoad.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/SaveLoad/PlayerPrefsSaveLoad.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/SceneLoader/AsyncSceneLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/SceneLoader/AsyncSceneLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/SceneLoader/ISceneLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/SceneLoader/ISceneLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/States/BootstrapState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/States/BootstrapState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/States/FinishedLevelState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/States/FinishedLevelState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/States/GameStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/States/GameStateMachine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/States/HubState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/States/HubState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/States/IState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/States/IState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/States/LoadHubState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/States/LoadHubState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/States/LoadLevelState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/States/LoadLevelState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/States/LoadProgressState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/States/LoadProgressState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/States/LoopLevelState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/States/LoopLevelState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/StaticData/IStaticDataSerivce.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/StaticData/IStaticDataSerivce.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/StaticData/StaticDataService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/StaticData/StaticDataService.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,8 +61,7 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/_Project/Scripts/Services/Windows/IWindowContainer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Project/Scripts/Services/Windows/WindowContainer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Infrastructure/ProjectInstaller.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Settings/UniversalRenderPipelineGlobalSettings.asset" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.gustavopsantos.reflex@802d9310e3bc/Core/Binding.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.gustavopsantos.reflex@802d9310e3bc/Core/Container.cs" root0="SKIP_HIGHLIGHTING" />
@@ -122,8 +153,17 @@
       <workItem from="1754999647371" duration="4905000" />
       <workItem from="1755068344114" duration="2223000" />
       <workItem from="1755080126186" duration="7367000" />
-      <workItem from="1774718091734" duration="1908000" />
+      <workItem from="1774718091734" duration="2294000" />
     </task>
+    <task id="LOCAL-00001" summary="Created asmdef for Infrastructure">
+      <option name="closed" value="true" />
+      <created>1774720297313</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1774720297313</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -139,6 +179,8 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Created asmdef for Infrastructure" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created asmdef for Infrastructure" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -148,10 +190,10 @@
           <line>17</line>
           <properties documentPath="Z:\Code\UnityProjects\UnityTemplateURP\Assets\_Project\Scripts\Services\SceneLoader\AsyncSceneLoader.cs" containingFunctionPresentation="Method 'LoadScene'">
             <startOffsets>
-              <option value="427" />
+              <option value="418" />
             </startOffsets>
             <endOffsets>
-              <option value="459" />
+              <option value="450" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="8" />
@@ -161,10 +203,10 @@
           <line>39</line>
           <properties documentPath="Z:\Code\UnityProjects\UnityTemplateURP\Assets\_Project\Scripts\Services\States\GameStateMachine.cs" containingFunctionPresentation="Method 'Enter'">
             <startOffsets>
-              <option value="1874" />
+              <option value="1820" />
             </startOffsets>
             <endOffsets>
-              <option value="1911" />
+              <option value="1857" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="9" />

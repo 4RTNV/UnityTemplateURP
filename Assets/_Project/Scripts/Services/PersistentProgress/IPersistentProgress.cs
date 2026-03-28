@@ -1,6 +1,4 @@
-﻿using _Project.Data;
-
-namespace _Project.Services.PlayerProgress
+﻿namespace _Project.Services.PlayerProgress
 {
     /// <summary>
     /// Service that provides access to player progress

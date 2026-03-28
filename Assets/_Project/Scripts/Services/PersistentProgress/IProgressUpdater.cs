@@ -1,9 +1,7 @@
-﻿using _Project.Data;
-
-namespace _Project.Services.PlayerProgress
+﻿namespace _Project.Services.PlayerProgress
 {
     public interface IProgressUpdater : ISavedProgressReader
     {
-        void UpdateProgress(Data.CurrentPlayerProgress progress);
+        void UpdateProgress(CurrentPlayerProgress progress);
     }
 }
