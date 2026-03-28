@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd204ba7-d195-47e0-a6ee-7f076d160efd" name="Changes" comment="Created asmdef for Infrastructure">
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Infrastructure/ProjectInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Infrastructure/ProjectInstaller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Infrastructure/_Project.Infrastructure.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Infrastructure/_Project.Infrastructure.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Data/ObservableDictionary.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Data/ObservableDictionary.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +124,7 @@
       <workItem from="1754999647371" duration="4905000" />
       <workItem from="1755068344114" duration="2223000" />
       <workItem from="1755080126186" duration="7367000" />
-      <workItem from="1774718091734" duration="7850000" />
+      <workItem from="1774718091734" duration="8548000" />
     </task>
     <task id="LOCAL-00001" summary="Created asmdef for Infrastructure">
       <option name="closed" value="true" />
