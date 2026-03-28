@@ -6,19 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="cd204ba7-d195-47e0-a6ee-7f076d160efd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityTemplateURP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityTemplateURP/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scenes/Hub.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/Hub.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/SceneLoader/AsyncSceneLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/SceneLoader/AsyncSceneLoader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/SceneLoader/ISceneLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/SceneLoader/ISceneLoader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/States/BootstrapState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/States/BootstrapState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/States/GameStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/States/GameStateMachine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/States/HubState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/States/HubState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/States/LoadHubState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/States/LoadHubState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/States/LoadProgressState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/States/LoadProgressState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/UIFactory/UIFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/UIFactory/UIFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/Windows/IWindowContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/Windows/IWindowContainer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/Windows/WindowContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Services/Windows/WindowContainer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/UI/ViewModels/UserMoneyViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/UI/ViewModels/UserMoneyViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/UI/Views/MoneyView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/UI/Views/MoneyView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Settings/UniversalRenderPipelineGlobalSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Settings/UniversalRenderPipelineGlobalSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +64,7 @@
   "keyToString": {
     "Attach to Unity Editor.Attach to Unity Editor.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "ui-mvvm-lw",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -83,7 +76,7 @@
 }]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.1.13f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.3.8f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath Z:\Code\UnityProjects\UnityTemplateURP -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="Z:\Code\UnityProjects\UnityTemplateURP" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -91,7 +84,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.1.13f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.3.8f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath Z:\Code\UnityProjects\UnityTemplateURP -testResults Logs/results.xml -logFile Logs/Editor.log -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="Z:\Code\UnityProjects\UnityTemplateURP" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -108,10 +101,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="3196">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="3196" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -138,6 +131,7 @@
       <workItem from="1754999647371" duration="4905000" />
       <workItem from="1755068344114" duration="2223000" />
       <workItem from="1755080126186" duration="7367000" />
+      <workItem from="1774718091734" duration="343000" />
     </task>
     <servers />
   </component>
@@ -162,10 +156,10 @@
           <line>34</line>
           <properties documentPath="Z:\Code\UnityProjects\UnityTemplateURP\Assets\_Project\Scripts\Services\UIFactory\UIFactory.cs" containingFunctionPresentation="Method 'CreateViewWithInjection'">
             <startOffsets>
-              <option value="939" />
+              <option value="1056" />
             </startOffsets>
             <endOffsets>
-              <option value="998" />
+              <option value="1121" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="1" />
