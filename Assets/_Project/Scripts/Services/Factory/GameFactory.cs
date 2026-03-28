@@ -1,8 +1,6 @@
-using UnityEngine;
 using System.Collections.Generic;
-using _Project.Data;
 using _Project.AssetManagement;
-using _Project.PlayerProgress;
+using _Project.PersistentProgress;
 
 namespace _Project.Factory
 {

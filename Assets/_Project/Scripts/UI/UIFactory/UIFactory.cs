@@ -1,4 +1,4 @@
-using _Project.Services.AssetManagement;
+using _Project.AssetManagement;
 using _Project.StaticData;
 using Reflex.Core;
 using Reflex.Extensions;
