@@ -1,8 +1,7 @@
-﻿
-using System;
+﻿using System;
 using UnityEngine;
 
-namespace _Project.Infrastructure.InGameTime
+namespace _Project.TimeService
 {
     public class InGameTimeService : IInGameTimeService
     {
