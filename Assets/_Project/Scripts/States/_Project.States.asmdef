@@ -1,6 +1,6 @@
 {
     "name": "_Project.States",
-    "rootNamespace": "",
+    "rootNamespace": "States",
     "references": [
         "GUID:3ea8ee105527089498ab319f2567613c",
         "GUID:73f2821b5fc52ba43abd0b9ec808c201",
