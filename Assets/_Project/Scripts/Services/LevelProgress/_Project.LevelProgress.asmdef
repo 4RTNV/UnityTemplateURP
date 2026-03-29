@@ -1,3 +1,14 @@
 {
-	"name": "_Project.LevelProgress"
+    "name": "_Project.LevelProgress",
+    "rootNamespace": "_Project.LevelProgress",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }

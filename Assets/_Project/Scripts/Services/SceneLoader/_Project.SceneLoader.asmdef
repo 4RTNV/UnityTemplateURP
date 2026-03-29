@@ -1,3 +1,14 @@
 {
-	"name": "_Project.SceneLoader"
+    "name": "_Project.SceneLoader",
+    "rootNamespace": "_Project.SceneLoader",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }
