@@ -1,6 +1,6 @@
-﻿using _Project.Data;
+﻿using _Project.PersistentProgress;
 
-namespace _Project.Infrastructure.SaveLoad
+namespace _Project.SaveLoad
 {
     public interface ISaveLoad 
     {

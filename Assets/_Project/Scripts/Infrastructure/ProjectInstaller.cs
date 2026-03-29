@@ -1,16 +1,13 @@
-﻿using _Project.Infrastructure.InGameTime;
-using _Project.Infrastructure.SaveLoad;
-using _Project.Models;
-using _Project.Services.SceneLoader;
-using _Project.Services.AssetManagement;
-using _Project.Services.Factory;
-using _Project.Services.States;
-using _Project.Services.CurrentLevelProgress;
-using _Project.Services.PlayerProgress;
+﻿using _Project.SaveLoad;
+using _Project.SceneLoader;
+using _Project.AssetManagement;
+using _Project.CurrentLevelProgress;
+using _Project.Factory;
+using _Project.States;
+using _Project.PersistentProgress;
 using _Project.StaticData;
-using _Project.UI.Services.Factory;
-using _Project.UI.Services.Windows;
-using _Project.UI.ViewModels;
+using _Project.TimeService;
+using _Project.UI.Factory;
 using Reflex.Core;
 using UnityEngine;
 
@@ -27,7 +24,7 @@ namespace _Project.Infrastructure
         public void InstallBindings(ContainerBuilder builder)
         {
             builder.AddSingleton(typeof(AssetProvider), typeof(IAssetProvider));
-            builder.AddSingleton(typeof(PersistentProgress), typeof(IPersistentProgress));
+            builder.AddSingleton(typeof(PersistentProgress.PersistentProgress), typeof(IPersistentProgress));
             builder.AddSingleton(typeof(PlayerPrefsSaveLoad), typeof(ISaveLoad));
             builder.AddSingleton(typeof(ScriptableStaticData), typeof(IStaticData));
             builder.AddSingleton(typeof(AsyncSceneLoader), typeof(ISceneLoader));
@@ -37,11 +34,7 @@ namespace _Project.Infrastructure
             builder.AddScoped(typeof(UIFactory), typeof(IUIFactory));
             builder.AddScoped(typeof(LevelProgress), typeof(ILevelProgress));
             builder.AddScoped(typeof(InGameTimeService), typeof(IInGameTimeService));
-            builder.AddScoped(typeof(WindowContainer), typeof(IWindowContainer));
             
-            builder.AddSingleton(typeof(UserModel)); // one shared instance
-            builder.AddSingleton(typeof(UserMoneyViewModel)); // one shared VM
-
             builder.AddSingleton(typeof(GameStateMachine));
             builder.OnContainerBuilt += container =>
             {

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace _Project.Services.CurrentLevelProgress
+namespace _Project.CurrentLevelProgress
 {
     [CreateAssetMenu(fileName = "Level_", menuName = "Config/LevelConfig", order = 2)]
     public class LevelConfig : ScriptableObject

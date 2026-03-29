@@ -1,10 +1,9 @@
 ﻿using System.Collections.Generic;
-using _Project.Data;
-using _Project.Services.Factory;
-using _Project.Services.PlayerProgress;
+using _Project.Factory;
+using _Project.PersistentProgress;
 using UnityEngine;
 
-namespace _Project.Infrastructure.SaveLoad
+namespace _Project.SaveLoad
 {
     public class PlayerPrefsSaveLoad : ISaveLoad
     {

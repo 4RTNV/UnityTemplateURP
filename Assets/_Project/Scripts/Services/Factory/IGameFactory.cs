@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using _Project.Services.PlayerProgress;
+using _Project.PersistentProgress;
 
-namespace _Project.Services.Factory
+namespace _Project.Factory
 {
     public interface IGameFactory : IProgressUpdater
     {

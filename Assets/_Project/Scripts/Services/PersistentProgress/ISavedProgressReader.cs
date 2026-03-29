@@ -1,6 +1,4 @@
-﻿using _Project.Data;
-
-namespace _Project.Services.PlayerProgress
+﻿namespace _Project.PersistentProgress
 {
     public interface ISavedProgressReader
     {

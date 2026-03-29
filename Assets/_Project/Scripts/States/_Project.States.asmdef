@@ -1,0 +1,24 @@
+{
+    "name": "_Project.States",
+    "rootNamespace": "",
+    "references": [
+        "GUID:3ea8ee105527089498ab319f2567613c",
+        "GUID:73f2821b5fc52ba43abd0b9ec808c201",
+        "GUID:161e9123cd2afcc4b9e5faa88d31cedd",
+        "GUID:db4fbd574b756214baa4cd5c3daafda4",
+        "GUID:6a66cbe93e5d50948a7153ed1e544fa0",
+        "GUID:5336a81b9d986504c8ba102598fd64a6",
+        "GUID:327f4528c03316f49a0d032eb827bfd3",
+        "GUID:4d4206dc6ce48c748bd84f3aa1d7174f",
+        "GUID:6e09dabfad769bc46aaa2387fdd1db3a"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

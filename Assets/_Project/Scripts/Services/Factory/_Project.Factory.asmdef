@@ -1,0 +1,17 @@
+{
+    "name": "_Project.Factory",
+    "rootNamespace": "_Project.Factory",
+    "references": [
+        "GUID:161e9123cd2afcc4b9e5faa88d31cedd",
+        "GUID:6e09dabfad769bc46aaa2387fdd1db3a"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

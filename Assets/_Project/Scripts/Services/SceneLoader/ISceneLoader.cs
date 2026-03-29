@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections;
 
-namespace _Project.Services.SceneLoader
+namespace _Project.SceneLoader
 {
     public interface ISceneLoader
     {

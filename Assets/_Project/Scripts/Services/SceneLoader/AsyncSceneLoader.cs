@@ -1,10 +1,9 @@
 ﻿using System;
 using UnityEngine;
 using System.Collections;
-using _Project.Infrastructure;
 using UnityEngine.SceneManagement;
 
-namespace _Project.Services.SceneLoader
+namespace _Project.SceneLoader
 {
     public class AsyncSceneLoader : ISceneLoader
     {

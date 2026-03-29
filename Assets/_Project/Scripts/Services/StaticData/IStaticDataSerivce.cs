@@ -1,5 +1,4 @@
-using _Project.MVVM;
-using _Project.Services.CurrentLevelProgress;
+using _Project.CurrentLevelProgress;
 
 namespace _Project.StaticData
 {

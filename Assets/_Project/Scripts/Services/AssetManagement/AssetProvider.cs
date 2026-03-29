@@ -1,7 +1,7 @@
 ﻿using Unity.Mathematics;
 using UnityEngine;
 
-namespace _Project.Services.AssetManagement
+namespace _Project.AssetManagement
 {
     public class AssetProvider : IAssetProvider
     {
