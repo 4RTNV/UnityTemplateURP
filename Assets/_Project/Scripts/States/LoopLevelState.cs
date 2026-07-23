@@ -23,7 +23,6 @@ namespace _Project.States
 
         public void Enter()
         {
-            
         }
 
         public void Exit()

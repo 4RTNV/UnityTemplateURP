@@ -5,7 +5,7 @@ namespace _Project.Factory
 {
     public interface IGameFactory : IProgressUpdater
     {
-        List<ISavedProgressReader> ProgressReaders { get; } 
+        List<ISavedProgressReader> ProgressReaders { get; }
         List<IProgressUpdater> ProgressWriters { get; }
         void CleanUp();
     }

@@ -32,7 +32,7 @@ namespace _Project.States
             _persistentProgress.Progress = _saveLoad.LoadProgress() ?? NewProgress();
         }
 
-        private CurrentPlayerProgress NewProgress() 
+        private CurrentPlayerProgress NewProgress()
             => new();
     }
 }

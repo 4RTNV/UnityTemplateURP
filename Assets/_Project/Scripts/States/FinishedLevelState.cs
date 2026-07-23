@@ -18,7 +18,7 @@ namespace _Project.States
             _timeService.EnablePause();
         }
 
-        public void Exit() 
+        public void Exit()
         {
             _timeService.RestoreTimePassage();
         }

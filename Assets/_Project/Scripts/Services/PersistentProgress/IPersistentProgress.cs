@@ -3,7 +3,7 @@
     /// <summary>
     /// Service that provides access to player progress
     /// </summary>
-    public interface IPersistentProgress 
+    public interface IPersistentProgress
     {
         CurrentPlayerProgress Progress { get; set; }
         void IncrementCurrentLevel();

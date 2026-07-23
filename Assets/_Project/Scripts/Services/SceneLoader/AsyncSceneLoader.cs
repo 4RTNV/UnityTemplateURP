@@ -22,9 +22,8 @@ namespace _Project.SceneLoader
             }
 
             AsyncOperation waitNextScene = SceneManager.LoadSceneAsync(name);
-            
-            while (!waitNextScene.isDone)
-                yield return null;
+
+            while (!waitNextScene.isDone) yield return null;
 
             onLoaded?.Invoke();
         }

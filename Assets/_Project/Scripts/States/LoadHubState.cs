@@ -19,13 +19,12 @@ namespace _Project.States
 
         private void OnHubSceneLoaded()
         {
-            
         }
 
         public void Enter()
         {
-            SingletonCoroutineRunner.Instance.StartCoroutine(
-                _sceneLoader.LoadScene(SceneNames.MenuSceneName, onLoaded: OnHubSceneLoaded));
+            SingletonCoroutineRunner.Instance.StartCoroutine(_sceneLoader.LoadScene(SceneNames.MenuSceneName,
+                onLoaded: OnHubSceneLoaded));
         }
     }
 }

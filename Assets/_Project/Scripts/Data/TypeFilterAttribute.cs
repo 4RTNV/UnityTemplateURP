@@ -27,7 +27,7 @@ namespace _Project.Data
 
             return false;
         }
-    
+
         private static Type ResolveGenericType(Type type)
         {
             if (type is not { IsGenericType: true }) return type;
@@ -35,18 +35,17 @@ namespace _Project.Data
             return genericType != type ? genericType : type;
         }
 
-        private static bool HasAnyInterfaces(Type type, Type interfaceType) 
+        private static bool HasAnyInterfaces(Type type, Type interfaceType)
             => type.GetInterfaces().Any(i => ResolveGenericType(i) == interfaceType);
-    } 
-    
+    }
+
     public class TypeFilterAttribute : PropertyAttribute
     {
         public Func<Type, bool> Filter { get; }
+
         public TypeFilterAttribute(Type filterType)
         {
-            Filter = type => !type.IsAbstract &&
-                             !type.IsInterface &&
-                             !type.IsGenericType &&
+            Filter = type => !type.IsAbstract && !type.IsInterface && !type.IsGenericType &&
                              type.InheritsOrImplements(filterType);
         }
     }

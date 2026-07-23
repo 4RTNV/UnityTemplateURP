@@ -10,17 +10,14 @@ namespace _Project.Factory
         private readonly IPersistentProgress _progress;
 
         public List<ISavedProgressReader> ProgressReaders { get; } = new();
-        public List<IProgressUpdater> ProgressWriters { get; } = new()
-        {
-            Capacity = 0
-        };
+        public List<IProgressUpdater> ProgressWriters { get; } = new() { Capacity = 0 };
 
         public GameFactory(IAssetProvider assets, IPersistentProgress progress)
         {
             _assets = assets;
             _progress = progress;
         }
-        
+
         public void CleanUp()
         {
             ProgressReaders.Clear();

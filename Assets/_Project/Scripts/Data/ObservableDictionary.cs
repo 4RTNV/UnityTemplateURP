@@ -8,7 +8,9 @@ namespace _Project.Data
         public EventHandler<TKey> ItemAdded;
         public EventHandler<TKey> ItemRemoved;
 
-        public ObservableDictionary() : base() { }
+        public ObservableDictionary() : base()
+        {
+        }
 
         public new void Add(TKey key, TValue value)
         {
@@ -19,9 +21,8 @@ namespace _Project.Data
         public new bool Remove(TKey key)
         {
             bool removed = base.Remove(key);
-            if (removed)
-                ItemRemoved(null, key);  
-            
+            if (removed) ItemRemoved(null, key);
+
             return removed;
         }
     }

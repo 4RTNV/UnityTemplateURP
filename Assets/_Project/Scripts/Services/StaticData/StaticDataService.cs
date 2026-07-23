@@ -1,7 +1,6 @@
 using _Project.CurrentLevelProgress;
 using System.Collections.Generic;
 using System.Linq;
-
 using UnityEngine;
 
 namespace _Project.StaticData
@@ -16,7 +15,7 @@ namespace _Project.StaticData
         {
             _levels = Resources.LoadAll<LevelConfig>("Configs/Levels").ToDictionary(x => x.LevelID, x => x);
         }
-        
+
         public LevelConfig ForLevel(int levelID)
             => _levels.GetValueOrDefault(levelID);
     }

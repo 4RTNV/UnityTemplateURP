@@ -8,7 +8,7 @@ namespace _Project.PersistentProgress
         public bool HasFinishedTutorial = false;
         public int CurrentLevel = 1;
 
-        public override string ToString() 
+        public override string ToString()
             => $"Level={CurrentLevel};";
-    } 
+    }
 }

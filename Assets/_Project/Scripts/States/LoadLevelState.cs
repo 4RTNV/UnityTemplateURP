@@ -18,10 +18,8 @@ namespace _Project.States
         private readonly Canvas _loadingCurtain;
         private readonly ILevelProgress _levelProgress;
 
-        public LoadLevelState(GameStateMachine gameStateMachine,
-            IGameFactory gameFactory, IPersistentProgress progress,
-            IStaticData staticData, IUIFactory uiFactory,
-            ILevelProgress levelProgress)
+        public LoadLevelState(GameStateMachine gameStateMachine, IGameFactory gameFactory, IPersistentProgress progress,
+            IStaticData staticData, IUIFactory uiFactory, ILevelProgress levelProgress)
         {
             _gameStateMachine = gameStateMachine;
             _gameFactory = gameFactory;
@@ -37,7 +35,7 @@ namespace _Project.States
             _loadingCurtain.gameObject.SetActive(true);
         }
 
-        public void Exit() 
+        public void Exit()
             => _loadingCurtain.gameObject.SetActive(false);
 
         private void OnLoaded()
@@ -57,7 +55,6 @@ namespace _Project.States
         private void InitializeInGameHUD()
         {
             _uiFactory.CreateUIRoot();
-
         }
     }
 }
