@@ -232,6 +232,13 @@
       },
       "url": "https://packages.unity.com"
     },
+    "facepunch.steamworks": {
+      "version": "https://github.com/kamyker/Facepunch.Steamworks.Package.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "48fb9fc3f7c9e020ccfd3af59e6d1af3241d1bf6"
+    },
     "com.unity.modules.accessibility": {
       "version": "1.0.0",
       "depth": 0,
