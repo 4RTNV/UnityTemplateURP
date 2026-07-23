@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.facepunch.steamworks": {
+      "version": "2.3.6",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://package.openupm.com"
+    },
     "com.github-glitchenzo.nugetforunity": {
       "version": "https://github.com/GlitchEnzo/NuGetForUnity.git?path=/src/NuGetForUnity",
       "depth": 0,
@@ -231,13 +238,6 @@
         "com.unity.modules.jsonserialize": "1.0.0"
       },
       "url": "https://packages.unity.com"
-    },
-    "facepunch.steamworks": {
-      "version": "https://github.com/kamyker/Facepunch.Steamworks.Package.git",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "48fb9fc3f7c9e020ccfd3af59e6d1af3241d1bf6"
     },
     "com.unity.modules.accessibility": {
       "version": "1.0.0",
