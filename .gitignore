@@ -106,3 +106,11 @@ InitTestScene*.unity*
 /[Pp]ackages/*
 !/[Pp]ackages/manifest.json
 !/[Pp]ackages/packages-lock.json
+
+!.idea/
+!.idea/.idea.UnityTemplateURP/
+!.idea/.idea.UnityTemplateURP/.idea/
+!.idea/.idea.UnityTemplateURP/.idea/scopes/
+!.idea/.idea.UnityTemplateURP/.idea/scopes/*
+!.idea/.idea.UnityTemplateURP/.idea/codeStyles/
+!.idea/.idea.UnityTemplateURP/.idea/codeStyles/*
