@@ -40,3 +40,4 @@ resharper_csharp_max_enum_members_on_line = 1k
 # fields, properties, methods 
 dotnet_diagnostic.SA1309.severity = none
 dotnet_diagnostic.SA1128.severity = none # let public ClassName : this() without new line after :
+dotnet_diagnostic.SA1101.severity = none # disable obligatory this.fieldName
