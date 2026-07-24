@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cd204ba7-d195-47e0-a6ee-7f076d160efd" name="Changes" comment="updated objects order in file layout xml - now match the stylecop">
+    <list default="true" id="cd204ba7-d195-47e0-a6ee-7f076d160efd" name="Changes" comment="Updated gitignore">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityTemplateURP/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityTemplateURP/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityTemplateURP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityTemplateURP/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.Bcl.AsyncInterfaces.6.0.0/lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/Microsoft.Bcl.AsyncInterfaces.6.0.0/lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.Bcl.TimeProvider.8.0.0/lib/netstandard2.0/Microsoft.Bcl.TimeProvider.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/Microsoft.Bcl.TimeProvider.8.0.0/lib/netstandard2.0/Microsoft.Bcl.TimeProvider.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Packages/ObservableCollections.3.3.4/lib/netstandard2.1/ObservableCollections.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/ObservableCollections.3.3.4/lib/netstandard2.1/ObservableCollections.xml" afterDir="false" />
@@ -113,6 +115,7 @@
     <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Services/AssetManagement/AssetPath.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Services/AssetManagement/AssetPath.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Services/AssetManagement/AssetPath.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Services/AssetManagement/AssetPath.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Scripts/Services/AssetManagement/AssetPath.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Services/AssetManagement/AssetProvider.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Scripts/Services/AssetManagement/AssetProvider.cs" root0="FORCE_HIGHLIGHTING" />
@@ -156,23 +159,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Attach to Unity Editor.Attach to Unity Editor.executor": "Debug",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "editorconfig",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "rider.code.cleanup.on.save": "true",
-    "rider.code.cleanup.on.save.profile": "Scitalis: Reformat Code",
-    "settings.editor.selected.configurable": "preferences.sourceCode",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;editorconfig&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;rider.code.cleanup.on.save&quot;: &quot;true&quot;,
+    &quot;rider.code.cleanup.on.save.profile&quot;: &quot;Scitalis: Reformat Code&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RiderProblemsViewState">
     <option name="showPreview" value="true" />
   </component>
@@ -237,7 +240,7 @@
       <workItem from="1774763380657" duration="4773000" />
       <workItem from="1784836353430" duration="336000" />
       <workItem from="1784873115616" duration="3533000" />
-      <workItem from="1784877003440" duration="18383000" />
+      <workItem from="1784877003440" duration="18620000" />
     </task>
     <task id="LOCAL-00001" summary="Created asmdef for Infrastructure">
       <option name="closed" value="true" />
@@ -319,7 +322,15 @@
       <option name="project" value="LOCAL" />
       <updated>1784894263117</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Updated gitignore">
+      <option name="closed" value="true" />
+      <created>1784903252380</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1784903252380</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -356,7 +367,8 @@
     <MESSAGE value="Added trailing comma to dotsetting" />
     <MESSAGE value="quick fix" />
     <MESSAGE value="updated objects order in file layout xml - now match the stylecop" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated objects order in file layout xml - now match the stylecop" />
+    <MESSAGE value="Updated gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated gitignore" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

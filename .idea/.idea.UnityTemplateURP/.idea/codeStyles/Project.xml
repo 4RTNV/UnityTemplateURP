@@ -2,7 +2,19 @@
   <code_scheme name="Project" version="173">
     <option name="DO_NOT_FORMAT">
       <list>
+        <fileSet type="globPattern" pattern="Assets/**/*.asset" />
+        <fileSet type="globPattern" pattern="Assets/**/*.cginc" />
+        <fileSet type="globPattern" pattern="Assets/**/*.hlsl" />
+        <fileSet type="globPattern" pattern="Assets/**/*.json" />
+        <fileSet type="globPattern" pattern="Assets/**/*.mat" />
+        <fileSet type="globPattern" pattern="Assets/**/*.meta" />
+        <fileSet type="globPattern" pattern="Assets/**/*.shader" />
+        <fileSet type="globPattern" pattern="Assets/**/*.shadergraph" />
+        <fileSet type="globPattern" pattern="Assets/**/*.txt" />
+        <fileSet type="globPattern" pattern="Assets/**/*.xml" />
+        <fileSet type="globPattern" pattern="Assets/Packages/**" />
         <fileSet type="globPattern" pattern="Assets/Plugins/**" />
+        <fileSet type="globPattern" pattern="Assets/TextMesh Pro/**" />
         <fileSet type="globPattern" pattern="Assets/ThirdParty/**" />
         <fileSet type="globPattern" pattern="Library/**" />
         <fileSet type="globPattern" pattern="Logs/**" />

@@ -34,7 +34,13 @@
 # Visual Studio cache directory
 .vs/
 .idea
-!.idea/UnityTemplateURP.sln.DotSettings
+!.idea/
+!.idea/.idea.UnityTemplateURP/
+!.idea/.idea.UnityTemplateURP/.idea/
+!.idea/.idea.UnityTemplateURP/.idea/codeStyles/
+!.idea/.idea.UnityTemplateURP/.idea/codeStyles/*
+!.idea/.idea.UnityTemplateURP/.idea/scopes/
+!.idea/.idea.UnityTemplateURP/.idea/scopes/*
 
 # Gradle cache directory
 .gradle/
