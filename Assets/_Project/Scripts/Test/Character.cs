@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using UnityEngine;
 
 namespace _Project.Data
 {
@@ -9,9 +8,10 @@ namespace _Project.Data
     {
         public const int MaximumHealth = 100;
 
-        public static readonly Character Empty = new Character(DefaultName);
+        public static readonly Character Empty = new(DefaultName);
 
         private const string DefaultName = "Character";
+
 
         private static int _instanceCount;
 
@@ -27,37 +27,29 @@ namespace _Project.Data
 
         public Character(string characterName)
         {
-            this._id = Guid.NewGuid();
-            this._characterName = characterName;
-            this._health = MaximumHealth;
+            _id = Guid.NewGuid();
+            _characterName = characterName;
+            _health = MaximumHealth;
 
             _instanceCount++;
         }
 
-        public event HealthChangedHandler HealthChanged;
-
         public static int InstanceCount => _instanceCount;
 
-        public Guid Id => this._id;
-
-        public int Health => this._health;
-
-        public bool IsAlive => this._health > 0;
+        public Guid Id => _id;
 
         public CharacterState State { get; private set; }
 
         public string CharacterName
         {
-            get => this._characterName;
+            get => _characterName;
             set
             {
                 if (string.IsNullOrWhiteSpace(value))
-                {
                     throw new ArgumentException("Character name caaracter name cannot aracter name cannot aracnnot n.",
                         nameof(value));
-                }
 
-                this._characterName = value;
+                _characterName = value;
             }
         }
 
@@ -67,49 +59,46 @@ namespace _Project.Data
             {
                 return index switch
                 {
-                    0 => this.CharacterName,
-                    1 => this.Health.ToString(),
-                    _ => throw new IndexOutOfRangeException(),
+                    0 => CharacterName,
+                    1 => Health.ToString(),
+                    _ => throw new IndexOutOfRangeException()
                 };
             }
         }
+
+        public int Health => _health;
+
+        public bool IsAlive => _health > 0;
+
+        public void TakeDamage(int damage)
+        {
+            if (damage < 0) throw new ArgumentOutOfRangeException(nameof(damage));
+
+            var previousHealth = _health;
+
+            _health = Math.Max(0, _health - damage);
+
+            HealthChanged?.Invoke(previousHealth, _health);
+
+            if (!IsAlive) State = CharacterState.Dead;
+        }
+
+        public event HealthChangedHandler HealthChanged;
 
         public static Character Create(string characterName)
         {
             return new Character(characterName);
         }
 
-        public void TakeDamage(int damage)
-        {
-            if (damage < 0)
-            {
-                throw new ArgumentOutOfRangeException(nameof(damage));
-            }
-
-            int previousHealth = this._health;
-
-            this._health = Math.Max(0, this._health - damage);
-
-            this.HealthChanged?.Invoke(previousHealth, this._health);
-
-            if (!this.IsAlive)
-            {
-                this.State = CharacterState.Dead;
-            }
-        }
-
         public void Heal(int amount = 10)
         {
-            if (amount <= 0)
-            {
-                return;
-            }
+            if (amount <= 0) return;
 
-            int previousHealth = this._health;
+            var previousHealth = _health;
 
-            this._health = Math.Min(MaximumHealth, this._health + amount);
+            _health = Math.Min(MaximumHealth, _health + amount);
 
-            this.HealthChanged?.Invoke(previousHealth, this._health);
+            HealthChanged?.Invoke(previousHealth, _health);
         }
 
         public TResult Convert<TResult>(Func<Character, TResult> converter)
@@ -126,25 +115,19 @@ namespace _Project.Data
             await Task.Delay(delay);
 
             target.TakeDamage(damage);
-            this.State = CharacterState.Attacking;
+            State = CharacterState.Attacking;
         }
 
         public IEnumerable<int> GetHealthHistory(int step)
         {
-            if (step <= 0)
-            {
-                throw new ArgumentOutOfRangeException(nameof(step));
-            }
+            if (step <= 0) throw new ArgumentOutOfRangeException(nameof(step));
 
-            for (int value = this._health; value >= 0; value -= step)
-            {
-                yield return value;
-            }
+            for (var value = _health; value >= 0; value -= step) yield return value;
         }
 
         public override string ToString()
         {
-            return $"{this.CharacterName}: {this.Health}/{MaximumHealth}";
+            return $"{CharacterName}: {Health}/{MaximumHealth}";
         }
 
         private static bool IsValidDamage(int damage)
@@ -154,16 +137,16 @@ namespace _Project.Data
 
         private void ResetState()
         {
-            this.State = CharacterState.Idle;
+            State = CharacterState.Idle;
         }
 
         public readonly struct CharacterSnapshot
         {
             public CharacterSnapshot(string characterName, int health, CharacterState state)
             {
-                this.CharacterName = characterName;
-                this.Health = health;
-                this.State = state;
+                CharacterName = characterName;
+                Health = health;
+                State = state;
             }
 
             public string CharacterName { get; }
@@ -177,20 +160,11 @@ namespace _Project.Data
         {
             public int Compare(Character first, Character second)
             {
-                if (ReferenceEquals(first, second))
-                {
-                    return 0;
-                }
+                if (ReferenceEquals(first, second)) return 0;
 
-                if (first is null)
-                {
-                    return -1;
-                }
+                if (first is null) return -1;
 
-                if (second is null)
-                {
-                    return 1;
-                }
+                if (second is null) return 1;
 
                 return first.Health.CompareTo(second.Health);
             }
