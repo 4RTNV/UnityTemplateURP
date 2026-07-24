@@ -4,25 +4,6 @@ using System.Threading.Tasks;
 
 namespace _Project.Data
 {
-    public enum CharacterState
-    {
-        Idle,
-        Walking,
-        Attacking,
-        Dead,
-    }
-
-    public delegate void HealthChangedHandler(int previousHealth, int currentHealth);
-
-    public interface IDamageable
-    {
-        int Health { get; }
-
-        bool IsAlive { get; }
-
-        void TakeDamage(int damage);
-    }
-
     public sealed class Character : IDamageable
     {
         public const int MaximumHealth = 100;
