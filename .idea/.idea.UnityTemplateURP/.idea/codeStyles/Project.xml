@@ -15,6 +15,7 @@
         <fileSet type="globPattern" pattern="Assets/Packages/**" />
         <fileSet type="globPattern" pattern="Assets/Plugins/**" />
         <fileSet type="globPattern" pattern="Assets/TextMesh Pro/**" />
+        <fileSet type="globPattern" pattern="Assets/TextMesh*/**" />
         <fileSet type="globPattern" pattern="Assets/ThirdParty/**" />
         <fileSet type="globPattern" pattern="Library/**" />
         <fileSet type="globPattern" pattern="Logs/**" />

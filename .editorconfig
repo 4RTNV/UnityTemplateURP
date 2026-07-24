@@ -9,6 +9,72 @@ tab_width = 4
 insert_final_newline = true
 trim_trailing_whitespace = true
 
+[Assets/Packages/**]
+generated_code = true
+
+[Assets/Plugins/**]
+generated_code = true
+
+[Assets/TextMesh Pro/**]
+generated_code = true
+
+[Assets/TextMesh*/**]
+generated_code = true
+
+[Assets/ThirdParty/**]
+generated_code = true
+
+[Assets/**/*.asset]
+generated_code = true
+
+[Assets/**/*.cginc]
+generated_code = true
+
+[Assets/**/*.hlsl]
+generated_code = true
+
+[Assets/**/*.json]
+generated_code = true
+
+[Assets/**/*.mat]
+generated_code = true
+
+[Assets/**/*.meta]
+generated_code = true
+
+[Assets/**/*.shader]
+generated_code = true
+
+[Assets/**/*.shadergraph]
+generated_code = true
+
+[Assets/**/*.txt]
+generated_code = true
+
+[Assets/**/*.xml]
+generated_code = true
+
+[Library/**]
+generated_code = true
+
+[Logs/**]
+generated_code = true
+
+[Packages/**]
+generated_code = true
+
+[ProjectSettings/**]
+generated_code = true
+
+[Temp/**]
+generated_code = true
+
+[UserSettings/**]
+generated_code = true
+
+[Assets/TextMesh*/**]
+generated_code = true
+
 # ReSharper properties
 resharper_keep_existing_embedded_arrangement = false
 

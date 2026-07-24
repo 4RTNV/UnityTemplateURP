@@ -4,37 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cd204ba7-d195-47e0-a6ee-7f076d160efd" name="Changes" comment="Updated gitignore">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="cd204ba7-d195-47e0-a6ee-7f076d160efd" name="Changes" comment="updated git repo">
+      <change beforePath="$PROJECT_DIR$/.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/.editorconfig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityTemplateURP/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityTemplateURP/.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityTemplateURP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityTemplateURP/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.Bcl.AsyncInterfaces.6.0.0/lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/Microsoft.Bcl.AsyncInterfaces.6.0.0/lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/Microsoft.Bcl.TimeProvider.8.0.0/lib/netstandard2.0/Microsoft.Bcl.TimeProvider.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/Microsoft.Bcl.TimeProvider.8.0.0/lib/netstandard2.0/Microsoft.Bcl.TimeProvider.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/ObservableCollections.3.3.4/lib/netstandard2.1/ObservableCollections.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/ObservableCollections.3.3.4/lib/netstandard2.1/ObservableCollections.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/ObservableCollections.R3.3.3.4/lib/netstandard2.1/ObservableCollections.R3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/ObservableCollections.R3.3.3.4/lib/netstandard2.1/ObservableCollections.R3.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/R3.1.3.0/lib/netstandard2.1/R3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/R3.1.3.0/lib/netstandard2.1/R3.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/System.ComponentModel.Annotations.5.0.0/lib/netstandard2.1/System.ComponentModel.Annotations.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/System.ComponentModel.Annotations.5.0.0/lib/netstandard2.1/System.ComponentModel.Annotations.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/System.Runtime.CompilerServices.Unsafe.6.0.0/lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/System.Runtime.CompilerServices.Unsafe.6.0.0/lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Packages/System.Threading.Channels.8.0.0/lib/netstandard2.1/System.Threading.Channels.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Packages/System.Threading.Channels.8.0.0/lib/netstandard2.1/System.Threading.Channels.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/SDFFunctions.hlsl" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/SDFFunctions.hlsl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF SSD.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF SSD.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile-2-Pass.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile-2-Pass.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Surface.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Surface.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Sprite.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Sprite.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro.cginc" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro.cginc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Mobile.cginc" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Mobile.cginc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Properties.cginc" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Properties.cginc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Data/ObservableDictionary.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Data/ObservableDictionary.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Data/SerializeableType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Data/SerializeableType.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Data/TypeFilterAttribute.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Data/TypeFilterAttribute.cs" afterDir="false" />
@@ -103,28 +76,52 @@
 }</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile-2-Pass.shader" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/TextMesh Pro/Shaders/TMP_SDF-Surface.shader" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Sprite.shader" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/TextMesh Pro/Shaders/TMP_SDF-Surface.shader" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Sprite.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/TextMesh Pro/Shaders/TMP_Sprite.shader" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/TextMesh Pro/Shaders/TMP_Sprite.shader" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/TextMesh Pro/Shaders/TMPro.cginc" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/TextMesh Pro/Shaders/TMPro_Mobile.cginc" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/TextMesh Pro/Shaders/TMPro_Properties.cginc" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Data/ObservableDictionary.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Data/ObservableDictionary.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Data/TypeFilterAttribute.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Services/AssetManagement/AssetPath.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Data/TypeFilterAttribute.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Infrastructure/ProjectInstaller.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Services/AssetManagement/AssetPath.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Services/AssetManagement/AssetPath.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Services/AssetManagement/AssetPath.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Scripts/Services/AssetManagement/AssetPath.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Services/AssetManagement/AssetProvider.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Services/AssetManagement/AssetPath.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Services/AssetManagement/AssetPath.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Scripts/Services/AssetManagement/AssetProvider.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Services/AssetManagement/AssetProvider.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Services/AssetManagement/Constants.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Services/LevelProgress/ILevelProgress.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Scripts/Services/LevelProgress/ILevelProgress.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Scripts/Services/LevelProgress/LevelProgress.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Services/PersistentProgress/CurrentPlayerProgress.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Services/PersistentProgress/PersistentProgress.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Services/SaveLoad/PlayerPrefsSaveLoad.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Services/SceneLoader/AsyncSceneLoader.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Services/StaticData/StaticDataService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Services/StaticData/WindowStaticData.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Services/StaticData/WindowStaticData.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Services/StaticData/WindowStaticData.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/States/BootstrapState.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Test/Character.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Test/Character.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Test/Character.cs" root0="SKIP_HIGHLIGHTING" />
@@ -240,7 +237,7 @@
       <workItem from="1774763380657" duration="4773000" />
       <workItem from="1784836353430" duration="336000" />
       <workItem from="1784873115616" duration="3533000" />
-      <workItem from="1784877003440" duration="18620000" />
+      <workItem from="1784877003440" duration="19578000" />
     </task>
     <task id="LOCAL-00001" summary="Created asmdef for Infrastructure">
       <option name="closed" value="true" />
@@ -330,7 +327,15 @@
       <option name="project" value="LOCAL" />
       <updated>1784903252380</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="updated git repo">
+      <option name="closed" value="true" />
+      <created>1784903508497</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1784903508497</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -368,7 +373,8 @@
     <MESSAGE value="quick fix" />
     <MESSAGE value="updated objects order in file layout xml - now match the stylecop" />
     <MESSAGE value="Updated gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated gitignore" />
+    <MESSAGE value="updated git repo" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated git repo" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
