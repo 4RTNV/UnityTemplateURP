@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "com.facepunch.steamworks": "2.3.6",
     "com.github-glitchenzo.nugetforunity": "https://github.com/GlitchEnzo/NuGetForUnity.git?path=/src/NuGetForUnity",
     "com.gustavopsantos.reflex": "https://github.com/gustavopsantos/reflex.git?path=/Assets/Reflex/#14.3.1",
     "com.unity.ai.navigation": "2.0.14",
@@ -50,13 +49,5 @@
     "com.unity.modules.wind": "1.0.0",
     "com.unity.modules.xr": "1.0.0"
   },
-  "scopedRegistries": [
-    {
-      "name": "OpenUPM",
-      "url": "https://package.openupm.com",
-      "scopes": [
-        "com.facepunch.steamworks"
-      ]
-    }
-  ]
+  "scopedRegistries": []
 }

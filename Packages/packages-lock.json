@@ -1,12 +1,5 @@
 {
   "dependencies": {
-    "com.facepunch.steamworks": {
-      "version": "2.3.6",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {},
-      "url": "https://package.openupm.com"
-    },
     "com.github-glitchenzo.nugetforunity": {
       "version": "https://github.com/GlitchEnzo/NuGetForUnity.git?path=/src/NuGetForUnity",
       "depth": 0,
