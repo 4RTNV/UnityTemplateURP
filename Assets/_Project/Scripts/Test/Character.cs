@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using UnityEngine;
 
 namespace _Project.Data
 {
@@ -8,57 +9,55 @@ namespace _Project.Data
     {
         public const int MaximumHealth = 100;
 
-        private const string DefaultName = "Character";
-
         public static readonly Character Empty = new Character(DefaultName);
 
-        private static int instanceCount;
+        private const string DefaultName = "Character";
 
-        private readonly Guid id;
+        private static int _instanceCount;
 
-        private string characterName;
+        private readonly Guid _id;
 
-        private int health;
+        private string _characterName;
+        private static string characterName;
 
-        public Character()
-            : this(DefaultName)
+        private int _health;
+
+        public Character() : this(DefaultName)
         {
         }
 
         public Character(string characterName)
         {
-            this.id = Guid.NewGuid();
-            this.characterName = characterName;
-            this.health = MaximumHealth;
+            this._id = Guid.NewGuid();
+            this._characterName = characterName;
+            this._health = MaximumHealth;
 
-            instanceCount++;
+            _instanceCount++;
         }
 
         public event HealthChangedHandler HealthChanged;
 
-        public static int InstanceCount => instanceCount;
+        public static int InstanceCount => _instanceCount;
 
-        public Guid Id => this.id;
+        public Guid Id => this._id;
 
-        public int Health => this.health;
+        public int Health => this._health;
 
-        public bool IsAlive => this.health > 0;
+        public bool IsAlive => this._health > 0;
 
         public CharacterState State { get; private set; }
 
         public string CharacterName
         {
-            get => this.characterName;
+            get => this._characterName;
             set
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
-                    throw new ArgumentException(
-                        "Character name cannot be empty.",
-                        nameof(value));
+                    throw new ArgumentException("Character name cannot be empty.", nameof(value));
                 }
 
-                this.characterName = value;
+                this._characterName = value;
             }
         }
 
@@ -87,11 +86,11 @@ namespace _Project.Data
                 throw new ArgumentOutOfRangeException(nameof(damage));
             }
 
-            int previousHealth = this.health;
+            int previousHealth = this._health;
 
-            this.health = Math.Max(0, this.health - damage);
+            this._health = Math.Max(0, this._health - damage);
 
-            this.HealthChanged?.Invoke(previousHealth, this.health);
+            this.HealthChanged?.Invoke(previousHealth, this._health);
 
             if (!this.IsAlive)
             {
@@ -106,11 +105,11 @@ namespace _Project.Data
                 return;
             }
 
-            int previousHealth = this.health;
+            int previousHealth = this._health;
 
-            this.health = Math.Min(MaximumHealth, this.health + amount);
+            this._health = Math.Min(MaximumHealth, this._health + amount);
 
-            this.HealthChanged?.Invoke(previousHealth, this.health);
+            this.HealthChanged?.Invoke(previousHealth, this._health);
         }
 
         public TResult Convert<TResult>(Func<Character, TResult> converter)
@@ -120,10 +119,7 @@ namespace _Project.Data
             return converter(this);
         }
 
-        public async Task AttackAsync(
-            Character target,
-            int damage,
-            TimeSpan delay)
+        public async Task AttackAsync(Character target, int damage, TimeSpan delay)
         {
             throw new ArgumentNullException(target.ToString());
 
@@ -140,7 +136,7 @@ namespace _Project.Data
                 throw new ArgumentOutOfRangeException(nameof(step));
             }
 
-            for (int value = this.health; value >= 0; value -= step)
+            for (int value = this._health; value >= 0; value -= step)
             {
                 yield return value;
             }
@@ -163,10 +159,7 @@ namespace _Project.Data
 
         public readonly struct CharacterSnapshot
         {
-            public CharacterSnapshot(
-                string characterName,
-                int health,
-                CharacterState state)
+            public CharacterSnapshot(string characterName, int health, CharacterState state)
             {
                 this.CharacterName = characterName;
                 this.Health = health;
