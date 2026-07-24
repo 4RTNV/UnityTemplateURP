@@ -1,11 +1,11 @@
 ﻿using System;
-using _Project.SaveLoad;
-using _Project.SceneLoader;
 using _Project.AssetManagement;
 using _Project.CurrentLevelProgress;
 using _Project.Factory;
-using _Project.States;
 using _Project.PersistentProgress;
+using _Project.SaveLoad;
+using _Project.SceneLoader;
+using _Project.States;
 using _Project.StaticData;
 using _Project.TimeService;
 using _Project.UI.Factory;
@@ -27,27 +27,27 @@ namespace _Project.Infrastructure
         public void InstallBindings(ContainerBuilder builder)
         {
             // Singleton bindings - Eager
-            builder.RegisterType(typeof(AssetProvider), new Type[] { typeof(IAssetProvider) }, Lifetime.Singleton,
+            builder.RegisterType(typeof(AssetProvider), new[] { typeof(IAssetProvider) }, Lifetime.Singleton,
                 Resolution.Eager);
             builder.RegisterType(typeof(PersistentProgress.PersistentProgress),
-                new Type[] { typeof(IPersistentProgress) }, Lifetime.Singleton, Resolution.Eager);
-            builder.RegisterType(typeof(PlayerPrefsSaveLoad), new Type[] { typeof(ISaveLoad) }, Lifetime.Singleton,
+                new[] { typeof(IPersistentProgress) }, Lifetime.Singleton, Resolution.Eager);
+            builder.RegisterType(typeof(PlayerPrefsSaveLoad), new[] { typeof(ISaveLoad) }, Lifetime.Singleton,
                 Resolution.Eager);
-            builder.RegisterType(typeof(ScriptableStaticData), new Type[] { typeof(IStaticData) }, Lifetime.Singleton,
+            builder.RegisterType(typeof(ScriptableStaticData), new[] { typeof(IStaticData) }, Lifetime.Singleton,
                 Resolution.Eager);
-            builder.RegisterType(typeof(AsyncSceneLoader), new Type[] { typeof(ISceneLoader) }, Lifetime.Singleton,
+            builder.RegisterType(typeof(AsyncSceneLoader), new[] { typeof(ISceneLoader) }, Lifetime.Singleton,
                 Resolution.Eager);
             builder.RegisterType(typeof(GameStateMachine), new Type[] { }, Lifetime.Singleton, Resolution.Eager);
 
             // Scoped bindings - Eager
             builder.RegisterType(typeof(GameFactory),
-                new Type[] { typeof(IGameFactory), typeof(ISavedProgressReader), typeof(IProgressUpdater) },
+                new[] { typeof(IGameFactory), typeof(ISavedProgressReader), typeof(IProgressUpdater) },
                 Lifetime.Scoped, Resolution.Eager);
-            builder.RegisterType(typeof(UIFactory), new Type[] { typeof(IUIFactory) }, Lifetime.Scoped,
+            builder.RegisterType(typeof(UIFactory), new[] { typeof(IUIFactory) }, Lifetime.Scoped,
                 Resolution.Eager);
-            builder.RegisterType(typeof(LevelProgress), new Type[] { typeof(ILevelProgress) }, Lifetime.Scoped,
+            builder.RegisterType(typeof(LevelProgress), new[] { typeof(ILevelProgress) }, Lifetime.Scoped,
                 Resolution.Eager);
-            builder.RegisterType(typeof(InGameTimeService), new Type[] { typeof(IInGameTimeService) }, Lifetime.Scoped,
+            builder.RegisterType(typeof(InGameTimeService), new[] { typeof(IInGameTimeService) }, Lifetime.Scoped,
                 Resolution.Eager);
 
             builder.OnContainerBuilt += container => { container.Single<GameStateMachine>().Enter<BootstrapState>(); };
