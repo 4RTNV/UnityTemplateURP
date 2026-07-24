@@ -6,7 +6,9 @@ namespace _Project.Data
 {
     public enum CharacterState
     {
-        Idle, Walking, Attacking,
+        Idle,
+        Walking,
+        Attacking,
         Dead,
     }
 
