@@ -9,6 +9,9 @@ tab_width = 4
 insert_final_newline = true
 trim_trailing_whitespace = true
 
+# ReSharper properties
+resharper_keep_existing_embedded_arrangement = false
+
 # noinspection EditorConfigKeyCorrectness
 [*.cs]
 
@@ -39,6 +42,7 @@ resharper_csharp_max_enum_members_on_line = 1
 
 # fields, properties, methods 
 dotnet_diagnostic.SA1309.severity = none
-dotnet_diagnostic.SA1128.severity = none # let public ClassName : this() without new line after :
+dotnet_diagnostic.SA1128.severity = none # allow public ClassName : this() without new line after :
 dotnet_diagnostic.SA1101.severity = none # disable obligatory this.fieldName
 dotnet_diagnostic.SA1401.severity = error # fields always private
+dotnet_diagnostic.SA1503.severity = none # allow no braces

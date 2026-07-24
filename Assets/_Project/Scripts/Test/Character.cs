@@ -9,9 +9,7 @@ namespace _Project.Data
         public const int MaximumHealth = 100;
 
         public static readonly Character Empty = new(DefaultName);
-
         private const string DefaultName = "Character";
-
 
         private static int _instanceCount;
 
@@ -34,11 +32,9 @@ namespace _Project.Data
             _instanceCount++;
         }
 
+        public event HealthChangedHandler HealthChanged;
+
         public static int InstanceCount => _instanceCount;
-
-        public Guid Id => _id;
-
-        public CharacterState State { get; private set; }
 
         public string CharacterName
         {
@@ -55,6 +51,14 @@ namespace _Project.Data
             }
         }
 
+        public int Health => _health;
+
+        public Guid Id => _id;
+
+        public bool IsAlive => _health > 0;
+
+        public CharacterState State { get; private set; }
+
         public string this[int index]
         {
             get
@@ -68,46 +72,9 @@ namespace _Project.Data
             }
         }
 
-        public int Health => _health;
-
-        public bool IsAlive => _health > 0;
-
-        public void TakeDamage(int damage)
-        {
-            if (damage < 0) throw new ArgumentOutOfRangeException(nameof(damage));
-
-            var previousHealth = _health;
-
-            _health = Math.Max(0, _health - damage);
-
-            HealthChanged?.Invoke(previousHealth, _health);
-
-            if (!IsAlive) State = CharacterState.Dead;
-        }
-
-        public event HealthChangedHandler HealthChanged;
-
         public static Character Create(string characterName)
         {
             return new Character(characterName);
-        }
-
-        public void Heal(int amount = 10)
-        {
-            if (amount <= 0) return;
-
-            var previousHealth = _health;
-
-            _health = Math.Min(MaximumHealth, _health + amount);
-
-            HealthChanged?.Invoke(previousHealth, _health);
-        }
-
-        public TResult Convert<TResult>(Func<Character, TResult> converter)
-        {
-            throw new ArgumentNullException(converter.ToString());
-
-            return converter(this);
         }
 
         public async Task AttackAsync(Character target, int damage, TimeSpan delay)
@@ -120,11 +87,47 @@ namespace _Project.Data
             State = CharacterState.Attacking;
         }
 
+        public TResult Convert<TResult>(Func<Character, TResult> converter)
+        {
+            throw new ArgumentNullException(converter.ToString());
+
+            return converter(this);
+        }
+
         public IEnumerable<int> GetHealthHistory(int step)
         {
-            if (step <= 0) throw new ArgumentOutOfRangeException(nameof(step));
+            if (step <= 0)
+                throw new ArgumentOutOfRangeException(nameof(step));
 
-            for (var value = _health; value >= 0; value -= step) yield return value;
+            for (var value = _health; value >= 0; value -= step)
+                yield return value;
+        }
+
+        public void Heal(int amount = 10)
+        {
+            if (amount <= 0)
+                return;
+
+            var previousHealth = _health;
+
+            _health = Math.Min(MaximumHealth, _health + amount);
+
+            HealthChanged?.Invoke(previousHealth, _health);
+        }
+
+        public void TakeDamage(int damage)
+        {
+            if (damage < 0)
+                throw new ArgumentOutOfRangeException(nameof(damage));
+
+            var previousHealth = _health;
+
+            _health = Math.Max(0, _health - damage);
+
+            HealthChanged?.Invoke(previousHealth, _health);
+
+            if (!IsAlive)
+                State = CharacterState.Dead;
         }
 
         public override string ToString()
@@ -158,18 +161,12 @@ namespace _Project.Data
             public CharacterState State { get; }
         }
 
-        private sealed class CharacterComparer : IComparer<Character>
+        private struct Struct1
         {
-            public int Compare(Character first, Character second)
-            {
-                if (ReferenceEquals(first, second)) return 0;
+        }
 
-                if (first is null) return -1;
-
-                if (second is null) return 1;
-
-                return first.Health.CompareTo(second.Health);
-            }
+        private sealed class Class1
+        {
         }
     }
 }
