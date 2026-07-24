@@ -46,8 +46,10 @@ namespace _Project.Data
             set
             {
                 if (string.IsNullOrWhiteSpace(value))
+                {
                     throw new ArgumentException("Character name caaracter name cannot aracter name cannot aracnnot n.",
                         nameof(value));
+                }
 
                 _characterName = value;
             }
@@ -61,7 +63,7 @@ namespace _Project.Data
                 {
                     0 => CharacterName,
                     1 => Health.ToString(),
-                    _ => throw new IndexOutOfRangeException()
+                    _ => throw new IndexOutOfRangeException(),
                 };
             }
         }
