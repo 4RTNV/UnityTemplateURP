@@ -1,0 +1,12 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <RepositoryRoot>$([MSBuild]::EnsureTrailingSlash('$(MSBuildThisFileDirectory)'))</RepositoryRoot>
+    <UnityVersion Condition="'$(UnityVersion)' == ''">6000.5.4f1</UnityVersion>
+
+    <UnityEditorPath Condition="'$(UnityEditorPath)' == '' and '$(UNITY_EDITOR_PATH)' != ''">$(UNITY_EDITOR_PATH)</UnityEditorPath>
+    <UnityEditorPath Condition="'$(UnityEditorPath)' == '' and '$(UNITY_PATH)' != ''">$(UNITY_PATH)</UnityEditorPath>
+    <UnityEditorPath Condition="'$(UnityEditorPath)' == '' and Exists('C:\Program Files\Unity\Hub\Editor\$(UnityVersion)\Editor\Data\Managed')">C:\Program Files\Unity\Hub\Editor\$(UnityVersion)\Editor</UnityEditorPath>
+    <UnityEditorPath Condition="'$(UnityEditorPath)' == '' and Exists('/opt/unity/Editor/Data/Managed')">/opt/unity/Editor</UnityEditorPath>
+    <UnityEditorPath Condition="'$(UnityEditorPath)' == '' and Exists('/Applications/Unity/Hub/Editor/$(UnityVersion)/Unity.app/Contents')">/Applications/Unity/Hub/Editor/$(UnityVersion)/Unity.app/Contents</UnityEditorPath>
+  </PropertyGroup>
+</Project>

@@ -51,6 +51,8 @@ ExportedObj/
 *.csproj
 *.unityproj
 *.sln
+!_Project.*.csproj
+!UnityTemplateURP.CI.sln
 *.suo
 *.tmp
 *.user
