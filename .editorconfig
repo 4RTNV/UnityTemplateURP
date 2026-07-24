@@ -35,7 +35,7 @@ dotnet_diagnostic.SA1600.severity = none
 dotnet_diagnostic.SA1602.severity = none
 resharper_csharp_place_simple_enum_on_single_line = false
 resharper_csharp_keep_existing_enum_arrangement = false
-resharper_csharp_max_enum_members_on_line = 1k
+resharper_csharp_max_enum_members_on_line = 1
 
 # fields, properties, methods 
 dotnet_diagnostic.SA1309.severity = none
