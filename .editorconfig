@@ -9,6 +9,7 @@ tab_width = 4
 insert_final_newline = true
 trim_trailing_whitespace = true
 
+# noinspection EditorConfigKeyCorrectness
 [*.cs]
 # Стандартные настройки C#
 csharp_new_line_before_open_brace = all
@@ -21,3 +22,5 @@ csharp_style_var_elsewhere = true:suggestion
 resharper_csharp_wrap_arguments_style = chop_if_long
 resharper_csharp_wrap_parameters_style = chop_if_long
 resharper_csharp_wrap_chained_method_calls = chop_if_long
+
+dotnet_diagnostic.SA1200.severity = none
