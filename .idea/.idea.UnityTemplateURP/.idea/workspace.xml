@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cd204ba7-d195-47e0-a6ee-7f076d160efd" name="Changes" comment="updated git repo">
+    <list default="true" id="cd204ba7-d195-47e0-a6ee-7f076d160efd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityTemplateURP/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityTemplateURP/.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityTemplateURP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityTemplateURP/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Data/ObservableDictionary.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Data/ObservableDictionary.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Data/SerializeableType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Data/SerializeableType.cs" afterDir="false" />
@@ -50,6 +49,7 @@
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/States/LoopLevelState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/States/LoopLevelState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/UI/UIFactory/IUIFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/UI/UIFactory/IUIFactory.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/UI/UIFactory/UIFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/UI/UIFactory/UIFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UnityTemplateURP.sln.DotSettings" beforeDir="false" afterPath="$PROJECT_DIR$/UnityTemplateURP.sln.DotSettings" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,65 +75,13 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile-2-Pass.shader" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/TextMesh Pro/Shaders/TMP_SDF-Surface.shader" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/TextMesh Pro/Shaders/TMP_SDF-Surface.shader" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Sprite.shader" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/TextMesh Pro/Shaders/TMP_Sprite.shader" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/TextMesh Pro/Shaders/TMP_Sprite.shader" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/TextMesh Pro/Shaders/TMPro.cginc" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/TextMesh Pro/Shaders/TMPro_Mobile.cginc" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/TextMesh Pro/Shaders/TMPro_Properties.cginc" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Data/ObservableDictionary.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Data/ObservableDictionary.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Data/TypeFilterAttribute.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Data/TypeFilterAttribute.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Infrastructure/ProjectInstaller.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Services/AssetManagement/AssetPath.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Services/AssetManagement/AssetPath.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Services/AssetManagement/AssetPath.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Scripts/Services/AssetManagement/AssetPath.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Services/AssetManagement/AssetPath.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Services/AssetManagement/AssetPath.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Scripts/Services/AssetManagement/AssetProvider.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Services/AssetManagement/AssetProvider.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Services/AssetManagement/Constants.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Services/LevelProgress/ILevelProgress.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Scripts/Services/LevelProgress/ILevelProgress.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Scripts/Services/LevelProgress/LevelProgress.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Services/PersistentProgress/CurrentPlayerProgress.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Services/PersistentProgress/PersistentProgress.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Services/SaveLoad/PlayerPrefsSaveLoad.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Services/SceneLoader/AsyncSceneLoader.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Services/StaticData/StaticDataService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Services/StaticData/WindowStaticData.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Services/StaticData/WindowStaticData.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Services/StaticData/WindowStaticData.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/States/BootstrapState.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Test/Character.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Test/Character.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Test/Character.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Test/Character.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Test/Character.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Test/Character.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Test/Character.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Test/Character.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/_Project/Scripts/Test/Character.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/packages.config" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/packages.config" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://D:/Code/Unity/UnityTemplateURP/Assets/packages.config" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="NamedScopeManager">
@@ -169,7 +117,7 @@
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;rider.code.cleanup.on.save&quot;: &quot;true&quot;,
     &quot;rider.code.cleanup.on.save.profile&quot;: &quot;Scitalis: Reformat Code&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -237,7 +185,10 @@
       <workItem from="1774763380657" duration="4773000" />
       <workItem from="1784836353430" duration="336000" />
       <workItem from="1784873115616" duration="3533000" />
-      <workItem from="1784877003440" duration="19578000" />
+      <workItem from="1784877003440" duration="20450000" />
+      <workItem from="1784905342158" duration="243000" />
+      <workItem from="1784911514788" duration="1088000" />
+      <workItem from="1784912634145" duration="1050000" />
     </task>
     <task id="LOCAL-00001" summary="Created asmdef for Infrastructure">
       <option name="closed" value="true" />
@@ -335,7 +286,15 @@
       <option name="project" value="LOCAL" />
       <updated>1784903508497</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="generated_code">
+      <option name="closed" value="true" />
+      <created>1784904553368</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1784904553368</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -374,7 +333,8 @@
     <MESSAGE value="updated objects order in file layout xml - now match the stylecop" />
     <MESSAGE value="Updated gitignore" />
     <MESSAGE value="updated git repo" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated git repo" />
+    <MESSAGE value="generated_code" />
+    <option name="LAST_COMMIT_MESSAGE" value="generated_code" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

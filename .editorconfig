@@ -72,9 +72,6 @@ generated_code = true
 [UserSettings/**]
 generated_code = true
 
-[Assets/TextMesh*/**]
-generated_code = true
-
 # ReSharper properties
 resharper_keep_existing_embedded_arrangement = false
 
