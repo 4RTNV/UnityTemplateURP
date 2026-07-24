@@ -18,7 +18,6 @@ namespace _Project.Data
         private readonly Guid _id;
 
         private string _characterName;
-        private static string characterName;
 
         private int _health;
 
@@ -54,7 +53,8 @@ namespace _Project.Data
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
-                    throw new ArgumentException("Character name cannot be empty.", nameof(value));
+                    throw new ArgumentException("Character name caaracter name cannot aracter name cannot aracnnot n.",
+                        nameof(value));
                 }
 
                 this._characterName = value;
