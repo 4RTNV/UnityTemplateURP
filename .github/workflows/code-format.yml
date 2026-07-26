@@ -1,88 +1,28 @@
-name: Code Quality
+name: Format Check
 
 on:
-  pull_request: {}
+  pull_request:
+    branches:
+      - main
   workflow_dispatch: {}
 
 permissions:
   contents: read
 
 jobs:
-  formatting-and-analyzers:
-    name: Formatting and analyzers
+  format-check:
+    name: Format check
     runs-on: windows-latest
-
-    env:
-      DOTNET_CLI_TELEMETRY_OPTOUT: "1"
-      DOTNET_NOLOGO: "1"
-      UNITY_VERSION: "6000.5.4f1"
-      RESHARPER_TOOLS_VERSION: "2026.1.4"
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v4
 
       - name: Setup .NET
-        uses: actions/setup-dotnet@v5
+        uses: actions/setup-dotnet@v4
         with:
           dotnet-version: "8.0.x"
 
-      - name: Setup Unity
-        uses: RageAgainstThePixel/unity-setup@v2.6.0
-        with:
-          unity-version: ${{ env.UNITY_VERSION }}
-
-      - name: Resolve Unity editor path
-        shell: pwsh
-        run: |
-          $candidates = @(
-            $env:UNITY_EDITOR_PATH,
-            $env:UNITY_PATH,
-            "C:\Program Files\Unity\Hub\Editor\$env:UNITY_VERSION\Editor"
-          ) | Where-Object { $_ }
-
-          $unityEditorPath = $candidates | Where-Object {
-            Test-Path (Join-Path $_ "Data\Managed\UnityEngine\UnityEngine.dll")
-          } | Select-Object -First 1
-
-          if (-not $unityEditorPath) {
-            Write-Error "Unity $env:UNITY_VERSION was not found. Install Unity on the runner or set UNITY_EDITOR_PATH to the Editor directory."
-            exit 1
-          }
-
-          "UNITY_EDITOR_PATH=$unityEditorPath" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
-          Write-Host "UNITY_EDITOR_PATH=$unityEditorPath"
-
-      - name: Install ReSharper command line tools
-        shell: pwsh
-        run: |
-          dotnet tool install JetBrains.ReSharper.GlobalTools `
-            --tool-path .\.tools `
-            --version $env:RESHARPER_TOOLS_VERSION
-
-      - name: Run cleanup profile
-        shell: pwsh
-        run: |
-          .\.tools\jb.exe cleanupcode UnityTemplateURP.CI.sln `
-            --profile="Scitalis: Reformat Code" `
-            --settings="UnityTemplateURP.sln.DotSettings" `
-            --include="Assets/_Project/Scripts/**" `
-            --verbosity=WARN
-
-      - name: Verify no formatting diff
-        shell: pwsh
-        run: |
-          $diff = git diff --name-only -- Assets/_Project/Scripts
-
-          if ($diff) {
-            Write-Error "Code cleanup changed files. Run Rider Silent Reformat and Cleanup or jb cleanupcode locally, then commit the result."
-            $diff | ForEach-Object { Write-Host "Changed: $_" }
-            git diff -- Assets/_Project/Scripts
-            exit 1
-          }
-
-          Write-Host "Formatting check passed."
-
-      - name: Build with analyzers
-        shell: pwsh
-        run: dotnet build UnityTemplateURP.CI.sln -warnaserror -p:CI=true
+      - name: Run format check
+        shell: bash
+        run: sh ./format_check.sh

@@ -1,0 +1,88 @@
+name: Build Linux
+
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  build-linux:
+    name: Build Linux
+    runs-on: ubuntu-latest
+
+    env:
+      UNITY_USERNAME: ${{ secrets.UNITY_USERNAME }}
+      UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+      UNITY_SERIAL: ${{ secrets.UNITY_SERIAL }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Unity
+        uses: RageAgainstThePixel/unity-setup@v2.6.0
+        with:
+          version-file: ProjectSettings/ProjectVersion.txt
+          build-targets: StandaloneLinux64
+
+      - name: Activate Unity Personal license
+        if: env.UNITY_USERNAME != '' && env.UNITY_PASSWORD != '' && env.UNITY_SERIAL == ''
+        uses: buildalon/activate-unity-license@v2
+        with:
+          license: personal
+          username: ${{ env.UNITY_USERNAME }}
+          password: ${{ env.UNITY_PASSWORD }}
+
+      - name: Activate Unity Professional license
+        if: env.UNITY_USERNAME != '' && env.UNITY_PASSWORD != '' && env.UNITY_SERIAL != ''
+        uses: buildalon/activate-unity-license@v2
+        with:
+          license: professional
+          username: ${{ env.UNITY_USERNAME }}
+          password: ${{ env.UNITY_PASSWORD }}
+          serial: ${{ env.UNITY_SERIAL }}
+
+      - name: Resolve Unity executable
+        shell: bash
+        run: |
+          set -eu
+
+          for candidate in \
+            "${UNITY_EDITOR_PATH:-}" \
+            "${UNITY_EDITOR_PATH:-}/Unity" \
+            "/opt/Unity/Editor/Unity"
+          do
+            if [ -f "$candidate" ]; then
+              echo "UNITY_EXECUTABLE=$candidate" >> "$GITHUB_ENV"
+              echo "UNITY_EXECUTABLE=$candidate"
+              exit 0
+            fi
+          done
+
+          echo "Unity executable was not found after unity-setup." >&2
+          exit 1
+
+      - name: Build Linux player
+        shell: bash
+        run: |
+          set -eu
+          mkdir -p Builds/Linux
+
+          "$UNITY_EXECUTABLE" \
+            -batchmode \
+            -nographics \
+            -quit \
+            -projectPath "$PWD" \
+            -buildTarget linux64 \
+            -buildLinux64Player "Builds/Linux/UnityTemplateURP.x86_64" \
+            -logFile -
+
+      - name: Upload Linux build
+        uses: actions/upload-artifact@v4
+        with:
+          name: UnityTemplateURP-Linux
+          path: Builds/Linux

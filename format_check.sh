@@ -12,7 +12,11 @@ fi
 
 dotnet tool restore
 
-dotnet tool run dotnet-format -- UnityTemplateURP.sln --include Assets/_Project/Scripts
+if ! dotnet tool run dotnet-format -- Assets/_Project/Scripts --folder --check --include Assets/_Project/Scripts; then
+  printf '\nFormat check failed. Run this command locally to see and fix formatting issues:\n'
+  printf 'dotnet tool run dotnet-format -- Assets/_Project/Scripts --folder --include Assets/_Project/Scripts\n'
+  exit 1
+fi
 cd "$SCRIPT_DIR"
 unset GIT_DIR
 unset GIT_WORK_TREE
