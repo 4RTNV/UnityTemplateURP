@@ -16,7 +16,7 @@ namespace _Project.States
         public void Enter()
         {
             SingletonCoroutineRunner.Instance.StartCoroutine(_sceneLoader.LoadScene(SceneNames.BootstrapSceneName,
-                onLoaded: EnterHub));
+                EnterHub));
         }
 
         public void Exit()
@@ -24,6 +24,8 @@ namespace _Project.States
         }
 
         private void EnterHub()
-            => _gameStateMachine.Enter<LoadProgressState>();
+        {
+            _gameStateMachine.Enter<LoadProgressState>();
+        }
     }
 }

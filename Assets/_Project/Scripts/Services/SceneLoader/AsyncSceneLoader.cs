@@ -1,6 +1,6 @@
 ﻿using System;
-using UnityEngine;
 using System.Collections;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace _Project.SceneLoader
@@ -21,7 +21,7 @@ namespace _Project.SceneLoader
                 yield break;
             }
 
-            AsyncOperation waitNextScene = SceneManager.LoadSceneAsync(name);
+            var waitNextScene = SceneManager.LoadSceneAsync(name);
 
             while (!waitNextScene.isDone) yield return null;
 

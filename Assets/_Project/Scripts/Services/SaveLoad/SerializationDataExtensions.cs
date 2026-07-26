@@ -5,9 +5,13 @@ namespace _Project.SaveLoad
     public static class SerializationDataExtensions
     {
         public static T ToDeserialized<T>(this string json)
-            => JsonUtility.FromJson<T>(json);
+        {
+            return JsonUtility.FromJson<T>(json);
+        }
 
         public static string ToJson(this object obj)
-            => JsonUtility.ToJson(obj);
+        {
+            return JsonUtility.ToJson(obj);
+        }
     }
 }

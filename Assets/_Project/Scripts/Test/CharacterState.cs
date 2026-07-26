@@ -5,6 +5,6 @@
         Idle,
         Walking,
         Attacking,
-        Dead,
+        Dead
     }
 }

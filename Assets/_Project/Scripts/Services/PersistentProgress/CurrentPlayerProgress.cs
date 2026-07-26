@@ -9,6 +9,8 @@ namespace _Project.PersistentProgress
         public int CurrentLevel = 1;
 
         public override string ToString()
-            => $"Level={CurrentLevel};";
+        {
+            return $"Level={CurrentLevel};";
+        }
     }
 }

@@ -8,9 +8,9 @@ namespace _Project.SaveLoad
     public class PlayerPrefsSaveLoad : ISaveLoad
     {
         private const string ProgressKey = "Progress";
+        private readonly IGameFactory _gameFactory;
 
         private readonly IPersistentProgress _progress;
-        private readonly IGameFactory _gameFactory;
         private readonly IEnumerable<IProgressUpdater> _savedServices;
         private readonly List<IProgressUpdater> _saveWriterServices;
 
@@ -23,7 +23,9 @@ namespace _Project.SaveLoad
         }
 
         public CurrentPlayerProgress LoadProgress()
-            => PlayerPrefs.GetString(ProgressKey)?.ToDeserialized<CurrentPlayerProgress>();
+        {
+            return PlayerPrefs.GetString(ProgressKey)?.ToDeserialized<CurrentPlayerProgress>();
+        }
 
         public void SaveProgress()
         {

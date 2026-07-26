@@ -29,8 +29,8 @@ namespace _Project.Infrastructure
             // Singleton bindings - Eager
             builder.RegisterType(typeof(AssetProvider), new[] { typeof(IAssetProvider) }, Lifetime.Singleton,
                 Resolution.Eager);
-            builder.RegisterType(typeof(PersistentProgress.PersistentProgress),
-                new[] { typeof(IPersistentProgress) }, Lifetime.Singleton, Resolution.Eager);
+            builder.RegisterType(typeof(PersistentProgress.PersistentProgress), new[] { typeof(IPersistentProgress) },
+                Lifetime.Singleton, Resolution.Eager);
             builder.RegisterType(typeof(PlayerPrefsSaveLoad), new[] { typeof(ISaveLoad) }, Lifetime.Singleton,
                 Resolution.Eager);
             builder.RegisterType(typeof(ScriptableStaticData), new[] { typeof(IStaticData) }, Lifetime.Singleton,
@@ -41,10 +41,9 @@ namespace _Project.Infrastructure
 
             // Scoped bindings - Eager
             builder.RegisterType(typeof(GameFactory),
-                new[] { typeof(IGameFactory), typeof(ISavedProgressReader), typeof(IProgressUpdater) },
-                Lifetime.Scoped, Resolution.Eager);
-            builder.RegisterType(typeof(UIFactory), new[] { typeof(IUIFactory) }, Lifetime.Scoped,
+                new[] { typeof(IGameFactory), typeof(ISavedProgressReader), typeof(IProgressUpdater) }, Lifetime.Scoped,
                 Resolution.Eager);
+            builder.RegisterType(typeof(UIFactory), new[] { typeof(IUIFactory) }, Lifetime.Scoped, Resolution.Eager);
             builder.RegisterType(typeof(LevelProgress), new[] { typeof(ILevelProgress) }, Lifetime.Scoped,
                 Resolution.Eager);
             builder.RegisterType(typeof(InGameTimeService), new[] { typeof(IInGameTimeService) }, Lifetime.Scoped,

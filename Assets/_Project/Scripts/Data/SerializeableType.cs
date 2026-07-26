@@ -10,7 +10,9 @@ namespace _Project.Data
         public Type Type { get; private set; }
 
         void ISerializationCallbackReceiver.OnBeforeSerialize()
-            => assemblyQualifiedName = Type?.AssemblyQualifiedName ?? assemblyQualifiedName;
+        {
+            assemblyQualifiedName = Type?.AssemblyQualifiedName ?? assemblyQualifiedName;
+        }
 
         void ISerializationCallbackReceiver.OnAfterDeserialize()
         {

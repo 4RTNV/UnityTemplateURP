@@ -13,18 +13,18 @@ namespace _Project.States
             _sceneLoader = sceneLoader;
         }
 
+        public void Enter()
+        {
+            SingletonCoroutineRunner.Instance.StartCoroutine(_sceneLoader.LoadScene(SceneNames.MenuSceneName,
+                OnHubSceneLoaded));
+        }
+
         public void Exit()
         {
         }
 
         private void OnHubSceneLoaded()
         {
-        }
-
-        public void Enter()
-        {
-            SingletonCoroutineRunner.Instance.StartCoroutine(_sceneLoader.LoadScene(SceneNames.MenuSceneName,
-                onLoaded: OnHubSceneLoaded));
         }
     }
 }

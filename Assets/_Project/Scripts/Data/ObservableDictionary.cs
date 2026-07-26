@@ -1,5 +1,5 @@
-using System.Collections.Generic;
 using System;
+using System.Collections.Generic;
 
 namespace _Project.Data
 {
@@ -20,7 +20,7 @@ namespace _Project.Data
 
         public new bool Remove(TKey key)
         {
-            bool removed = base.Remove(key);
+            var removed = base.Remove(key);
             if (removed) ItemRemoved(null, key);
 
             return removed;
