@@ -34,6 +34,13 @@
 # Visual Studio cache directory
 .vs/
 .idea
+!.idea/
+!.idea/.idea.UnityTemplateURP/
+!.idea/.idea.UnityTemplateURP/.idea/
+!.idea/.idea.UnityTemplateURP/.idea/codeStyles/
+!.idea/.idea.UnityTemplateURP/.idea/codeStyles/*
+!.idea/.idea.UnityTemplateURP/.idea/scopes/
+!.idea/.idea.UnityTemplateURP/.idea/scopes/*
 
 # Gradle cache directory
 .gradle/
@@ -44,6 +51,8 @@ ExportedObj/
 *.csproj
 *.unityproj
 *.sln
+!_Project.*.csproj
+!UnityTemplateURP.CI.sln
 *.suo
 *.tmp
 *.user
@@ -98,3 +107,18 @@ InitTestScene*.unity*
 
 # Auto-generated scenes by play mode tests
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
+
+# NuGet Importer / NuGetForUnity
+/[Aa]ssets/[Pp]ackages/
+/[Aa]ssets/[Pp]ackages.meta
+/[Pp]ackages/*
+!/[Pp]ackages/manifest.json
+!/[Pp]ackages/packages-lock.json
+
+!.idea/
+!.idea/.idea.UnityTemplateURP/
+!.idea/.idea.UnityTemplateURP/.idea/
+!.idea/.idea.UnityTemplateURP/.idea/scopes/
+!.idea/.idea.UnityTemplateURP/.idea/scopes/*
+!.idea/.idea.UnityTemplateURP/.idea/codeStyles/
+!.idea/.idea.UnityTemplateURP/.idea/codeStyles/*
