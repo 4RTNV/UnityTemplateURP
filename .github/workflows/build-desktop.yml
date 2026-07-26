@@ -27,26 +27,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install Unity Windows runtime dependencies
-        shell: pwsh
-        run: |
-          choco install vcredist2010 -y --no-progress
-          choco install vcredist140 -y --no-progress
-
       - name: Setup Unity
         uses: RageAgainstThePixel/unity-setup@v2.6.0
         with:
           version-file: ProjectSettings/ProjectVersion.txt
           build-targets: StandaloneWindows64
+          modules: windows-mono
           cache-installation: false
-
-      - name: Restore Unity Library cache
-        uses: actions/cache@v4
-        with:
-          path: Library
-          key: Library-${{ runner.os }}-StandaloneWindows64-${{ hashFiles('ProjectSettings/ProjectVersion.txt', 'Packages/manifest.json', 'Packages/packages-lock.json', 'ProjectSettings/EditorBuildSettings.asset') }}
-          restore-keys: |
-            Library-${{ runner.os }}-StandaloneWindows64-
 
       - name: Activate Unity Personal license
         if: env.UNITY_USERNAME != '' && env.UNITY_PASSWORD != '' && env.UNITY_SERIAL == ''
@@ -65,79 +52,12 @@ jobs:
           password: ${{ env.UNITY_PASSWORD }}
           serial: ${{ env.UNITY_SERIAL }}
 
-      - name: Resolve Unity executable
-        shell: pwsh
-        run: |
-          if ($env:UNITY_EDITOR_PATH) {
-            "UNITY_EXECUTABLE=$env:UNITY_EDITOR_PATH" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
-            Write-Host "UNITY_EXECUTABLE=$env:UNITY_EDITOR_PATH"
-            exit 0
-          }
-
-          $candidates = @()
-
-          if ($env:UNITY_EDITORS) {
-            try {
-              $candidates += ($env:UNITY_EDITORS | ConvertFrom-Json | ForEach-Object { $_.path })
-            }
-            catch {
-              Write-Warning "Could not parse UNITY_EDITORS: $_"
-            }
-          }
-
-          $candidates += Get-ChildItem "C:\Program Files\Unity\Hub\Editor" -Filter Unity.exe -Recurse -ErrorAction SilentlyContinue |
-            Select-Object -ExpandProperty FullName
-
-          $unityExe = $candidates | Where-Object {
-            Test-Path $_ -PathType Leaf
-          } | Select-Object -First 1
-
-          if (-not $unityExe) {
-            Write-Error "Unity executable was not found after unity-setup."
-            Write-Host "UNITY_EDITOR_PATH=$env:UNITY_EDITOR_PATH"
-            Write-Host "UNITY_EDITORS=$env:UNITY_EDITORS"
-            exit 1
-          }
-
-          "UNITY_EXECUTABLE=$unityExe" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
-          Write-Host "UNITY_EXECUTABLE=$unityExe"
-
-      - name: Check Unity editor startup
-        shell: pwsh
-        run: |
-          $unityDirectory = Split-Path $env:UNITY_EXECUTABLE
-          $troubleshooter = Join-Path $unityDirectory "UnityTroubleshooter.exe"
-
-          if (Test-Path $troubleshooter) {
-            Write-Host "Running UnityTroubleshooter.exe before starting the build."
-            & $troubleshooter
-          }
-          else {
-            Write-Host "UnityTroubleshooter.exe was not found next to Unity.exe."
-          }
-
-          & $env:UNITY_EXECUTABLE `
-            -batchmode `
-            -nographics `
-            -quit `
-            -projectPath "$pwd" `
-            -logFile "unity-startup.log"
-
-          if ($LASTEXITCODE -ne 0) {
-            if (Test-Path "unity-startup.log") {
-              Get-Content -Path "unity-startup.log" -Tail 200
-            }
-
-            Write-Error "Unity editor startup check failed with exit code $LASTEXITCODE."
-            exit 1
-          }
-
       - name: Build Windows player
         shell: pwsh
         run: |
           New-Item -ItemType Directory -Force -Path Builds\Windows | Out-Null
 
-          & $env:UNITY_EXECUTABLE `
+          & "$env:UNITY_EDITOR_PATH" `
             -batchmode `
             -nographics `
             -quit `
@@ -170,15 +90,8 @@ jobs:
         with:
           version-file: ProjectSettings/ProjectVersion.txt
           build-targets: StandaloneLinux64
+          modules: linux-mono
           cache-installation: true
-
-      - name: Restore Unity Library cache
-        uses: actions/cache@v4
-        with:
-          path: Library
-          key: Library-${{ runner.os }}-StandaloneLinux64-${{ hashFiles('ProjectSettings/ProjectVersion.txt', 'Packages/manifest.json', 'Packages/packages-lock.json', 'ProjectSettings/EditorBuildSettings.asset') }}
-          restore-keys: |
-            Library-${{ runner.os }}-StandaloneLinux64-
 
       - name: Activate Unity Personal license
         if: env.UNITY_USERNAME != '' && env.UNITY_PASSWORD != '' && env.UNITY_SERIAL == ''
@@ -197,33 +110,13 @@ jobs:
           password: ${{ env.UNITY_PASSWORD }}
           serial: ${{ env.UNITY_SERIAL }}
 
-      - name: Resolve Unity executable
-        shell: bash
-        run: |
-          set -eu
-
-          for candidate in \
-            "${UNITY_EDITOR_PATH:-}" \
-            "${UNITY_EDITOR_PATH:-}/Unity" \
-            "/opt/Unity/Editor/Unity"
-          do
-            if [ -f "$candidate" ]; then
-              echo "UNITY_EXECUTABLE=$candidate" >> "$GITHUB_ENV"
-              echo "UNITY_EXECUTABLE=$candidate"
-              exit 0
-            fi
-          done
-
-          echo "Unity executable was not found after unity-setup." >&2
-          exit 1
-
       - name: Build Linux player
         shell: bash
         run: |
           set -eu
           mkdir -p Builds/Linux
 
-          "$UNITY_EXECUTABLE" \
+          "$UNITY_EDITOR_PATH" \
             -batchmode \
             -nographics \
             -quit \
