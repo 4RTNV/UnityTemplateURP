@@ -9,34 +9,19 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: build-desktop-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  UNITY_USERNAME: ${{ secrets.UNITY_USERNAME }}
+  UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+  UNITY_SERIAL: ${{ secrets.UNITY_SERIAL }}
+
 jobs:
-  build-desktop:
-    name: Build ${{ matrix.display-name }}
-    runs-on: ubuntu-latest
-
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - display-name: Windows Desktop
-            setup-target: StandaloneWindows64
-            unity-target: win64
-            build-argument: -buildWindows64Player
-            output-path: Builds/Windows/UnityTemplateURP.exe
-            upload-path: Builds/Windows
-            artifact-name: UnityTemplateURP-Windows
-          - display-name: Linux Desktop
-            setup-target: StandaloneLinux64
-            unity-target: linux64
-            build-argument: -buildLinux64Player
-            output-path: Builds/Linux/UnityTemplateURP.x86_64
-            upload-path: Builds/Linux
-            artifact-name: UnityTemplateURP-Linux
-
-    env:
-      UNITY_USERNAME: ${{ secrets.UNITY_USERNAME }}
-      UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
-      UNITY_SERIAL: ${{ secrets.UNITY_SERIAL }}
+  build-windows:
+    name: Build Windows Desktop
+    runs-on: windows-latest
 
     steps:
       - name: Checkout
@@ -46,7 +31,104 @@ jobs:
         uses: RageAgainstThePixel/unity-setup@v2.6.0
         with:
           version-file: ProjectSettings/ProjectVersion.txt
-          build-targets: ${{ matrix.setup-target }}
+          build-targets: StandaloneWindows64
+          cache-installation: true
+
+      - name: Restore Unity Library cache
+        uses: actions/cache@v4
+        with:
+          path: Library
+          key: Library-${{ runner.os }}-StandaloneWindows64-${{ hashFiles('ProjectSettings/ProjectVersion.txt', 'Packages/manifest.json', 'Packages/packages-lock.json', 'ProjectSettings/EditorBuildSettings.asset') }}
+          restore-keys: |
+            Library-${{ runner.os }}-StandaloneWindows64-
+
+      - name: Activate Unity Personal license
+        if: env.UNITY_USERNAME != '' && env.UNITY_PASSWORD != '' && env.UNITY_SERIAL == ''
+        uses: buildalon/activate-unity-license@v2
+        with:
+          license: personal
+          username: ${{ env.UNITY_USERNAME }}
+          password: ${{ env.UNITY_PASSWORD }}
+
+      - name: Activate Unity Professional license
+        if: env.UNITY_USERNAME != '' && env.UNITY_PASSWORD != '' && env.UNITY_SERIAL != ''
+        uses: buildalon/activate-unity-license@v2
+        with:
+          license: professional
+          username: ${{ env.UNITY_USERNAME }}
+          password: ${{ env.UNITY_PASSWORD }}
+          serial: ${{ env.UNITY_SERIAL }}
+
+      - name: Resolve Unity executable
+        shell: pwsh
+        run: |
+          $candidates = @(
+            $env:UNITY_EDITOR_PATH
+          ) | Where-Object { $_ }
+
+          if ($env:UNITY_EDITOR_PATH) {
+            $candidates += Join-Path $env:UNITY_EDITOR_PATH "Unity.exe"
+          }
+
+          $unityExe = $candidates | Where-Object {
+            Test-Path $_ -PathType Leaf
+          } | Select-Object -First 1
+
+          if (-not $unityExe) {
+            Write-Error "Unity executable was not found after unity-setup."
+            exit 1
+          }
+
+          "UNITY_EXECUTABLE=$unityExe" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+          Write-Host "UNITY_EXECUTABLE=$unityExe"
+
+      - name: Build Windows player
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force -Path Builds\Windows | Out-Null
+
+          & $env:UNITY_EXECUTABLE `
+            -batchmode `
+            -nographics `
+            -quit `
+            -projectPath "$pwd" `
+            -buildTarget win64 `
+            -buildWindows64Player "Builds\Windows\UnityTemplateURP.exe" `
+            -logFile -
+
+          if ($LASTEXITCODE -ne 0) {
+            Write-Error "Unity Windows build failed with exit code $LASTEXITCODE."
+            exit $LASTEXITCODE
+          }
+
+      - name: Upload Windows build
+        uses: actions/upload-artifact@v4
+        with:
+          name: UnityTemplateURP-Windows
+          path: Builds/Windows
+
+  build-linux:
+    name: Build Linux Desktop
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Unity
+        uses: RageAgainstThePixel/unity-setup@v2.6.0
+        with:
+          version-file: ProjectSettings/ProjectVersion.txt
+          build-targets: StandaloneLinux64
+          cache-installation: true
+
+      - name: Restore Unity Library cache
+        uses: actions/cache@v4
+        with:
+          path: Library
+          key: Library-${{ runner.os }}-StandaloneLinux64-${{ hashFiles('ProjectSettings/ProjectVersion.txt', 'Packages/manifest.json', 'Packages/packages-lock.json', 'ProjectSettings/EditorBuildSettings.asset') }}
+          restore-keys: |
+            Library-${{ runner.os }}-StandaloneLinux64-
 
       - name: Activate Unity Personal license
         if: env.UNITY_USERNAME != '' && env.UNITY_PASSWORD != '' && env.UNITY_SERIAL == ''
@@ -85,25 +167,23 @@ jobs:
           echo "Unity executable was not found after unity-setup." >&2
           exit 1
 
-      - name: Build player
+      - name: Build Linux player
         shell: bash
         run: |
           set -eu
-
-          build_output="${{ matrix.output-path }}"
-          mkdir -p "$(dirname "$build_output")"
+          mkdir -p Builds/Linux
 
           "$UNITY_EXECUTABLE" \
             -batchmode \
             -nographics \
             -quit \
             -projectPath "$PWD" \
-            -buildTarget "${{ matrix.unity-target }}" \
-            "${{ matrix.build-argument }}" "$build_output" \
+            -buildTarget linux64 \
+            -buildLinux64Player "Builds/Linux/UnityTemplateURP.x86_64" \
             -logFile -
 
-      - name: Upload build
+      - name: Upload Linux build
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ matrix.artifact-name }}
-          path: ${{ matrix.upload-path }}
+          name: UnityTemplateURP-Linux
+          path: Builds/Linux
