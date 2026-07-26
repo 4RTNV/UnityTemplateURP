@@ -32,7 +32,6 @@ jobs:
         with:
           version-file: ProjectSettings/ProjectVersion.txt
           build-targets: StandaloneWindows64
-          modules: windows-mono
           cache-installation: false
 
       - name: Activate Unity Personal license
@@ -56,20 +55,37 @@ jobs:
         shell: pwsh
         run: |
           New-Item -ItemType Directory -Force -Path Builds\Windows | Out-Null
+          New-Item -ItemType Directory -Force -Path Logs\CI | Out-Null
+
+          $logPath = Join-Path $pwd "Logs\CI\unity-windows-build.log"
 
           & "$env:UNITY_EDITOR_PATH" `
             -batchmode `
             -nographics `
             -quit `
             -projectPath "$pwd" `
-            -buildTarget win64 `
-            -buildWindows64Player "Builds\Windows\UnityTemplateURP.exe" `
-            -logFile -
+            -activeBuildProfile "Assets\Settings\Build Profiles\Windows.asset" `
+            -build "Builds\Windows\UnityTemplateURP.exe" `
+            -stackTraceLogType Full `
+            -logFile "$logPath"
 
           if ($LASTEXITCODE -ne 0) {
+            if (Test-Path $logPath) {
+              Get-Content -Path $logPath -Tail 300
+            }
+
             Write-Error "Unity Windows build failed with exit code $LASTEXITCODE."
             exit $LASTEXITCODE
           }
+
+      - name: Upload Windows Unity logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: UnityTemplateURP-Windows-Logs
+          path: |
+            Logs/CI
+            Library/Logs
 
       - name: Upload Windows build
         uses: actions/upload-artifact@v4
