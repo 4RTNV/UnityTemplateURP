@@ -85,6 +85,9 @@ csharp_style_var_for_built_in_types = true:suggestion
 csharp_style_var_when_type_is_apparent = true:suggestion
 csharp_style_var_elsewhere = true:suggestion
 
+# Comment section
+dotnet_diagnostic.SA1629.severity = none
+
 # wrap over chop, long arguments 
 resharper_csharp_wrap_arguments_style = wrap_if_long
 resharper_csharp_max_invocation_arguments_on_line = 10
