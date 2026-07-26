@@ -31,16 +31,35 @@
 # Jetbrains Rider personal-layer settings
 *.DotSettings.user
 
-# Visual Studio cache directory
+# Rider
+.idea/
 .vs/
-.idea
-!.idea/
+
+# но разрешаем общие настройки
 !.idea/.idea.UnityTemplateURP/
 !.idea/.idea.UnityTemplateURP/.idea/
+
 !.idea/.idea.UnityTemplateURP/.idea/codeStyles/
-!.idea/.idea.UnityTemplateURP/.idea/codeStyles/*
-!.idea/.idea.UnityTemplateURP/.idea/scopes/
-!.idea/.idea.UnityTemplateURP/.idea/scopes/*
+!.idea/.idea.UnityTemplateURP/.idea/codeStyles/**
+
+!.idea/.idea.UnityTemplateURP/.idea/inspectionProfiles/
+!.idea/.idea.UnityTemplateURP/.idea/inspectionProfiles/**
+
+!.idea/.idea.UnityTemplateURP/.idea/vcs.xml
+
+# обязательно игнорируем
+.idea/**/workspace.xml
+.idea/**/indexLayout.xml
+.idea/**/Project_Default.xml
+.idea/**/mcp.json
+.idea/**/shelf/
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+.idea/**/contentModel.xml
+.idea/**/dictionaries/
+.idea/**/httpRequests/
+.idea/**/caches/
+.idea/**/localHistory/
 
 # Gradle cache directory
 .gradle/
