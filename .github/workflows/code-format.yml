@@ -12,7 +12,7 @@ permissions:
 jobs:
   format-check:
     name: Format check
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     env:
       UNITY_USERNAME: ${{ secrets.UNITY_USERNAME }}
@@ -60,62 +60,44 @@ jobs:
           serial: ${{ env.UNITY_SERIAL }}
 
       - name: Resolve Unity executable
-        shell: pwsh
+        shell: bash
         run: |
-          if ($env:UNITY_EDITOR_PATH) {
-            "UNITY_EXECUTABLE=$env:UNITY_EDITOR_PATH" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
-            Write-Host "UNITY_EXECUTABLE=$env:UNITY_EDITOR_PATH"
-            exit 0
-          }
+          set -eu
 
-          $candidates = @()
+          for candidate in \
+            "${UNITY_EDITOR_PATH:-}" \
+            "${UNITY_EDITOR_PATH:-}/Unity" \
+            "/opt/Unity/Editor/Unity"
+          do
+            if [ -f "$candidate" ]; then
+              echo "UNITY_EXECUTABLE=$candidate" >> "$GITHUB_ENV"
+              echo "UNITY_EXECUTABLE=$candidate"
+              exit 0
+            fi
+          done
 
-          if ($env:UNITY_EDITORS) {
-            try {
-              $candidates += ($env:UNITY_EDITORS | ConvertFrom-Json | ForEach-Object { $_.path })
-            }
-            catch {
-              Write-Warning "Could not parse UNITY_EDITORS: $_"
-            }
-          }
-
-          $candidates += Get-ChildItem "C:\Program Files\Unity\Hub\Editor" -Filter Unity.exe -Recurse -ErrorAction SilentlyContinue |
-            Select-Object -ExpandProperty FullName
-
-          $unityExe = $candidates | Where-Object {
-            Test-Path $_ -PathType Leaf
-          } | Select-Object -First 1
-
-          if (-not $unityExe) {
-            Write-Error "Unity executable was not found after unity-setup."
-            Write-Host "UNITY_EDITOR_PATH=$env:UNITY_EDITOR_PATH"
-            Write-Host "UNITY_EDITORS=$env:UNITY_EDITORS"
-            exit 1
-          }
-
-          "UNITY_EXECUTABLE=$unityExe" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
-          Write-Host "UNITY_EXECUTABLE=$unityExe"
+          echo "Unity executable was not found after unity-setup." >&2
+          echo "UNITY_EDITOR_PATH=${UNITY_EDITOR_PATH:-}" >&2
+          echo "UNITY_EDITORS=${UNITY_EDITORS:-}" >&2
+          exit 1
 
       - name: Generate Unity project files
-        shell: pwsh
+        shell: bash
         run: |
-          & $env:UNITY_EXECUTABLE `
-            -batchmode `
-            -nographics `
-            -quit `
-            -projectPath "$pwd" `
-            -executeMethod Packages.Rider.Editor.RiderScriptEditor.SyncSolution `
+          set -eu
+
+          "$UNITY_EXECUTABLE" \
+            -batchmode \
+            -nographics \
+            -quit \
+            -projectPath "$PWD" \
+            -executeMethod Packages.Rider.Editor.RiderScriptEditor.SyncSolution \
             -logFile -
 
-          if ($LASTEXITCODE -ne 0) {
-            Write-Error "Unity project-file generation failed with exit code $LASTEXITCODE."
-            exit $LASTEXITCODE
-          }
-
-          if (-not (Test-Path "UnityTemplateURP.sln")) {
-            Write-Error "UnityTemplateURP.sln was not generated."
+          if [ ! -f UnityTemplateURP.sln ]; then
+            echo "UnityTemplateURP.sln was not generated." >&2
             exit 1
-          }
+          fi
 
       - name: Run format check
         shell: bash

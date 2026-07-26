@@ -21,18 +21,24 @@ env:
 jobs:
   build-windows:
     name: Build Windows Desktop
-    runs-on: windows-latest
+    runs-on: windows-2022
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Install Unity Windows runtime dependencies
+        shell: pwsh
+        run: |
+          choco install vcredist2010 -y --no-progress
+          choco install vcredist140 -y --no-progress
 
       - name: Setup Unity
         uses: RageAgainstThePixel/unity-setup@v2.6.0
         with:
           version-file: ProjectSettings/ProjectVersion.txt
           build-targets: StandaloneWindows64
-          cache-installation: true
+          cache-installation: false
 
       - name: Restore Unity Library cache
         uses: actions/cache@v4
@@ -95,6 +101,36 @@ jobs:
 
           "UNITY_EXECUTABLE=$unityExe" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
           Write-Host "UNITY_EXECUTABLE=$unityExe"
+
+      - name: Check Unity editor startup
+        shell: pwsh
+        run: |
+          $unityDirectory = Split-Path $env:UNITY_EXECUTABLE
+          $troubleshooter = Join-Path $unityDirectory "UnityTroubleshooter.exe"
+
+          if (Test-Path $troubleshooter) {
+            Write-Host "Running UnityTroubleshooter.exe before starting the build."
+            & $troubleshooter
+          }
+          else {
+            Write-Host "UnityTroubleshooter.exe was not found next to Unity.exe."
+          }
+
+          & $env:UNITY_EXECUTABLE `
+            -batchmode `
+            -nographics `
+            -quit `
+            -projectPath "$pwd" `
+            -logFile "unity-startup.log"
+
+          if ($LASTEXITCODE -ne 0) {
+            if (Test-Path "unity-startup.log") {
+              Get-Content -Path "unity-startup.log" -Tail 200
+            }
+
+            Write-Error "Unity editor startup check failed with exit code $LASTEXITCODE."
+            exit 1
+          }
 
       - name: Build Windows player
         shell: pwsh
