@@ -62,13 +62,25 @@ jobs:
       - name: Resolve Unity executable
         shell: pwsh
         run: |
-          $candidates = @(
-            $env:UNITY_EDITOR_PATH
-          ) | Where-Object { $_ }
-
           if ($env:UNITY_EDITOR_PATH) {
-            $candidates += Join-Path $env:UNITY_EDITOR_PATH "Unity.exe"
+            "UNITY_EXECUTABLE=$env:UNITY_EDITOR_PATH" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+            Write-Host "UNITY_EXECUTABLE=$env:UNITY_EDITOR_PATH"
+            exit 0
           }
+
+          $candidates = @()
+
+          if ($env:UNITY_EDITORS) {
+            try {
+              $candidates += ($env:UNITY_EDITORS | ConvertFrom-Json | ForEach-Object { $_.path })
+            }
+            catch {
+              Write-Warning "Could not parse UNITY_EDITORS: $_"
+            }
+          }
+
+          $candidates += Get-ChildItem "C:\Program Files\Unity\Hub\Editor" -Filter Unity.exe -Recurse -ErrorAction SilentlyContinue |
+            Select-Object -ExpandProperty FullName
 
           $unityExe = $candidates | Where-Object {
             Test-Path $_ -PathType Leaf
@@ -76,6 +88,8 @@ jobs:
 
           if (-not $unityExe) {
             Write-Error "Unity executable was not found after unity-setup."
+            Write-Host "UNITY_EDITOR_PATH=$env:UNITY_EDITOR_PATH"
+            Write-Host "UNITY_EDITORS=$env:UNITY_EDITORS"
             exit 1
           }
 
