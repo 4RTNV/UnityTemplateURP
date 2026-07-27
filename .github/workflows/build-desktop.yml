@@ -1,148 +1,37 @@
-name: Build Desktop
+name: Build project
 
-on:
-  pull_request:
-    branches:
-      - main
-  workflow_dispatch: {}
-
-permissions:
-  contents: read
-
-concurrency:
-  group: build-desktop-${{ github.ref }}
-  cancel-in-progress: true
-
-env:
-  UNITY_USERNAME: ${{ secrets.UNITY_USERNAME }}
-  UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
-  UNITY_SERIAL: ${{ secrets.UNITY_SERIAL }}
+on: [push, pull_request]
 
 jobs:
-  build-windows:
-    name: Build Windows Desktop
-    runs-on: windows-2022
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Unity
-        uses: RageAgainstThePixel/unity-setup@v2.6.0
-        with:
-          version-file: ProjectSettings/ProjectVersion.txt
-          build-targets: StandaloneWindows64
-          cache-installation: false
-
-      - name: Activate Unity Personal license
-        if: env.UNITY_USERNAME != '' && env.UNITY_PASSWORD != '' && env.UNITY_SERIAL == ''
-        uses: buildalon/activate-unity-license@v2
-        with:
-          license: personal
-          username: ${{ env.UNITY_USERNAME }}
-          password: ${{ env.UNITY_PASSWORD }}
-
-      - name: Activate Unity Professional license
-        if: env.UNITY_USERNAME != '' && env.UNITY_PASSWORD != '' && env.UNITY_SERIAL != ''
-        uses: buildalon/activate-unity-license@v2
-        with:
-          license: professional
-          username: ${{ env.UNITY_USERNAME }}
-          password: ${{ env.UNITY_PASSWORD }}
-          serial: ${{ env.UNITY_SERIAL }}
-
-      - name: Build Windows player
-        shell: pwsh
-        run: |
-          New-Item -ItemType Directory -Force -Path Builds\Windows | Out-Null
-          New-Item -ItemType Directory -Force -Path Logs\CI | Out-Null
-
-          $logPath = Join-Path $pwd "Logs\CI\unity-windows-build.log"
-
-          & "$env:UNITY_EDITOR_PATH" `
-            -batchmode `
-            -nographics `
-            -quit `
-            -projectPath "$pwd" `
-            -activeBuildProfile "Assets\Settings\Build Profiles\Windows.asset" `
-            -build "Builds\Windows\UnityTemplateURP.exe" `
-            -stackTraceLogType Full `
-            -logFile "$logPath"
-
-          if ($LASTEXITCODE -ne 0) {
-            if (Test-Path $logPath) {
-              Get-Content -Path $logPath -Tail 300
-            }
-
-            Write-Error "Unity Windows build failed with exit code $LASTEXITCODE."
-            exit $LASTEXITCODE
-          }
-
-      - name: Upload Windows Unity logs
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: UnityTemplateURP-Windows-Logs
-          path: |
-            Logs/CI
-            Library/Logs
-
-      - name: Upload Windows build
-        uses: actions/upload-artifact@v4
-        with:
-          name: UnityTemplateURP-Windows
-          path: Builds/Windows
-
-  build-linux:
-    name: Build Linux Desktop
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Unity
-        uses: RageAgainstThePixel/unity-setup@v2.6.0
-        with:
-          version-file: ProjectSettings/ProjectVersion.txt
-          build-targets: StandaloneLinux64
-          modules: linux-mono
-          cache-installation: true
-
-      - name: Activate Unity Personal license
-        if: env.UNITY_USERNAME != '' && env.UNITY_PASSWORD != '' && env.UNITY_SERIAL == ''
-        uses: buildalon/activate-unity-license@v2
-        with:
-          license: personal
-          username: ${{ env.UNITY_USERNAME }}
-          password: ${{ env.UNITY_PASSWORD }}
-
-      - name: Activate Unity Professional license
-        if: env.UNITY_USERNAME != '' && env.UNITY_PASSWORD != '' && env.UNITY_SERIAL != ''
-        uses: buildalon/activate-unity-license@v2
-        with:
-          license: professional
-          username: ${{ env.UNITY_USERNAME }}
-          password: ${{ env.UNITY_PASSWORD }}
-          serial: ${{ env.UNITY_SERIAL }}
-
-      - name: Build Linux player
-        shell: bash
-        run: |
-          set -eu
-          mkdir -p Builds/Linux
-
-          "$UNITY_EDITOR_PATH" \
-            -batchmode \
-            -nographics \
-            -quit \
-            -projectPath "$PWD" \
-            -buildTarget linux64 \
-            -buildLinux64Player "Builds/Linux/UnityTemplateURP.x86_64" \
-            -logFile -
-
-      - name: Upload Linux build
-        uses: actions/upload-artifact@v4
-        with:
-          name: UnityTemplateURP-Linux
-          path: Builds/Linux
+    build-desktop:
+        name: Build for ${{ matrix.targetPlatform }}
+        runs-on: ubuntu-latest
+        strategy:
+            fail-fast: false
+            matrix:
+                targetPlatform:
+                    - StandaloneOSX # Build a macOS standalone (Intel 64-bit).
+                    - StandaloneWindows # Build a Windows standalone.
+                    - StandaloneWindows64 # Build a Windows 64-bit standalone.
+                    - StandaloneLinux64 # Build a Linux 64-bit standalone.
+        steps:
+            - uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
+                  lfs: true
+            - uses: actions/cache@v3
+              with:
+                  path: Library
+                  key: Library-${{ matrix.targetPlatform }}
+                  restore-keys: Library-
+            - uses: game-ci/unity-builder@v4
+              env:
+                  UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+                  UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+                  UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+              with:
+                  targetPlatform: ${{ matrix.targetPlatform }}
+            - uses: actions/upload-artifact@v4
+              with:
+                  name: Build-${{ matrix.targetPlatform }}
+                  path: build/${{ matrix.targetPlatform }}
