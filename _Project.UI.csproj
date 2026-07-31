@@ -511,17 +511,11 @@
     <Reference Include="Unity.Collections.LowLevel.ILSupport">
       <HintPath>/home/galtexx/Documents/GitHub/UnityTemplateURP/Library/PackageCache/com.unity.collections@91fb845e8cf9/Unity.Collections.LowLevel.ILSupport/Unity.Collections.LowLevel.ILSupport.dll</HintPath>
     </Reference>
-    <Reference Include="Facepunch.Steamworks.Win64">
-      <HintPath>/home/galtexx/Documents/GitHub/UnityTemplateURP/Assets/Packages/Facepunch.Steamworks.2.5.2/Debug/net6.0/Facepunch.Steamworks.Win64.dll</HintPath>
-    </Reference>
     <Reference Include="System.Threading.Channels">
       <HintPath>/home/galtexx/Documents/GitHub/UnityTemplateURP/Assets/Packages/System.Threading.Channels.8.0.0/lib/netstandard2.1/System.Threading.Channels.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Plastic.Antlr3.Runtime">
       <HintPath>/home/galtexx/Documents/GitHub/UnityTemplateURP/Library/PackageCache/com.unity.collab-proxy@0b1559bcd34e/Lib/Editor/Unity.Plastic.Antlr3.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Facepunch.Steamworks.Posix">
-      <HintPath>/home/galtexx/Documents/GitHub/UnityTemplateURP/Assets/Packages/Facepunch.Steamworks.2.5.2/Debug/net6.0/Facepunch.Steamworks.Posix.dll</HintPath>
     </Reference>
     <Reference Include="OnigwrapPlastic">
       <HintPath>/home/galtexx/Documents/GitHub/UnityTemplateURP/Library/PackageCache/com.unity.collab-proxy@0b1559bcd34e/Lib/Editor/TextMateSharp/Onigwrap/OnigwrapPlastic.dll</HintPath>
@@ -540,9 +534,6 @@
     </Reference>
     <Reference Include="unityplastic">
       <HintPath>/home/galtexx/Documents/GitHub/UnityTemplateURP/Library/PackageCache/com.unity.collab-proxy@0b1559bcd34e/Lib/Editor/unityplastic.dll</HintPath>
-    </Reference>
-    <Reference Include="Facepunch.Steamworks.Win32">
-      <HintPath>/home/galtexx/Documents/GitHub/UnityTemplateURP/Assets/Packages/Facepunch.Steamworks.2.5.2/Debug/net46/Facepunch.Steamworks.Win32.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>/home/galtexx/Documents/GitHub/UnityTemplateURP/Library/PackageCache/com.unity.visualscripting@4edfcc09512f/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
@@ -970,11 +961,11 @@
     <Reference Include="Reflex">
       <HintPath>/home/galtexx/Documents/GitHub/UnityTemplateURP/Library/ScriptAssemblies/Reflex.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>/home/galtexx/Documents/GitHub/UnityTemplateURP/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>/home/galtexx/Documents/GitHub/UnityTemplateURP/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>/home/galtexx/Documents/GitHub/UnityTemplateURP/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
