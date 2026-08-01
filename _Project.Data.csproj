@@ -46,8 +46,10 @@
     <Analyzer Include="/home/galtexx/Documents/GitHub/UnityTemplateURP/Assets/Packages/StyleCop.Analyzers.Unstable.1.2.0.556/analyzers/dotnet/cs/en-GB/StyleCop.Analyzers.resources.dll" />
     <Analyzer Include="/home/galtexx/Documents/GitHub/UnityTemplateURP/Assets/Packages/StyleCop.Analyzers.Unstable.1.2.0.556/analyzers/dotnet/cs/es-MX/StyleCop.Analyzers.resources.dll" />
     <Analyzer Include="/home/galtexx/Documents/GitHub/UnityTemplateURP/Assets/Packages/StyleCop.Analyzers.Unstable.1.2.0.556/analyzers/dotnet/cs/StyleCop.Analyzers.CodeFixes.dll" />
+    <Analyzer Include="/home/galtexx/Documents/GitHub/UnityTemplateURP/Assets/Plugins/Facepunch.Steamworks/Facepunch.Steamworks.Win32.dll" />
     <Analyzer Include="/home/galtexx/Documents/GitHub/UnityTemplateURP/Assets/Packages/StyleCop.Analyzers.Unstable.1.2.0.556/analyzers/dotnet/cs/fr-FR/StyleCop.Analyzers.resources.dll" />
     <Analyzer Include="/home/galtexx/Documents/GitHub/UnityTemplateURP/Assets/Packages/StyleCop.Analyzers.Unstable.1.2.0.556/analyzers/dotnet/cs/pl-PL/StyleCop.Analyzers.resources.dll" />
+    <Analyzer Include="/home/galtexx/Documents/GitHub/UnityTemplateURP/Assets/Plugins/Facepunch.Steamworks/Facepunch.Steamworks.Win64.dll" />
     <Analyzer Include="/home/galtexx/Documents/GitHub/UnityTemplateURP/Assets/Packages/StyleCop.Analyzers.Unstable.1.2.0.556/analyzers/dotnet/cs/pt-BR/StyleCop.Analyzers.resources.dll" />
     <Analyzer Include="/home/galtexx/Documents/GitHub/UnityTemplateURP/Assets/Packages/StyleCop.Analyzers.Unstable.1.2.0.556/analyzers/dotnet/cs/de-DE/StyleCop.Analyzers.resources.dll" />
     <Analyzer Include="/home/galtexx/Documents/GitHub/UnityTemplateURP/Assets/Packages/StyleCop.Analyzers.Unstable.1.2.0.556/analyzers/dotnet/cs/ru-RU/StyleCop.Analyzers.resources.dll" />
@@ -555,6 +557,9 @@
     </Reference>
     <Reference Include="R3">
       <HintPath>/home/galtexx/Documents/GitHub/UnityTemplateURP/Assets/Packages/R3.1.3.0/lib/netstandard2.1/R3.dll</HintPath>
+    </Reference>
+    <Reference Include="Facepunch.Steamworks.Posix">
+      <HintPath>/home/galtexx/Documents/GitHub/UnityTemplateURP/Assets/Plugins/Facepunch.Steamworks/Facepunch.Steamworks.Posix.dll</HintPath>
     </Reference>
     <Reference Include="ObservableCollections">
       <HintPath>/home/galtexx/Documents/GitHub/UnityTemplateURP/Assets/Packages/ObservableCollections.3.3.4/lib/netstandard2.1/ObservableCollections.dll</HintPath>
