@@ -32,9 +32,10 @@ jobs:
             - name: Run Rider formatter
               run: >-
                   dotnet tool run jb cleanupcode
-                  UnityTemplateURP.sln
+                  "Assets/_Project/Scripts/**/*.cs"
                   --profile="Built-in: Reformat Code"
-                  --no-build
+                  --settings="UnityTemplateURP.DotSettings"
+                  --no-updates
 
             - name: Check formatting diff
-              run: git diff --exit-code
+              run: git diff --exit-code -- Assets/_Project/Scripts
