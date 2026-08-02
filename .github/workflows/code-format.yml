@@ -23,8 +23,7 @@ jobs:
               run: dotnet tool restore
 
             - name: Run Rider formatter
-              run:
-                dotnet tool run jb cleanupcode UnityTemplateURP.sln --profile="Built-in: Reformat Code" --no-build
+              run: dotnet tool run jb cleanupcode UnityTemplateURP.sln --profile="Built-in: Reformat Code" --no-build
 
             - name: Check formatting diff
               shell: cmd
