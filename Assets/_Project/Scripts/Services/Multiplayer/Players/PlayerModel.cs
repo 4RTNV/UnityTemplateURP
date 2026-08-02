@@ -5,17 +5,28 @@ namespace _Project.Multiplayer.Players.Steam
 {
     public struct PlayerModel
     {
-        public Texture2D Avatar { get; set; }
+        public PlayerModel(Texture2D avatar, string id, string name, string nickname, bool playingSameGame,
+            FriendState state)
+        {
+            Avatar = avatar;
+            Id = id;
+            Name = name;
+            Nickname = nickname;
+            PlayingSameGame = playingSameGame;
+            State = state;
+        }
 
-        public string Id { get; set; }
+        public Texture2D Avatar { get; internal set; }
 
-        public string Name { get; set; }
+        public string Id { get; }
 
-        public string Nickname { get; set; }
+        public string Name { get; internal set; }
 
-        public bool PlayingSameGame { get; set; }
+        public string Nickname { get; internal set; }
 
-        public FriendState State { get; set; }
+        public bool PlayingSameGame { get; internal set; }
+
+        public FriendState State { get; internal set; }
 
         public override bool Equals(object obj)
         {
