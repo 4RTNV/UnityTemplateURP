@@ -8,10 +8,10 @@ namespace _Project.States
     public class LoopLevelState : IState
     {
         private readonly GameStateMachine _gameStateMachine;
-        private readonly ISaveLoad _saveLoad;
-        private readonly IPersistentProgress _progress;
-        private readonly IInGameTimeService _timeService;
         private readonly ILevelProgress _levelProgress;
+        private readonly IPersistentProgress _progress;
+        private readonly ISaveLoad _saveLoad;
+        private readonly IInGameTimeService _timeService;
         private bool _isWaveOngoing;
 
         public LoopLevelState(GameStateMachine gameStateMachine, ISaveLoad saveLoad, ILevelProgress levelProgress)
@@ -23,7 +23,6 @@ namespace _Project.States
 
         public void Enter()
         {
-            
         }
 
         public void Exit()

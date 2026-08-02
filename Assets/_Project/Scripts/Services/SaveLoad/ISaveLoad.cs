@@ -2,9 +2,9 @@
 
 namespace _Project.SaveLoad
 {
-    public interface ISaveLoad 
+    public interface ISaveLoad
     {
-        void SaveProgress();
         CurrentPlayerProgress LoadProgress();
+        void SaveProgress();
     }
 }

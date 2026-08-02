@@ -15,13 +15,17 @@ namespace _Project.States
 
         public void Enter()
         {
-            SingletonCoroutineRunner.Instance.StartCoroutine(
-                _sceneLoader.LoadScene(SceneNames.BootstrapSceneName, onLoaded: EnterHub));
+            SingletonCoroutineRunner.Instance.StartCoroutine(_sceneLoader.LoadScene(SceneNames.BootstrapSceneName,
+                EnterHub));
         }
 
-        public void Exit() {}
+        public void Exit()
+        {
+        }
 
         private void EnterHub()
-            => _gameStateMachine.Enter<LoadProgressState>();
+        {
+            _gameStateMachine.Enter<LoadProgressState>();
+        }
     }
 }

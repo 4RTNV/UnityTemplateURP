@@ -7,9 +7,9 @@ namespace _Project.UI.Factory
     public class UIFactory : IUIFactory
     {
         private const string UIRootPath = "Prefabs/UI/UIRoot";
+        private readonly IAssetProvider _assets;
 
         private readonly IStaticData _staticData;
-        private readonly IAssetProvider _assets;
         private Transform _uiRoot;
 
         public UIFactory(IAssetProvider assets, IStaticData staticData)
@@ -19,7 +19,9 @@ namespace _Project.UI.Factory
         }
 
         public void CreateUIRoot()
-            => _uiRoot = _assets.Instantiate(UIRootPath).transform;
+        {
+            _uiRoot = _assets.Instantiate(UIRootPath).transform;
+        }
 
         /*public TView CreateViewWithInjection<TView>() where TView : View
         {

@@ -5,8 +5,8 @@ namespace _Project.States
 {
     public class LoadProgressState : IState
     {
-        private readonly IPersistentProgress _persistentProgress;
         private readonly GameStateMachine _gameStateMachine;
+        private readonly IPersistentProgress _persistentProgress;
         private readonly ISaveLoad _saveLoad;
 
         public LoadProgressState(GameStateMachine gameStateMachine, IPersistentProgress persistentProgress,
@@ -32,7 +32,9 @@ namespace _Project.States
             _persistentProgress.Progress = _saveLoad.LoadProgress() ?? NewProgress();
         }
 
-        private CurrentPlayerProgress NewProgress() 
-            => new();
+        private CurrentPlayerProgress NewProgress()
+        {
+            return new CurrentPlayerProgress();
+        }
     }
 }

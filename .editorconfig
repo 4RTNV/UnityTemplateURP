@@ -1,0 +1,120 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_style = space
+indent_size = 4
+tab_width = 4
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[Assets/Packages/**]
+generated_code = true
+
+[Assets/Plugins/**]
+generated_code = true
+
+[Assets/TextMesh Pro/**]
+generated_code = true
+
+[Assets/TextMesh*/**]
+generated_code = true
+
+[Assets/ThirdParty/**]
+generated_code = true
+
+[Assets/**/*.asset]
+generated_code = true
+
+[Assets/**/*.cginc]
+generated_code = true
+
+[Assets/**/*.hlsl]
+generated_code = true
+
+[Assets/**/*.json]
+generated_code = true
+
+[Assets/**/*.mat]
+generated_code = true
+
+[Assets/**/*.meta]
+generated_code = true
+
+[Assets/**/*.shader]
+generated_code = true
+
+[Assets/**/*.shadergraph]
+generated_code = true
+
+[Assets/**/*.txt]
+generated_code = true
+
+[Assets/**/*.xml]
+generated_code = true
+
+[Library/**]
+generated_code = true
+
+[Logs/**]
+generated_code = true
+
+[Packages/**]
+generated_code = true
+
+[ProjectSettings/**]
+generated_code = true
+
+[Temp/**]
+generated_code = true
+
+[UserSettings/**]
+generated_code = true
+
+# ReSharper properties
+resharper_keep_existing_embedded_arrangement = false
+
+# noinspection EditorConfigKeyCorrectness
+[*.cs]
+
+# Стандартные настройки C#
+csharp_new_line_before_open_brace = all
+
+csharp_style_var_for_built_in_types = true:suggestion
+csharp_style_var_when_type_is_apparent = true:suggestion
+csharp_style_var_elsewhere = true:suggestion
+
+# Comment section
+dotnet_diagnostic.SA1629.severity = none
+
+# wrap over chop, long arguments 
+resharper_csharp_wrap_arguments_style = wrap_if_long
+resharper_csharp_max_invocation_arguments_on_line = 10
+resharper_csharp_keep_user_linebreaks = false
+dotnet_diagnostic.SA1116.severity = none
+
+# using block
+dotnet_diagnostic.SA1200.severity = none # move usings inside namespace
+dotnet_diagnostic.SA1633.severity = none # obligatory file header
+dotnet_diagnostic.SA1300.severity = none # _Project. namespace to be changed
+
+# Documentation on Enum, Enum elements
+dotnet_diagnostic.SA1600.severity = none
+dotnet_diagnostic.SA1602.severity = none
+resharper_csharp_place_simple_enum_on_single_line = false
+resharper_csharp_keep_existing_enum_arrangement = false
+resharper_csharp_max_enum_members_on_line = 1
+
+# fields, properties, methods 
+dotnet_diagnostic.SA1309.severity = none
+dotnet_diagnostic.SA1128.severity = none # allow public ClassName : this() without new line after :
+dotnet_diagnostic.SA1101.severity = none # disable obligatory this.fieldName
+dotnet_diagnostic.SA1401.severity = error # fields always private
+dotnet_diagnostic.SA1503.severity = none # allow no braces
+dotnet_diagnostic.SA1134.severity = none # allow [attributes] private OneLineWithField
+dotnet_diagnostic.SA1127.severity = none # generic type constrains must be on the new line
+dotnet_diagnostic.SA1611.severity = none # all ctor args must be documented
+dotnet_diagnostic.SA1117.severity = none # allow arguments to be wrapped, not chopped
+dotnet_diagnostic.SA1130.severity = none # allow = delegate {}; syntax, not only lambda
+

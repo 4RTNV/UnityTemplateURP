@@ -9,17 +9,18 @@ namespace _Project.Data
         [SerializeField] private string assemblyQualifiedName = string.Empty;
         public Type Type { get; private set; }
 
-        void ISerializationCallbackReceiver.OnBeforeSerialize() 
-            => assemblyQualifiedName = Type?.AssemblyQualifiedName ?? assemblyQualifiedName;
+        void ISerializationCallbackReceiver.OnBeforeSerialize()
+        {
+            assemblyQualifiedName = Type?.AssemblyQualifiedName ?? assemblyQualifiedName;
+        }
 
         void ISerializationCallbackReceiver.OnAfterDeserialize()
         {
-            if (!TryGetType(assemblyQualifiedName, out var type))
-                return;
-            
+            if (!TryGetType(assemblyQualifiedName, out var type)) return;
+
             Type = type;
         }
-        
+
         private static bool TryGetType(string typeString, out Type type)
         {
             type = Type.GetType(typeString);
@@ -30,6 +31,6 @@ namespace _Project.Data
         // public static implicit operator Type(SerializeableType sType) => sType.Type;
 
         // Implicit conversion from Type to SerializableType
-        //public static implicit operator SerializeableType(Type type) => new() { Type = type };
+        // public static implicit operator SerializeableType(Type type) => new() { Type = type };
     }
 }

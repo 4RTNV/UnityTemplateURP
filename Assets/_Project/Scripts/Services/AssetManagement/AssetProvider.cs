@@ -5,28 +5,44 @@ namespace _Project.AssetManagement
 {
     public class AssetProvider : IAssetProvider
     {
-        public T Instantiate<T>(string path) where T : MonoBehaviour 
-            => Object.Instantiate(Resources.Load<T>(path));
+        public T Instantiate<T>(string path) where T : MonoBehaviour
+        {
+            return Object.Instantiate(Resources.Load<T>(path));
+        }
 
-        public T Instantiate<T>(string path, Vector3 at) where T : MonoBehaviour 
-            => Object.Instantiate(Resources.Load<T>(path), at, Quaternion.identity);
-        
+        public T Instantiate<T>(string path, Vector3 at) where T : MonoBehaviour
+        {
+            return Object.Instantiate(Resources.Load<T>(path), at, Quaternion.identity);
+        }
+
         public T Instantiate<T>(string path, Transform parent) where T : MonoBehaviour
-            => Object.Instantiate(Resources.Load<T>(path), parent);
+        {
+            return Object.Instantiate(Resources.Load<T>(path), parent);
+        }
 
         public T Instantiate<T>(T prefab, Vector3 position) where T : MonoBehaviour
-            => Object.Instantiate(prefab, position, quaternion.identity);
-        
+        {
+            return Object.Instantiate(prefab, position, quaternion.identity);
+        }
+
         public T Instantiate<T>(T prefab, Transform parent) where T : MonoBehaviour
-            => Object.Instantiate(prefab, parent);
+        {
+            return Object.Instantiate(prefab, parent);
+        }
 
-        public GameObject Instantiate(string path) 
-            => Object.Instantiate(Resources.Load<GameObject>(path));
+        public GameObject Instantiate(string path)
+        {
+            return Object.Instantiate(Resources.Load<GameObject>(path));
+        }
 
-        public GameObject Instantiate(string path, Vector3 at) 
-            => Object.Instantiate(Resources.Load<GameObject>(path), at, Quaternion.identity);
+        public GameObject Instantiate(string path, Vector3 at)
+        {
+            return Object.Instantiate(Resources.Load<GameObject>(path), at, Quaternion.identity);
+        }
 
         public GameObject Instantiate(string path, Transform parent)
-            => Object.Instantiate(Resources.Load<GameObject>(path), parent);
+        {
+            return Object.Instantiate(Resources.Load<GameObject>(path), parent);
+        }
     }
 }

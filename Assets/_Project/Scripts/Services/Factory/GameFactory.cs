@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using _Project.AssetManagement;
 using _Project.PersistentProgress;
@@ -9,18 +10,15 @@ namespace _Project.Factory
         private readonly IAssetProvider _assets;
         private readonly IPersistentProgress _progress;
 
-        public List<ISavedProgressReader> ProgressReaders { get; } = new();
-        public List<IProgressUpdater> ProgressWriters { get; } = new()
-        {
-            Capacity = 0
-        };
-
         public GameFactory(IAssetProvider assets, IPersistentProgress progress)
         {
             _assets = assets;
             _progress = progress;
         }
-        
+
+        public List<ISavedProgressReader> ProgressReaders { get; } = new();
+        public List<IProgressUpdater> ProgressWriters { get; } = new() { Capacity = 0 };
+
         public void CleanUp()
         {
             ProgressReaders.Clear();
@@ -29,12 +27,12 @@ namespace _Project.Factory
 
         public void LoadProgress(CurrentPlayerProgress progress)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public void UpdateProgress(CurrentPlayerProgress progress)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
     }
 }

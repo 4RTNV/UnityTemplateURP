@@ -5,10 +5,9 @@ namespace _Project.States
 {
     public class HubState : IState
     {
-        public IEnumerable<ISavedProgressReader> SaveReaderServices { get; }
-        
-        private readonly IEnumerator<ISavedProgressReader> _saveReaderServices;
         private readonly GameStateMachine _gameStateMachine;
+
+        private readonly IEnumerator<ISavedProgressReader> _saveReaderServices;
 
         public HubState(GameStateMachine gameStateMachine, IEnumerable<ISavedProgressReader> saveReaderServices)
         {
@@ -16,14 +15,14 @@ namespace _Project.States
             SaveReaderServices = saveReaderServices;
         }
 
+        public IEnumerable<ISavedProgressReader> SaveReaderServices { get; }
+
         public void Enter()
         {
-            
         }
 
         public void Exit()
         {
-            
         }
     }
 }

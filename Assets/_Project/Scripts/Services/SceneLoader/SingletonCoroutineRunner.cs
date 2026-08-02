@@ -11,10 +11,9 @@ namespace _Project.SceneLoader
         {
             get
             {
-                if (_instance != null) 
-                    return _instance;
-                
-                GameObject emptyInstance = new GameObject("[Coroutine Runner]");
+                if (_instance != null) return _instance;
+
+                var emptyInstance = new GameObject("[Coroutine Runner]");
                 _instance = emptyInstance.AddComponent<SingletonCoroutineRunner>();
                 DontDestroyOnLoad(emptyInstance);
 
@@ -22,10 +21,14 @@ namespace _Project.SceneLoader
             }
         }
 
-        public static Coroutine RunRoutine(IEnumerator coroutine) 
-            => Instance.StartCoroutine(coroutine);
+        public static Coroutine RunRoutine(IEnumerator coroutine)
+        {
+            return Instance.StartCoroutine(coroutine);
+        }
 
-        public static void StopRoutine(Coroutine coroutine) 
-            => Instance.StopCoroutine(coroutine);
+        public static void StopRoutine(Coroutine coroutine)
+        {
+            Instance.StopCoroutine(coroutine);
+        }
     }
 }
