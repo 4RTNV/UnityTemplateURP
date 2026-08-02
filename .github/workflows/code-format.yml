@@ -2,13 +2,20 @@ name: Code format
 
 on:
     pull_request:
+        branches:
+            - main
     push:
         branches:
             - main
 
+permissions:
+    contents: read
+
 jobs:
     format-check:
-        runs-on: windows-latest
+        name: Rider formatting check
+        runs-on: ubuntu-latest
+        timeout-minutes: 10
 
         steps:
             - name: Checkout
@@ -23,8 +30,11 @@ jobs:
               run: dotnet tool restore
 
             - name: Run Rider formatter
-              run: dotnet tool run jb cleanupcode UnityTemplateURP.sln --profile="Built-in: Reformat Code" --no-build
+              run: >-
+                  dotnet tool run jb cleanupcode
+                  UnityTemplateURP.sln
+                  --profile="Built-in: Reformat Code"
+                  --no-build
 
             - name: Check formatting diff
-              shell: cmd
-              run: git diff --exit-code -- Assets/_Project/Scripts
+              run: git diff --exit-code
