@@ -116,3 +116,5 @@ dotnet_diagnostic.SA1134.severity = none # allow [attributes] private OneLineWit
 dotnet_diagnostic.SA1127.severity = none # generic type constrains must be on the new line
 dotnet_diagnostic.SA1611.severity = none # all ctor args must be documented
 dotnet_diagnostic.SA1117.severity = none # allow arguments to be wrapped, not chopped
+dotnet_diagnostic.SA1130.severity = none # allow = delegate {}; syntax, not only lambda
+
