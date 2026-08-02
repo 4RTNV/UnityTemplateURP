@@ -24,18 +24,47 @@ jobs:
             - name: Setup .NET
               uses: actions/setup-dotnet@v4
               with:
-                  dotnet-version: "8.0.x"
+                  dotnet-version: "10.0.x"
 
             - name: Restore JetBrains tools
               run: dotnet tool restore
 
             - name: Run Rider formatter
-              run: >-
-                    dotnet tool run jb cleanupcode
-                    "Assets/_Project/Scripts/**/*.cs"
-                    --profile="Built-in: Reformat Code"
-                    --settings="UnityTemplateURP.sln.DotSettings"
+              shell: bash
+              run: |
+                  format_root="$(mktemp -d)"
+
+                  mkdir -p "$format_root/Assets/_Project"
+                  cp -a Assets/_Project/Scripts "$format_root/Assets/_Project/Scripts"
+                  cp .editorconfig "$format_root/.editorconfig"
+                  cp UnityTemplateURP.sln.DotSettings "$format_root/Rider.DotSettings"
+
+                  mapfile -d '' cs_files < <(
+                    find "$format_root/Assets/_Project/Scripts" \
+                      -type f \
+                      -name '*.cs' \
+                      -print0
+                  )
+
+                  if [ "${#cs_files[@]}" -eq 0 ]; then
+                    echo "No C# files found."
+                    exit 1
+                  fi
+
+                  dotnet tool run jb cleanupcode \
+                    "${cs_files[@]}" \
+                    --profile="Built-in: Reformat Code" \
+                    --settings="$format_root/Rider.DotSettings" \
                     --no-updates
 
+                  rsync -a \
+                    "$format_root/Assets/_Project/Scripts/" \
+                    Assets/_Project/Scripts/
+
             - name: Check formatting diff
-              run: git diff --exit-code -- Assets/_Project/Scripts
+              shell: bash
+              run: |
+                  if ! git diff --exit-code -- Assets/_Project/Scripts; then
+                    echo "::error::C# formatting does not match Rider formatting rules."
+                    exit 1
+                  fi
