@@ -112,3 +112,5 @@ dotnet_diagnostic.SA1128.severity = none # allow public ClassName : this() witho
 dotnet_diagnostic.SA1101.severity = none # disable obligatory this.fieldName
 dotnet_diagnostic.SA1401.severity = error # fields always private
 dotnet_diagnostic.SA1503.severity = none # allow no braces
+dotnet_diagnostic.SA1134.severity = none
+dotnet_diagnostic.SA1127.severity = none
