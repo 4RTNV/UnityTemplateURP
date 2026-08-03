@@ -22,8 +22,10 @@ namespace _Project.Multiplayer.Players.Steam.Steam
 
         private static Texture2D GetPlayerAvatarTexture(Image image)
         {
-            var avatar = new Texture2D((int)image.Width, (int)image.Height, TextureFormat.ARGB32, false);
-            avatar.filterMode = FilterMode.Trilinear;
+            var avatar = new Texture2D((int)image.Width, (int)image.Height, TextureFormat.ARGB32, false)
+            {
+                filterMode = FilterMode.Trilinear
+            };
 
             for (var x = 0; x < image.Width; x++)
             for (var y = 0; y < image.Height; y++)
