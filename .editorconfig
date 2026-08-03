@@ -77,9 +77,11 @@ resharper_keep_existing_embedded_arrangement = false
 
 # noinspection EditorConfigKeyCorrectness
 [*.cs]
-
-# Стандартные настройки C#
-csharp_new_line_before_open_brace = all
+resharper_blank_lines_around_single_line_property = 1
+# Настройка для автоформатирования (сохранять 1 пустую строку)
+resharper_blank_lines_keep_max = 1
+resharper_int_keep_blank_lines_in_declarations = 1
+resharper_place_simple_property_on_single_line = false
 
 csharp_style_var_for_built_in_types = true:suggestion
 csharp_style_var_when_type_is_apparent = true:suggestion
@@ -112,3 +114,9 @@ dotnet_diagnostic.SA1128.severity = none # allow public ClassName : this() witho
 dotnet_diagnostic.SA1101.severity = none # disable obligatory this.fieldName
 dotnet_diagnostic.SA1401.severity = error # fields always private
 dotnet_diagnostic.SA1503.severity = none # allow no braces
+dotnet_diagnostic.SA1134.severity = none # allow [attributes] private OneLineWithField
+dotnet_diagnostic.SA1127.severity = none # generic type constrains must be on the new line
+dotnet_diagnostic.SA1611.severity = none # all ctor args must be documented
+dotnet_diagnostic.SA1117.severity = none # allow arguments to be wrapped, not chopped
+dotnet_diagnostic.SA1130.severity = none # allow = delegate {}; syntax, not only lambda
+

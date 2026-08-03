@@ -31,6 +31,6 @@ namespace _Project.Data
         // public static implicit operator Type(SerializeableType sType) => sType.Type;
 
         // Implicit conversion from Type to SerializableType
-        //public static implicit operator SerializeableType(Type type) => new() { Type = type };
+        // public static implicit operator SerializeableType(Type type) => new() { Type = type };
     }
 }

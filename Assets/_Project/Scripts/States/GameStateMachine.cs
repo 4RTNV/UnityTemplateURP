@@ -30,7 +30,7 @@ namespace _Project.States
                 [typeof(LoadLevelState)] = new LoadLevelState(this, gameFactory, persistentProgress, staticData,
                     uiFactory, levelProgress),
                 [typeof(LoopLevelState)] = new LoopLevelState(this, saveLoad, levelProgress),
-                [typeof(FinishedLevelState)] = new FinishedLevelState(this, timeService)
+                [typeof(FinishedLevelState)] = new FinishedLevelState(this, timeService),
             };
         }
 
@@ -48,7 +48,7 @@ namespace _Project.States
 
         private TState ChangeState<TState>() where TState : class, IExitableState
         {
-            // The first state could be null on program start 
+            // The first state could be null on program start
             _currentState?.Exit();
             var state = GetState<TState>();
             Debug.Log($"State changed: {_currentState?.ToString() ?? "None"} => {state}");
@@ -56,9 +56,6 @@ namespace _Project.States
             return state;
         }
 
-        private TState GetState<TState>() where TState : class, IExitableState
-        {
-            return _states[typeof(TState)] as TState;
-        }
+        private TState GetState<TState>() where TState : class, IExitableState => _states[typeof(TState)] as TState;
     }
 }
