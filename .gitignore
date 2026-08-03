@@ -142,3 +142,6 @@ InitTestScene*.unity*
 !.idea/.idea.UnityTemplateURP/.idea/scopes/*
 !.idea/.idea.UnityTemplateURP/.idea/codeStyles/
 !.idea/.idea.UnityTemplateURP/.idea/codeStyles/*
+
+.claude
+.codex
