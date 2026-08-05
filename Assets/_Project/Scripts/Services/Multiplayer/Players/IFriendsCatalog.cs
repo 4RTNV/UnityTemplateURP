@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace _Project.Multiplayer.Players.Steam.Steam
+namespace _Project.Multiplayer.Players
 {
     public interface IFriendsCatalog
     {

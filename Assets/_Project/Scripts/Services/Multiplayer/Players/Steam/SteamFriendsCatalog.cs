@@ -3,16 +3,12 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Steamworks;
 
-namespace _Project.Multiplayer.Players.Steam.Steam
+namespace _Project.Multiplayer.Players.Steam
 {
     public class SteamFriendsCatalog : IFriendsCatalog
     {
-        private readonly PlayerModelTranslator _translator;
-
         public SteamFriendsCatalog()
         {
-            _translator = new PlayerModelTranslator();
-
             SteamFriends.OnPersonaStateChange += friend => { _ = OnFriendDetailsChanged(friend); }; // spooky!!
         }
 
@@ -21,12 +17,12 @@ namespace _Project.Multiplayer.Players.Steam.Steam
         public async IAsyncEnumerable<PlayerModel> GetFriendsAsync()
         {
             foreach (var friend in SteamFriends.GetFriends())
-                yield return await _translator.CreatePlayerModel(friend);
+                yield return await PlayerModelTranslator.CreatePlayerModel(friend);
         }
 
         private async Task OnFriendDetailsChanged(Friend friend)
         {
-            FriendDetailsChanged?.Invoke(this, await _translator.CreatePlayerModel(friend));
+            FriendDetailsChanged?.Invoke(this, await PlayerModelTranslator.CreatePlayerModel(friend));
         }
     }
 }

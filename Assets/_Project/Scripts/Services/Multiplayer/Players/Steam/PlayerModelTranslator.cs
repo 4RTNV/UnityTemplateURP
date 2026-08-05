@@ -4,11 +4,11 @@ using Steamworks.Data;
 using UnityEngine;
 using Color = UnityEngine.Color;
 
-namespace _Project.Multiplayer.Players.Steam.Steam
+namespace _Project.Multiplayer.Players.Steam
 {
-    public class PlayerModelTranslator
+    internal class PlayerModelTranslator
     {
-        public async Task<PlayerModel> CreatePlayerModel(Friend friend)
+        public static async Task<PlayerModel> CreatePlayerModel(Friend friend)
         {
             var avatar = Texture2D.blackTexture;
             if (await friend.GetLargeAvatarAsync() is { } image) avatar = GetPlayerAvatarTexture(image);
