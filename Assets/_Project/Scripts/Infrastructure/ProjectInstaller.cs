@@ -2,6 +2,9 @@
 using _Project.AssetManagement;
 using _Project.CurrentLevelProgress;
 using _Project.Factory;
+using _Project.Multiplayer;
+using _Project.Multiplayer.Players;
+using _Project.Multiplayer.Players.Steam;
 using _Project.PersistentProgress;
 using _Project.SaveLoad;
 using _Project.SceneLoader;
@@ -26,7 +29,16 @@ namespace _Project.Infrastructure
         /// </summary>
         public void InstallBindings(ContainerBuilder builder)
         {
-            // Singleton bindings - Eager
+            InstallInfrastructureBindings(builder);
+            InstallGameplayServices(builder);
+            InstallUIBindings(builder);
+            InstallMultiplayerBindings(builder);
+
+            builder.OnContainerBuilt += container => { container.Single<GameStateMachine>().Enter<BootstrapState>(); };
+        }
+
+        private static void InstallInfrastructureBindings(ContainerBuilder builder)
+        {
             builder.RegisterType(typeof(AssetProvider), new[] { typeof(IAssetProvider) }, Lifetime.Singleton,
                 Resolution.Eager);
             builder.RegisterType(typeof(PersistentProgress.PersistentProgress), new[] { typeof(IPersistentProgress) },
@@ -39,17 +51,30 @@ namespace _Project.Infrastructure
                 Resolution.Eager);
             builder.RegisterType(typeof(GameStateMachine), new Type[] { }, Lifetime.Singleton, Resolution.Eager);
 
-            // Scoped bindings - Eager
             builder.RegisterType(typeof(GameFactory),
                 new[] { typeof(IGameFactory), typeof(ISavedProgressReader), typeof(IProgressUpdater) }, Lifetime.Scoped,
                 Resolution.Eager);
-            builder.RegisterType(typeof(UIFactory), new[] { typeof(IUIFactory) }, Lifetime.Scoped, Resolution.Eager);
+        }
+
+        private static void InstallGameplayServices(ContainerBuilder builder)
+        {
             builder.RegisterType(typeof(LevelProgress), new[] { typeof(ILevelProgress) }, Lifetime.Scoped,
                 Resolution.Eager);
             builder.RegisterType(typeof(InGameTimeService), new[] { typeof(IInGameTimeService) }, Lifetime.Scoped,
                 Resolution.Eager);
+        }
 
-            builder.OnContainerBuilt += container => { container.Single<GameStateMachine>().Enter<BootstrapState>(); };
+        private static void InstallUIBindings(ContainerBuilder builder)
+        {
+            builder.RegisterType(typeof(UIFactory), new[] { typeof(IUIFactory) }, Lifetime.Scoped, Resolution.Eager);
+        }
+
+        private static void InstallMultiplayerBindings(ContainerBuilder builder)
+        {
+            builder.RegisterType(typeof(SteamFriendsCatalog), new[] { typeof(IFriendsCatalog) }, Lifetime.Singleton,
+                Resolution.Eager);
+            builder.RegisterType(typeof(SteamClientWrapper), new[] { typeof(IMultiplayerClient) }, Lifetime.Singleton,
+                Resolution.Eager);
         }
     }
 }
