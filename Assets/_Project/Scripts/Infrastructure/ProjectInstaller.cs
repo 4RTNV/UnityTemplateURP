@@ -1,5 +1,4 @@
-﻿using System;
-using _Project.AssetManagement;
+﻿using _Project.AssetManagement;
 using _Project.CurrentLevelProgress;
 using _Project.Factory;
 using _Project.Multiplayer;
@@ -29,6 +28,7 @@ namespace _Project.Infrastructure
         /// </summary>
         public void InstallBindings(ContainerBuilder builder)
         {
+            Debug.Log("Install Binding Started");
             InstallInfrastructureBindings(builder);
             InstallGameplayServices(builder);
             InstallUIBindings(builder);
@@ -49,7 +49,7 @@ namespace _Project.Infrastructure
                 Resolution.Eager);
             builder.RegisterType(typeof(AsyncSceneLoader), new[] { typeof(ISceneLoader) }, Lifetime.Singleton,
                 Resolution.Eager);
-            builder.RegisterType(typeof(GameStateMachine), new Type[] { }, Lifetime.Singleton, Resolution.Eager);
+            builder.RegisterType(typeof(GameStateMachine), Lifetime.Singleton, Resolution.Eager);
 
             builder.RegisterType(typeof(GameFactory),
                 new[] { typeof(IGameFactory), typeof(ISavedProgressReader), typeof(IProgressUpdater) }, Lifetime.Scoped,

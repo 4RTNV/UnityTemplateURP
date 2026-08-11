@@ -10,6 +10,7 @@ namespace _Project.Multiplayer
     public class FriendshipTester : MonoBehaviour
     {
         private IFriendsCatalog _catalog;
+        private IMultiplayerClient _client;
         private List<PlayerModel> _friends;
 
         public void Start()
@@ -17,9 +18,15 @@ namespace _Project.Multiplayer
             Debug.Log($"{_catalog!}, {_friends!}");
         }
 
-        [Inject]
-        public async Task Initialize(IFriendsCatalog friendsCatalog)
+        private void Update()
         {
+            _client?.Update();
+        }
+
+        [Inject]
+        public async Task Initialize(IMultiplayerClient client, IFriendsCatalog friendsCatalog)
+        {
+            _client = client;
             _catalog = friendsCatalog;
             await foreach (var friend in friendsCatalog.GetFriendsAsync()) _friends.Add(friend);
             Debug.Log($"FriendshipTester initialized with {_friends.Count} friends");
