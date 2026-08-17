@@ -7,7 +7,7 @@ using _Project.Multiplayer.Players.Steam;
 using _Project.PersistentProgress;
 using _Project.SaveLoad;
 using _Project.SceneLoader;
-using _Project.States;
+using _Project.StateMachines;
 using _Project.StaticData;
 using _Project.TimeService;
 using _Project.UI.Factory;

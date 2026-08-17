@@ -5,7 +5,6 @@ using _Project.Factory;
 using _Project.PersistentProgress;
 using _Project.SaveLoad;
 using _Project.SceneLoader;
-using _Project.States;
 using _Project.StaticData;
 using _Project.TimeService;
 using _Project.UI.Factory;
@@ -15,14 +14,14 @@ namespace _Project.StateMachines
 {
     public sealed class AppStateMachine
     {
-        private readonly Dictionary<Type, IExitableState> _states;
-        private IExitableState _currentState;
+        private readonly Dictionary<Type, IExitableAppState> _states;
+        private IExitableAppState _currentState;
 
         public AppStateMachine(IPersistentProgress persistentProgress, ISaveLoad saveLoad, IGameFactory gameFactory,
             IUIFactory uiFactory, IStaticData staticData, ILevelProgress levelProgress, IInGameTimeService timeService,
             IEnumerable<ISavedProgressReader> saveReaderServices, ISceneLoader sceneLoader)
         {
-            _states = new Dictionary<Type, IExitableState>
+            _states = new Dictionary<Type, IExitableAppState>
             {
                 [typeof(BootstrapState)] = new BootstrapState(this, sceneLoader),
                 [typeof(LoadProgressState)] = new LoadProgressState(this, persistentProgress, saveLoad),
@@ -32,19 +31,19 @@ namespace _Project.StateMachines
             };
         }
 
-        public void Enter<TState>() where TState : class, IState
+        public void Enter<TState>() where TState : class, IAppState
         {
-            IState state = ChangeState<TState>();
+            IAppState state = ChangeState<TState>();
             state.Enter();
         }
 
-        public void Enter<TState, TPayload>(TPayload payload) where TState : class, IPayloadedState<TPayload>
+        public void Enter<TState, TPayload>(TPayload payload) where TState : class, IPayloadedAppState<TPayload>
         {
             var state = ChangeState<TState>();
             state.Enter(payload);
         }
 
-        private TState ChangeState<TState>() where TState : class, IExitableState
+        private TState ChangeState<TState>() where TState : class, IExitableAppState
         {
             // The first state could be null on program start
             _currentState?.Exit();
@@ -54,7 +53,7 @@ namespace _Project.StateMachines
             return state;
         }
 
-        private TState GetState<TState>() where TState : class, IExitableState
+        private TState GetState<TState>() where TState : class, IExitableAppState
         {
             return _states[typeof(TState)] as TState;
         }

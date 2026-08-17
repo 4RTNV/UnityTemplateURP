@@ -1,9 +1,9 @@
 ﻿using _Project.PersistentProgress;
 using _Project.SaveLoad;
 
-namespace _Project.States
+namespace _Project.StateMachines
 {
-    public class LoadProgressState : IState
+    public class LoadProgressState : IAppState
     {
         private readonly AppStateMachine _appStateMachine;
         private readonly IPersistentProgress _persistentProgress;

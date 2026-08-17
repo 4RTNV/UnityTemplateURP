@@ -1,8 +1,8 @@
 ﻿using _Project.SceneLoader;
 
-namespace _Project.States
+namespace _Project.StateMachines
 {
-    public class LoadMainMenuState : IState
+    public class LoadMainMenuState : IAppState
     {
         private readonly AppStateMachine _appStateMachine;
         private readonly ISceneLoader _sceneLoader;

@@ -1,6 +1,8 @@
-﻿namespace _Project.States
+﻿using _Project.SceneLoader;
+
+namespace _Project.StateMachines
 {
-    public class BootstrapState : IState
+    public class BootstrapState : IAppState
     {
         private readonly AppStateMachine _appStateMachine;
         private readonly ISceneLoader _sceneLoader;
