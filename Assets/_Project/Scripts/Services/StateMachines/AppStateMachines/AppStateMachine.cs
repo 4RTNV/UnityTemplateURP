@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
-using Reflex.Core;
-using Reflex.Injectors;
+using System.Linq;
 using UnityEngine;
 
 namespace _Project.StateMachines
@@ -11,19 +10,9 @@ namespace _Project.StateMachines
         private readonly Dictionary<Type, IExitableAppState> _states;
         private IExitableAppState _currentState;
 
-        public AppStateMachine(Container container)
+        public AppStateMachine(IAppStateFactory stateFactory)
         {
-            _states = new Dictionary<Type, IExitableAppState>
-            {
-                [typeof(BootstrapState)] =
-                    ConstructorInjector.Construct(typeof(BootstrapState), container) as BootstrapState,
-                [typeof(LoadProgressState)] =
-                    ConstructorInjector.Construct(typeof(LoadProgressState), container) as LoadProgressState,
-                [typeof(LoadMainMenuState)] =
-                    ConstructorInjector.Construct(typeof(LoadMainMenuState), container) as LoadMainMenuState,
-                [typeof(LoadLevelState)] =
-                    ConstructorInjector.Construct(typeof(LoadLevelState), container) as LoadLevelState,
-            };
+            _states = stateFactory.CreateStates(this).ToDictionary(state => state.GetType());
         }
 
         public void Enter<TState>() where TState : class, IAppState

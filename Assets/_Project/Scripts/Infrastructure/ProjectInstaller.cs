@@ -49,6 +49,8 @@ namespace _Project.Infrastructure
                 Resolution.Eager);
             builder.RegisterType(typeof(AsyncSceneLoader), new[] { typeof(ISceneLoader) }, Lifetime.Singleton,
                 Resolution.Eager);
+            builder.RegisterType(typeof(AppStateFactory), new[] { typeof(IAppStateFactory) }, Lifetime.Singleton,
+                Resolution.Eager);
             builder.RegisterType(typeof(AppStateMachine), Lifetime.Singleton, Resolution.Eager);
 
             builder.RegisterType(typeof(GameFactory),
