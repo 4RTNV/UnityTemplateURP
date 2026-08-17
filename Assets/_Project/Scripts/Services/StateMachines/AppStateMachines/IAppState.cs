@@ -1,6 +1,6 @@
 namespace _Project.StateMachines
 {
-    public interface IAppState
+    public interface IAppState : IExitableAppState
     {
         void Enter();
     }
