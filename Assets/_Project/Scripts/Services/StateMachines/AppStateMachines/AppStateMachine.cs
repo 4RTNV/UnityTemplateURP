@@ -13,7 +13,7 @@ using UnityEngine;
 
 namespace _Project.StateMachines
 {
-    public class AppStateMachine
+    public sealed class AppStateMachine
     {
         private readonly Dictionary<Type, IExitableState> _states;
         private IExitableState _currentState;
