@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using _Project.Multiplayer.Players;
 using Reflex.Attributes;
@@ -20,13 +19,13 @@ namespace _Project.Multiplayer
 
         private void Update()
         {
-            _client?.Update();
+            // _client?.Update();
         }
 
         [Inject]
-        public async Task Initialize(IMultiplayerClient client, IFriendsCatalog friendsCatalog)
+        public async Task Initialize()
         {
-            _client = client;
+            /*_client = client;
             _catalog = friendsCatalog;
             await foreach (var friend in friendsCatalog.GetFriendsAsync()) _friends.Add(friend);
             Debug.Log($"FriendshipTester initialized with {_friends.Count} friends");
@@ -34,7 +33,7 @@ namespace _Project.Multiplayer
             {
                 Debug.Log($"FriendshipTester: Friend details changed: {model}");
                 _friends = _friends.Select(f => f.Equals(model) ? model : f).ToList();
-            };
+            };*/
         }
     }
 }

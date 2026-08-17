@@ -6,7 +6,7 @@ namespace _Project.Multiplayer
     {
         public SteamClientWrapper()
         {
-            SteamClient.Init(480);
+            // SteamClient.Init(480);
         }
 
         public void Dispose()
