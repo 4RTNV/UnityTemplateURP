@@ -25,12 +25,12 @@ namespace _Project.States
             {
                 [typeof(BootstrapState)] = new BootstrapState(this, sceneLoader),
                 [typeof(LoadProgressState)] = new LoadProgressState(this, persistentProgress, saveLoad),
-                /*[typeof(LoadHubState)] = new LoadHubState(this, sceneLoader),
+                [typeof(LoadHubState)] = new LoadHubState(this, sceneLoader),
                 [typeof(HubState)] = new HubState(this, saveReaderServices),
                 [typeof(LoadLevelState)] = new LoadLevelState(this, gameFactory, persistentProgress, staticData,
                     uiFactory, levelProgress),
                 [typeof(LoopLevelState)] = new LoopLevelState(this, saveLoad, levelProgress),
-                [typeof(FinishedLevelState)] = new FinishedLevelState(this, timeService),*/
+                [typeof(FinishedLevelState)] = new FinishedLevelState(this, timeService),
             };
         }
 

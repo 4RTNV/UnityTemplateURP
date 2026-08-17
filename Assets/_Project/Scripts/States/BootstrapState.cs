@@ -15,6 +15,7 @@ namespace _Project.States
 
         public void Enter()
         {
+            //EnterHub();
             SingletonCoroutineRunner.Instance.StartCoroutine(_sceneLoader.LoadScene(SceneNames.BootstrapSceneName,
                 EnterHub));
         }
