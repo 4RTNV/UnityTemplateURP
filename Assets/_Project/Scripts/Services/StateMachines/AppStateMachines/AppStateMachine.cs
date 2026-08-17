@@ -1,13 +1,7 @@
 using System;
 using System.Collections.Generic;
-using _Project.CurrentLevelProgress;
-using _Project.Factory;
-using _Project.PersistentProgress;
-using _Project.SaveLoad;
-using _Project.SceneLoader;
-using _Project.StaticData;
-using _Project.TimeService;
-using _Project.UI.Factory;
+using Reflex.Core;
+using Reflex.Injectors;
 using UnityEngine;
 
 namespace _Project.StateMachines
@@ -17,17 +11,18 @@ namespace _Project.StateMachines
         private readonly Dictionary<Type, IExitableAppState> _states;
         private IExitableAppState _currentState;
 
-        public AppStateMachine(IPersistentProgress persistentProgress, ISaveLoad saveLoad, IGameFactory gameFactory,
-            IUIFactory uiFactory, IStaticData staticData, ILevelProgress levelProgress, IInGameTimeService timeService,
-            IEnumerable<ISavedProgressReader> saveReaderServices, ISceneLoader sceneLoader)
+        public AppStateMachine(Container container)
         {
             _states = new Dictionary<Type, IExitableAppState>
             {
-                [typeof(BootstrapState)] = new BootstrapState(this, sceneLoader),
-                [typeof(LoadProgressState)] = new LoadProgressState(this, persistentProgress, saveLoad),
-                [typeof(LoadMainMenuState)] = new LoadMainMenuState(this, sceneLoader),
-                [typeof(LoadLevelState)] = new LoadLevelState(this, gameFactory, persistentProgress, staticData,
-                    uiFactory, levelProgress),
+                [typeof(BootstrapState)] =
+                    ConstructorInjector.Construct(typeof(BootstrapState), container) as BootstrapState,
+                [typeof(LoadProgressState)] =
+                    ConstructorInjector.Construct(typeof(LoadProgressState), container) as LoadProgressState,
+                [typeof(LoadMainMenuState)] =
+                    ConstructorInjector.Construct(typeof(LoadMainMenuState), container) as LoadMainMenuState,
+                [typeof(LoadLevelState)] =
+                    ConstructorInjector.Construct(typeof(LoadLevelState), container) as LoadLevelState,
             };
         }
 
