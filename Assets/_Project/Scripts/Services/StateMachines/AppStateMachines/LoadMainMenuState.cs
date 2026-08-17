@@ -2,14 +2,14 @@
 
 namespace _Project.States
 {
-    public class LoadHubState : IState
+    public class LoadMainMenuState : IState
     {
-        private readonly GameStateMachine _gameStateMachine;
+        private readonly AppStateMachine _appStateMachine;
         private readonly ISceneLoader _sceneLoader;
 
-        public LoadHubState(GameStateMachine gameStateMachine, ISceneLoader sceneLoader)
+        public LoadMainMenuState(AppStateMachine appStateMachine, ISceneLoader sceneLoader)
         {
-            _gameStateMachine = gameStateMachine;
+            _appStateMachine = appStateMachine;
             _sceneLoader = sceneLoader;
         }
 

@@ -5,14 +5,14 @@ namespace _Project.States
 {
     public class LoadProgressState : IState
     {
-        private readonly GameStateMachine _gameStateMachine;
+        private readonly AppStateMachine _appStateMachine;
         private readonly IPersistentProgress _persistentProgress;
         private readonly ISaveLoad _saveLoad;
 
-        public LoadProgressState(GameStateMachine gameStateMachine, IPersistentProgress persistentProgress,
+        public LoadProgressState(AppStateMachine appStateMachine, IPersistentProgress persistentProgress,
             ISaveLoad saveLoad)
         {
-            _gameStateMachine = gameStateMachine;
+            _appStateMachine = appStateMachine;
             _persistentProgress = persistentProgress;
             _saveLoad = saveLoad;
         }
@@ -20,7 +20,7 @@ namespace _Project.States
         public void Enter()
         {
             LoadProgressOrInitNew();
-            _gameStateMachine.Enter<LoadHubState>();
+            _appStateMachine.Enter<LoadMainMenuState>();
         }
 
         public void Exit()

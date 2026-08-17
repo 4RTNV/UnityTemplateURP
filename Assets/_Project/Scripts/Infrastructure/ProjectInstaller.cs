@@ -34,7 +34,7 @@ namespace _Project.Infrastructure
             InstallUIBindings(builder);
             // InstallMultiplayerBindings(builder);
 
-            builder.OnContainerBuilt += container => { container.Single<GameStateMachine>().Enter<BootstrapState>(); };
+            builder.OnContainerBuilt += container => { container.Single<AppStateMachine>().Enter<BootstrapState>(); };
         }
 
         private static void InstallInfrastructureBindings(ContainerBuilder builder)
@@ -49,7 +49,7 @@ namespace _Project.Infrastructure
                 Resolution.Eager);
             builder.RegisterType(typeof(AsyncSceneLoader), new[] { typeof(ISceneLoader) }, Lifetime.Singleton,
                 Resolution.Eager);
-            builder.RegisterType(typeof(GameStateMachine), Lifetime.Singleton, Resolution.Eager);
+            builder.RegisterType(typeof(AppStateMachine), Lifetime.Singleton, Resolution.Eager);
 
             builder.RegisterType(typeof(GameFactory),
                 new[] { typeof(IGameFactory), typeof(ISavedProgressReader), typeof(IProgressUpdater) }, Lifetime.Scoped,

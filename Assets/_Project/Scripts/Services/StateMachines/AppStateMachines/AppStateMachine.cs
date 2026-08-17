@@ -5,19 +5,20 @@ using _Project.Factory;
 using _Project.PersistentProgress;
 using _Project.SaveLoad;
 using _Project.SceneLoader;
+using _Project.States;
 using _Project.StaticData;
 using _Project.TimeService;
 using _Project.UI.Factory;
 using UnityEngine;
 
-namespace _Project.States
+namespace _Project.StateMachines
 {
-    public class GameStateMachine
+    public class AppStateMachine
     {
         private readonly Dictionary<Type, IExitableState> _states;
         private IExitableState _currentState;
 
-        public GameStateMachine(IPersistentProgress persistentProgress, ISaveLoad saveLoad, IGameFactory gameFactory,
+        public AppStateMachine(IPersistentProgress persistentProgress, ISaveLoad saveLoad, IGameFactory gameFactory,
             IUIFactory uiFactory, IStaticData staticData, ILevelProgress levelProgress, IInGameTimeService timeService,
             IEnumerable<ISavedProgressReader> saveReaderServices, ISceneLoader sceneLoader)
         {
@@ -25,12 +26,9 @@ namespace _Project.States
             {
                 [typeof(BootstrapState)] = new BootstrapState(this, sceneLoader),
                 [typeof(LoadProgressState)] = new LoadProgressState(this, persistentProgress, saveLoad),
-                [typeof(LoadHubState)] = new LoadHubState(this, sceneLoader),
-                [typeof(HubState)] = new HubState(this, saveReaderServices),
+                [typeof(LoadMainMenuState)] = new LoadMainMenuState(this, sceneLoader),
                 [typeof(LoadLevelState)] = new LoadLevelState(this, gameFactory, persistentProgress, staticData,
                     uiFactory, levelProgress),
-                [typeof(LoopLevelState)] = new LoopLevelState(this, saveLoad, levelProgress),
-                [typeof(FinishedLevelState)] = new FinishedLevelState(this, timeService),
             };
         }
 

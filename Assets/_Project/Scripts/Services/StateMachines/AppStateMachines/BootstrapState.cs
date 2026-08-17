@@ -1,15 +1,13 @@
-﻿using _Project.SceneLoader;
-
-namespace _Project.States
+﻿namespace _Project.States
 {
     public class BootstrapState : IState
     {
-        private readonly GameStateMachine _gameStateMachine;
+        private readonly AppStateMachine _appStateMachine;
         private readonly ISceneLoader _sceneLoader;
 
-        public BootstrapState(GameStateMachine gameStateMachine, ISceneLoader sceneLoader)
+        public BootstrapState(AppStateMachine appStateMachine, ISceneLoader sceneLoader)
         {
-            _gameStateMachine = gameStateMachine;
+            _appStateMachine = appStateMachine;
             _sceneLoader = sceneLoader;
         }
 
@@ -25,7 +23,7 @@ namespace _Project.States
 
         private void EnterHub()
         {
-            _gameStateMachine.Enter<LoadProgressState>();
+            _appStateMachine.Enter<LoadProgressState>();
         }
     }
 }

@@ -10,18 +10,18 @@ namespace _Project.States
 {
     public class LoadLevelState : IPayloadedState<string>
     {
+        private readonly AppStateMachine _appStateMachine;
         private readonly IGameFactory _gameFactory;
-        private readonly GameStateMachine _gameStateMachine;
         private readonly ILevelProgress _levelProgress;
         private readonly Canvas _loadingCurtain;
         private readonly IPersistentProgress _progress;
         private readonly IStaticData _staticData;
         private readonly IUIFactory _uiFactory;
 
-        public LoadLevelState(GameStateMachine gameStateMachine, IGameFactory gameFactory, IPersistentProgress progress,
+        public LoadLevelState(AppStateMachine appStateMachine, IGameFactory gameFactory, IPersistentProgress progress,
             IStaticData staticData, IUIFactory uiFactory, ILevelProgress levelProgress)
         {
-            _gameStateMachine = gameStateMachine;
+            _appStateMachine = appStateMachine;
             _gameFactory = gameFactory;
             _progress = progress;
             _staticData = staticData;
@@ -56,7 +56,7 @@ namespace _Project.States
             _levelProgress.LoadLevelConfig(config);
             InitializeInGameHUD();
             InitializeCamera();
-            _gameStateMachine.Enter<LoopLevelState>();
+            _appStateMachine.Enter<LoopLevelState>();
         }
     }
 }
