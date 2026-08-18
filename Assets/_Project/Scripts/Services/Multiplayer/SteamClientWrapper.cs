@@ -1,4 +1,5 @@
 using Steamworks;
+using UnityEngine;
 
 namespace _Project.Multiplayer
 {
@@ -6,7 +7,9 @@ namespace _Project.Multiplayer
     {
         public SteamClientWrapper()
         {
-            // SteamClient.Init(480);
+            SteamClient.Init(480);
+            Debug.Log($"Initializing SteamClient. Valid: {SteamClient.IsValid}, Connected: {SteamClient.IsLoggedOn}");
+            Debug.Log($"{SteamClient.State}, {SteamClient.Name}, {SteamClient.AppId}");
         }
 
         public void Dispose()

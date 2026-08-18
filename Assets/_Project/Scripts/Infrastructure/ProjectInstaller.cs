@@ -32,7 +32,7 @@ namespace _Project.Infrastructure
             InstallInfrastructureBindings(builder);
             InstallGameplayServices(builder);
             InstallUIBindings(builder);
-            // InstallMultiplayerBindings(builder);
+            InstallMultiplayerBindings(builder);
 
             builder.OnContainerBuilt += container => { container.Single<AppStateMachine>().Enter<BootstrapState>(); };
         }
