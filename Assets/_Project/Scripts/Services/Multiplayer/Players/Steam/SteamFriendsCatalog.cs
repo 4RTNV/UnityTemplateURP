@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Steamworks;
 
@@ -16,8 +17,12 @@ namespace _Project.Multiplayer.Players.Steam
 
         public async IAsyncEnumerable<PlayerModel> GetFriendsAsync()
         {
-            foreach (var friend in SteamFriends.GetFriends())
-                yield return await PlayerModelTranslator.CreatePlayerModel(friend);
+            var friendsArray = SteamFriends.GetFriends().ToArray();
+            foreach (var friend in friendsArray)
+            {
+                var playerModel = await PlayerModelTranslator.CreatePlayerModel(friend);
+                yield return playerModel;
+            }
         }
 
         private async Task OnFriendDetailsChanged(Friend friend)

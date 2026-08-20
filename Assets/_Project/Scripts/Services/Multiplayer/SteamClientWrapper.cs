@@ -14,6 +14,7 @@ namespace _Project.Multiplayer
 
         public void Dispose()
         {
+            Debug.Log($"Disposing SteamClient.");
             SteamClient.Shutdown();
         }
 

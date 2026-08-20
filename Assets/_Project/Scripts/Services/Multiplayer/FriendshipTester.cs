@@ -10,12 +10,7 @@ namespace _Project.Multiplayer
     {
         private IFriendsCatalog _catalog;
         private IMultiplayerClient _client;
-        private List<PlayerModel> _friends;
-
-        public void Start()
-        {
-            Debug.Log($"{_catalog!}, {_friends!}");
-        }
+        private List<PlayerModel> _friends = new();
 
         private void Update()
         {
@@ -27,7 +22,7 @@ namespace _Project.Multiplayer
         {
             _client = client;
             _catalog = catalog;
-            _ = CreateFriendsList();
+            CreateFriendsList().LogExceptionsAndForget();
         }
 
         private async Awaitable CreateFriendsList()
@@ -36,7 +31,7 @@ namespace _Project.Multiplayer
             Debug.Log($"FriendshipTester initialized with {_friends.Count} friends");
             _catalog.FriendDetailsChanged += (sender, model) =>
             {
-                Debug.Log($"FriendshipTester: Friend details changed: {model}");
+                Debug.Log($"FriendshipTester: Friend details changed: {model.Name}");
                 _friends = _friends.Select(f => f.Equals(model) ? model : f).ToList();
             };
         }
