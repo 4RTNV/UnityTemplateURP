@@ -18,7 +18,7 @@ namespace _Project.Multiplayer.Steam
         public async Awaitable<Lobby?> JoinLobbyAsync(string targetId)
         {
             var steamLobby = await SteamMatchmaking.JoinLobbyAsync(ulong.Parse(targetId));
-            return LobbyTranslator.CreateLobby(steamLobby);
+            return await LobbyTranslator.CreateLobby(steamLobby);
         }
     }
 }
