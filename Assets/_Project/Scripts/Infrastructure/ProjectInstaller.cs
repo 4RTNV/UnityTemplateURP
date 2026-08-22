@@ -2,8 +2,7 @@
 using _Project.CurrentLevelProgress;
 using _Project.Factory;
 using _Project.Multiplayer;
-using _Project.Multiplayer.Players;
-using _Project.Multiplayer.Players.Steam;
+using _Project.Multiplayer.Steam;
 using _Project.PersistentProgress;
 using _Project.SaveLoad;
 using _Project.SceneLoader;
