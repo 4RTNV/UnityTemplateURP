@@ -1,4 +1,4 @@
-namespace _Project.Multiplayer.Lobbies
+namespace _Project.Multiplayer.Steam
 {
     internal static class LobbyTranslator
     {

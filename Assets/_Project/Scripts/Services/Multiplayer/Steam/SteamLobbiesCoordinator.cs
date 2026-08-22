@@ -1,7 +1,7 @@
 using Steamworks;
 using UnityEngine;
 
-namespace _Project.Multiplayer.Lobbies
+namespace _Project.Multiplayer.Steam
 {
     public class SteamLobbiesCoordinator
     {
@@ -18,6 +18,7 @@ namespace _Project.Multiplayer.Lobbies
         public async Awaitable<Lobby?> JoinLobbyAsync(string targetId)
         {
             var steamLobby = await SteamMatchmaking.JoinLobbyAsync(ulong.Parse(targetId));
+            return LobbyTranslator.CreateLobby(steamLobby);
         }
     }
 }

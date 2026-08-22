@@ -1,7 +1,7 @@
 using Steamworks;
 using UnityEngine;
 
-namespace _Project.Multiplayer.Players
+namespace _Project.Multiplayer
 {
     public struct PlayerModel
     {

@@ -2,7 +2,7 @@ using System.Threading.Tasks;
 using Steamworks;
 using UnityEngine;
 
-namespace _Project.Multiplayer.Players.Steam
+namespace _Project.Multiplayer.Steam
 {
     internal static class PlayerModelTranslator
     {

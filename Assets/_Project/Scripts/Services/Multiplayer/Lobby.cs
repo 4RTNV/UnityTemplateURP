@@ -1,7 +1,6 @@
 using System.Collections.Generic;
-using _Project.Multiplayer.Players;
 
-namespace _Project.Multiplayer.Lobbies
+namespace _Project.Multiplayer
 {
     public struct Lobby
     {

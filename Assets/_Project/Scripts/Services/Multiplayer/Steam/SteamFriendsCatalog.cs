@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Steamworks;
 
-namespace _Project.Multiplayer.Players.Steam
+namespace _Project.Multiplayer.Steam
 {
     public class SteamFriendsCatalog : IFriendsCatalog
     {
