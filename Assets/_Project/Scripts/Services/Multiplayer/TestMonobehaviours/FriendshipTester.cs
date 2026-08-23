@@ -26,7 +26,7 @@ namespace _Project.Multiplayer
 
         private async Awaitable CreateFriendsList()
         {
-            await foreach (var friend in _catalog.GetFriendsAsync()) _friends.Add(friend);
+            _friends = (await _catalog.GetFriendsAsync()).ToList();
             Debug.Log($"FriendshipTester initialized with {_friends.Count} friends");
             _catalog.FriendDetailsChanged += (sender, model) =>
             {

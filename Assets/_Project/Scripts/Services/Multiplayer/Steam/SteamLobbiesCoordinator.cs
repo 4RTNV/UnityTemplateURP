@@ -17,13 +17,7 @@ namespace _Project.Multiplayer.Steam
             return targetLobby;
         }
 
-        public async Awaitable<Lobby?> JoinLobbyAsync(string targetId)
-        {
-            var steamLobby = await SteamMatchmaking.JoinLobbyAsync(ulong.Parse(targetId));
-            return await LobbyTranslator.CreateLobby(steamLobby);
-        }
-
-        public async Awaitable<IEnumerable<Lobby>> ListLobbiesAsync()
+        public async Awaitable<IEnumerable<Lobby>> GetLobbiesAsync()
         {
             // TODO: add filters
             var steamLobbies = (await SteamMatchmaking.LobbyList.RequestAsync()).ToArray();
@@ -37,6 +31,12 @@ namespace _Project.Multiplayer.Steam
             }
 
             return lobbies;
+        }
+
+        public async Awaitable<Lobby?> JoinLobbyAsync(string targetId)
+        {
+            var steamLobby = await SteamMatchmaking.JoinLobbyAsync(ulong.Parse(targetId));
+            return await LobbyTranslator.CreateLobby(steamLobby);
         }
     }
 }

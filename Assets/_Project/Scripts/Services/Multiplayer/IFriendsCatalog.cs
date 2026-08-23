@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace _Project.Multiplayer
 {
@@ -7,6 +8,6 @@ namespace _Project.Multiplayer
     {
         event EventHandler<PlayerModel> FriendDetailsChanged;
 
-        IAsyncEnumerable<PlayerModel> GetFriendsAsync();
+        Awaitable<IEnumerable<PlayerModel>> GetFriendsAsync();
     }
 }

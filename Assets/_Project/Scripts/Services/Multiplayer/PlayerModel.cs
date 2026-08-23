@@ -1,9 +1,10 @@
+using System;
 using Steamworks;
 using UnityEngine;
 
 namespace _Project.Multiplayer
 {
-    public struct PlayerModel
+    public struct PlayerModel : IEquatable<PlayerModel>
     {
         public PlayerModel(Texture2D avatar, string id, string name, string nickname, bool playingSameGame,
             FriendState state)
@@ -33,6 +34,11 @@ namespace _Project.Multiplayer
             if (obj is PlayerModel player) return Id.Equals(player.Id);
 
             return false;
+        }
+
+        public bool Equals(PlayerModel other)
+        {
+            return Id == other.Id;
         }
 
         public override int GetHashCode()

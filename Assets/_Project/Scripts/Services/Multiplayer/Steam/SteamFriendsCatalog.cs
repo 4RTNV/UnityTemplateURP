@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Steamworks;
+using UnityEngine;
 
 namespace _Project.Multiplayer.Steam
 {
@@ -10,22 +10,25 @@ namespace _Project.Multiplayer.Steam
     {
         public SteamFriendsCatalog()
         {
-            SteamFriends.OnPersonaStateChange += friend => { _ = OnFriendDetailsChanged(friend); }; // spooky!!
+            SteamFriends.OnPersonaStateChange += friend => { OnFriendDetailsChanged(friend).LogExceptionsAndForget(); };
         }
 
         public event EventHandler<PlayerModel> FriendDetailsChanged;
 
-        public async IAsyncEnumerable<PlayerModel> GetFriendsAsync()
+        public async Awaitable<IEnumerable<PlayerModel>> GetFriendsAsync()
         {
             var friendsArray = SteamFriends.GetFriends().ToArray();
+            var friendsList = new List<PlayerModel>();
             foreach (var friend in friendsArray)
             {
                 var playerModel = await PlayerModelTranslator.CreatePlayerModel(friend);
-                yield return playerModel;
+                friendsList.Add(playerModel);
             }
+
+            return friendsList;
         }
 
-        private async Task OnFriendDetailsChanged(Friend friend)
+        private async Awaitable OnFriendDetailsChanged(Friend friend)
         {
             FriendDetailsChanged?.Invoke(this, await PlayerModelTranslator.CreatePlayerModel(friend));
         }

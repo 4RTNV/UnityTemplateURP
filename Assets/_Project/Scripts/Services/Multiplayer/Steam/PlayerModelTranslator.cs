@@ -1,4 +1,3 @@
-using System.Threading.Tasks;
 using Steamworks;
 using UnityEngine;
 
@@ -6,13 +5,17 @@ namespace _Project.Multiplayer.Steam
 {
     internal static class PlayerModelTranslator
     {
-        public static async Task<PlayerModel> CreatePlayerModel(Friend friend)
+        public static async Awaitable<PlayerModel> CreatePlayerModel(Friend friend)
         {
+            await Awaitable.MainThreadAsync();
+
+
             var playingSameGame = false;
             var avatar = Texture2D.whiteTexture;
-            var image = await friend.GetLargeAvatarAsync();
+            var image = await friend.GetLargeAvatarAsync(); // this crashes the whole Unity Editor
             if (image != null)
                 avatar = CreateTextureFromRawBytes(image.Value.Data, (int)image.Value.Width, (int)image.Value.Height);
+
             if (friend.GameInfo is { } gameInfo) playingSameGame = gameInfo.GameID == SteamClient.AppId;
             return new PlayerModel(avatar, friend.Id.ToString(), friend.Name, friend.Nickname, playingSameGame,
                 friend.State);

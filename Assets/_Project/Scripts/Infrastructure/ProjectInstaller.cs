@@ -76,8 +76,8 @@ namespace _Project.Infrastructure
                 Resolution.Eager);
             builder.RegisterType(typeof(SteamClientWrapper), new[] { typeof(IMultiplayerClient) }, Lifetime.Singleton,
                 Resolution.Eager);
-            builder.RegisterType(typeof(SteamLobbiesCoordinator), new[] { typeof(ILobbiesCoordinator) },
-                Lifetime.Singleton, Resolution.Eager);
+            /*builder.RegisterType(typeof(SteamLobbiesCoordinator), new[] { typeof(ILobbiesCoordinator) },
+                Lifetime.Singleton, Resolution.Eager);*/
         }
     }
 }
