@@ -1,9 +1,11 @@
+using System.Collections.Generic;
+using System.Linq;
 using Steamworks;
 using UnityEngine;
 
 namespace _Project.Multiplayer.Steam
 {
-    public class SteamLobbiesCoordinator
+    public class SteamLobbiesCoordinator : ILobbiesCoordinator
     {
         public async Awaitable<Lobby?> CreateLobbyAsync(Lobby targetLobby)
         {
@@ -19,6 +21,22 @@ namespace _Project.Multiplayer.Steam
         {
             var steamLobby = await SteamMatchmaking.JoinLobbyAsync(ulong.Parse(targetId));
             return await LobbyTranslator.CreateLobby(steamLobby);
+        }
+
+        public async Awaitable<IEnumerable<Lobby>> ListLobbiesAsync()
+        {
+            // TODO: add filters
+            var steamLobbies = (await SteamMatchmaking.LobbyList.RequestAsync()).ToArray();
+
+            var lobbies = new List<Lobby>();
+            foreach (var steamLobby in steamLobbies)
+            {
+                if (await LobbyTranslator.CreateLobby(steamLobby) is not { } lobby) continue;
+
+                lobbies.Add(lobby);
+            }
+
+            return lobbies;
         }
     }
 }
