@@ -53,16 +53,17 @@ namespace _Project.Multiplayer
         {
             var friends = SteamFriends.GetFriends();
             var avatars = new List<Image>();
-            /*foreach (var friend in friends)
+            foreach (var friend in friends)
             {
                 var avatar = await friend.GetLargeAvatarAsync();
                 if (avatar is { } avatarValue)
                     avatars.Add(avatarValue);
-            }*/
+                await Awaitable.NextFrameAsync();
+            }
 
-            var avatar = await SteamFriends.GetLargeAvatarAsync(SteamClient.SteamId);
+            /*var avatar = await SteamFriends.GetLargeAvatarAsync(76561198449719972);
             if (avatar is { } avatarValue)
-                avatars.Add(avatarValue);
+                avatars.Add(avatarValue);*/
 
             Debug.Log($"Got all {avatars.Count} avatars.");
         }
