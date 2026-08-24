@@ -1,6 +1,7 @@
 using System.Collections.Generic;
-using System.Linq;
 using Reflex.Attributes;
+using Steamworks;
+using Steamworks.Data;
 using UnityEngine;
 
 namespace _Project.Multiplayer
@@ -11,8 +12,21 @@ namespace _Project.Multiplayer
         private IMultiplayerClient _client;
         private List<PlayerModel> _friends = new();
 
+        private void Start()
+        {
+            if (_client == null)
+            {
+                Debug.LogError("Client is missing");
+                return;
+            }
+
+            CallForAvatars().LogExceptionsAndForget();
+        }
+
         private void Update()
         {
+            if (_client == null)
+                Debug.LogError("Client is missing");
             _client?.Update();
         }
 
@@ -21,10 +35,10 @@ namespace _Project.Multiplayer
         {
             _client = client;
             _catalog = catalog;
-            CreateFriendsList().LogExceptionsAndForget();
+            //CreateFriendsList().LogExceptionsAndForget();
         }
 
-        private async Awaitable CreateFriendsList()
+        /*private async Awaitable CreateFriendsList()
         {
             _friends = (await _catalog.GetFriendsAsync()).ToList();
             Debug.Log($"FriendshipTester initialized with {_friends.Count} friends");
@@ -33,6 +47,24 @@ namespace _Project.Multiplayer
                 Debug.Log($"FriendshipTester: Friend details changed: {model.Name}");
                 _friends = _friends.Select(f => f.Equals(model) ? model : f).ToList();
             };
+        }*/
+
+        private async Awaitable CallForAvatars()
+        {
+            var friends = SteamFriends.GetFriends();
+            var avatars = new List<Image>();
+            /*foreach (var friend in friends)
+            {
+                var avatar = await friend.GetLargeAvatarAsync();
+                if (avatar is { } avatarValue)
+                    avatars.Add(avatarValue);
+            }*/
+
+            var avatar = await SteamFriends.GetLargeAvatarAsync(SteamClient.SteamId);
+            if (avatar is { } avatarValue)
+                avatars.Add(avatarValue);
+
+            Debug.Log($"Got all {avatars.Count} avatars.");
         }
     }
 }

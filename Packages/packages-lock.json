@@ -14,6 +14,14 @@
       "dependencies": {},
       "hash": "55423389e8d443f18090720891af52d9952d6e5e"
     },
+    "com.scitalis.assetnavigator": {
+      "version": "file:/home/galtexx/Documents/GitHub/asset-navigation-unity-plugin",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {
+        "com.unity.test-framework": "1.6.0"
+      }
+    },
     "com.unity.ai.navigation": {
       "version": "2.0.14",
       "depth": 0,
