@@ -2,7 +2,7 @@
   "dependencies": {
     "com.github-glitchenzo.nugetforunity": "https://github.com/GlitchEnzo/NuGetForUnity.git?path=/src/NuGetForUnity",
     "com.gustavopsantos.reflex": "https://github.com/gustavopsantos/reflex.git?path=/Assets/Reflex/#14.3.1",
-    "com.scitalis.assetnavigator": "file:/home/galtexx/Documents/GitHub/asset-navigation-unity-plugin",
+    "com.scitalis.assetnavigator": "git@github.com:TaggedDev/asset-navigation-unity-plugin.git",
     "com.unity.ai.navigation": "2.0.14",
     "com.unity.cinemachine": "3.1.7",
     "com.unity.collab-proxy": "2.12.4",
