@@ -7,7 +7,7 @@ namespace _Project.Multiplayer
     {
         Awaitable<Lobby?> CreateLobbyAsync(Lobby targetLobby);
 
-        Awaitable<IEnumerable<Lobby>> GetLobbiesAsync();
+        IAsyncEnumerable<Lobby> GetLobbiesAsync();
 
         Awaitable<Lobby?> JoinLobbyAsync(string targetId);
     }

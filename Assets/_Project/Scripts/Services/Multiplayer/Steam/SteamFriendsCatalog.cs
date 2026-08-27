@@ -15,17 +15,14 @@ namespace _Project.Multiplayer.Steam
 
         public event EventHandler<PlayerModel> FriendDetailsChanged;
 
-        public async Awaitable<IEnumerable<PlayerModel>> GetFriendsAsync()
+        public async IAsyncEnumerable<PlayerModel> GetFriendsAsync()
         {
             var friendsArray = SteamFriends.GetFriends().ToArray();
-            var friendsList = new List<PlayerModel>();
             foreach (var friend in friendsArray)
             {
                 var playerModel = await PlayerModelTranslator.CreatePlayerModel(friend);
-                friendsList.Add(playerModel);
+                yield return playerModel;
             }
-
-            return friendsList;
         }
 
         private async Awaitable OnFriendDetailsChanged(Friend friend)
