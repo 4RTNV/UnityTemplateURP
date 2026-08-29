@@ -1,0 +1,9 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="Container" style="flex-grow: 1; flex-direction: row; justify-content: center;">
+        <ui:Image name="ProfilePicture" style="width: 100px; height: 100px;"/>
+        <ui:VisualElement name="Labels" style="flex-grow: 1; align-content: center; align-items: flex-start; justify-content: center;">
+            <ui:Label text="Name" name="Name"/>
+            <ui:Label text="Status" name="Status"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
