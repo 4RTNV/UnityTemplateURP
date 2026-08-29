@@ -1,0 +1,9 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement style="flex-grow: 1; flex-direction: row; align-content: center; align-items: center;">
+        <ui:VisualElement name="Labels" style="flex-grow: 1; align-content: center; justify-content: center;">
+            <ui:Label text="Lobby Name" name="Name" style="font-size: 20px;"/>
+            <ui:Label text="Status" name="Status"/>
+        </ui:VisualElement>
+        <ui:Label text="N/M" name="PlayersCount" style="justify-content: center; align-content: center; font-size: 30px;"/>
+    </ui:VisualElement>
+</ui:UXML>
