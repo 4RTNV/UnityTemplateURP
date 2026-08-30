@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace _Project.UI.Elements
+namespace _Project.UI.ViewModels.Multiplayer
 {
     [UxmlElement]
     public partial class LobbyPreview : VisualElement

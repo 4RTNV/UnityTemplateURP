@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace _Project
+namespace _Project.UI.Views.Elements
 {
     [UxmlElement]
     public partial class PlayerView : VisualElement
