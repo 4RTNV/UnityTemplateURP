@@ -7,7 +7,8 @@ namespace _Project.Multiplayer.Steam
     {
         public static async Awaitable<Lobby?> CreateLobby(Steamworks.Data.Lobby? steamLobbyNullable)
         {
-            if (steamLobbyNullable is not { } steamLobby) return null;
+            if (steamLobbyNullable is not { } steamLobby)
+                return null;
 
             // I wish I could use LINQ..
             var steamPlayers = steamLobby.Members.ToArray();

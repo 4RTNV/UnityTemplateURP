@@ -31,7 +31,8 @@ namespace _Project.Multiplayer
 
         public override bool Equals(object obj)
         {
-            if (obj is PlayerModel player) return Id.Equals(player.Id);
+            if (obj is PlayerModel player)
+                return Id.Equals(player.Id);
 
             return false;
         }

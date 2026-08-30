@@ -12,10 +12,11 @@ namespace _Project.Multiplayer.Steam
             var avatar = Texture2D.whiteTexture;
             var image = await friend.GetLargeAvatarAsync();
             await Awaitable.MainThreadAsync();
-            //if (image != null)
-            //    avatar = CreateTextureFromRawBytes(image.Value.Data, (int)image.Value.Width, (int)image.Value.Height);
+            if (image != null)
+                avatar = CreateTextureFromRawBytes(image.Value.Data, (int)image.Value.Width, (int)image.Value.Height);
 
-            if (friend.GameInfo is { } gameInfo) playingSameGame = gameInfo.GameID == SteamClient.AppId;
+            if (friend.GameInfo is { } gameInfo)
+                playingSameGame = gameInfo.GameID == SteamClient.AppId;
             return new PlayerModel(avatar, friend.Id.ToString(), friend.Name, friend.Nickname, playingSameGame,
                 friend.State);
         }
