@@ -1,3 +1,4 @@
+using SourceKettle;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -6,18 +7,16 @@ namespace _Project.UI.Views.Elements
     [UxmlElement]
     public partial class PlayerView : VisualElement
     {
-        private readonly Label _name;
-        private readonly Image _profilePicture;
-        private readonly Label _status;
+        [Query] private Label _name;
+        [Query] private Image _profilePicture;
+        [Query] private Label _status;
 
         public PlayerView()
         {
             var template = Resources.Load<VisualTreeAsset>("UI/Elements/Multiplayer/PlayerView");
             template.CloneTree(this);
 
-            _name = this.Q<Label>("Name");
-            _status = this.Q<Label>("Status");
-            _profilePicture = this.Q<Image>("ProfilePicture");
+            BindQueries(this);
         }
 
         public string Name
