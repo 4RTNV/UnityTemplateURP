@@ -77,9 +77,11 @@ resharper_keep_existing_embedded_arrangement = false
 
 # noinspection EditorConfigKeyCorrectness
 [*.cs]
-
-# Стандартные настройки C#
-csharp_new_line_before_open_brace = all
+resharper_blank_lines_around_single_line_property = 1
+# Настройка для автоформатирования (сохранять 1 пустую строку)
+resharper_blank_lines_keep_max = 1
+resharper_int_keep_blank_lines_in_declarations = 1
+resharper_place_simple_property_on_single_line = false
 
 csharp_style_var_for_built_in_types = true:suggestion
 csharp_style_var_when_type_is_apparent = true:suggestion
